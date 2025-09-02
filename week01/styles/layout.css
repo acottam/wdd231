@@ -1,3 +1,4 @@
+/* ----- CSS Variables ----- */
 :root {
   --header-footer: #2f2f2f;   /* dark gray panels (header + footer + page bg) */
   --nav: #000000;             /* pure black nav bar */
@@ -8,7 +9,7 @@
   --body-font: "Open Sans", sans-serif;
 }
 
-/* ----- Page grid (header, main+aside, footer) ----- */
+/* ----- Page grid (header, main + aside, footer) ----- */
 html, body { height: 100%; }
 body {
   margin: 0;
@@ -24,7 +25,6 @@ body {
 header {
   grid-column: 1 / -1;
 }
-
 header::before {
   content: "Header Content";
   display: block;
@@ -53,7 +53,7 @@ header nav a {
 header nav a:hover,
 header nav a:focus-visible { text-decoration: underline; }
 
-/* ----- Main & Aside ----- */
+/* ----- Main ----- */
 main {
   grid-column: 1 / 2;
   background: var(--main-bg);
@@ -67,6 +67,7 @@ main h1 {
   color: #222;
 }
 
+/* ----- Aside ----- */
 .aside-content {
   grid-column: 2 / 3;
   background: var(--aside-bg);
@@ -89,6 +90,7 @@ footer {
   font-size: 1.15rem;
 }
 
+/* ----- Responsive ----- */
 @media (max-width: 800px) {
   body {
     grid-template-columns: 1fr;
