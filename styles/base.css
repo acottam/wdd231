@@ -25,16 +25,6 @@ body {
 header {
   grid-column: 1 / -1;
 }
-header::before {
-  content: "Header Content";
-  display: block;
-  background: var(--header-footer);
-  color: #fff;
-  padding: 1.75rem 1.25rem;
-  font-family: var(--heading-font);
-  font-size: 1.5rem;
-  font-weight: 700;
-}
 header nav {
   background: var(--nav);
   display: flex;
@@ -52,6 +42,12 @@ header nav a {
 }
 header nav a:hover,
 header nav a:focus-visible { text-decoration: underline; }
+#course-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
 
 /* ----- Main ----- */
 main {
@@ -89,6 +85,15 @@ footer {
   font-weight: 700;
   font-size: 1.15rem;
 }
+#currentyear {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+#lastmodified {
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+} 
 
 /* ----- Responsive ----- */
 @media (max-width: 800px) {
