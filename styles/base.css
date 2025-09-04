@@ -1,0 +1,103 @@
+/* ----- CSS Variables ----- */
+:root {
+  --header-footer: #2f2f2f;   /* dark gray panels (header + footer + page bg) */
+  --nav: #000000;             /* pure black nav bar */
+  --main-bg: #d4d4d4;         /* light gray main area */
+  --aside-bg: #ffffff;        /* white aside area */
+  --text: #111;               /* dark text for content areas */
+  --heading-font: "Raleway", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+}
+
+/* ----- Page grid (header, main + aside, footer) ----- */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  color: var(--text);
+  background: var(--header-footer);                 
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 320px;
+}
+
+/* ----- Header (title strip + black nav) ----- */
+header {
+  grid-column: 1 / -1;
+}
+header::before {
+  content: "Header Content";
+  display: block;
+  background: var(--header-footer);
+  color: #fff;
+  padding: 1.75rem 1.25rem;
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+header nav {
+  background: var(--nav);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.9rem 0.75rem;
+}
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: .2px;
+}
+header nav a:hover,
+header nav a:focus-visible { text-decoration: underline; }
+
+/* ----- Main ----- */
+main {
+  grid-column: 1 / 2;
+  background: var(--main-bg);
+  min-height: 28rem;
+  padding: 1.25rem;
+}
+main h1 {
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  color: #222;
+}
+
+/* ----- Aside ----- */
+.aside-content {
+  grid-column: 2 / 3;
+  background: var(--aside-bg);
+  padding: 1.25rem;
+  border-left: 1px solid #dcdcdc; 
+  color: #222;
+  font-family: var(--heading-font);
+  font-size: 1.25rem;
+}
+
+/* ----- Footer ----- */
+footer {
+  grid-column: 1 / -1;
+  background: var(--header-footer);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  .aside-content {
+    grid-column: 1 / -1;
+    border-left: none;
+    border-top: 1px solid #dcdcdc;
+  }
+}

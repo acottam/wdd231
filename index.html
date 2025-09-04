@@ -1,0 +1,88 @@
+<!-- 
+HTML
+In the index.html document, include the:
+required document type definition
+html tag with language attribute
+head tag
+body tag
+In the <head>, include the following elements with appropriate attributes and content:
+Refer to the course development standards if you need to review any of these <head> elements.
+meta charset
+meta viewport
+title
+meta description
+meta author
+Set the title content to "WDD 131 – Dynamic Web Fundamentals – Your Name".
+Phrase the meta description that it at least contains the following content:
+"WDD 131 – Dynamic Web Fundamentals"
+Your full name
+Keyword summary of the page content
+In the <body>, create a layout using a header, a main, and a footer element.
+The <header> element contains:
+the page heading text as shown in an <span> tag with an id attribute of "course-title". The content is "WDD 131 – Dynamic Web Fundamentals"
+a <nav> tag with these four menu links:
+Your LinkedIn profile page.
+If you do not have a free LinkedIn account profile, consider making one or just provide a general link to LinkedIn.
+
+Canvas using https://byupw.instructure.com/.
+Link to a favorite Scripture using https://www.churchofjesuschrist.org/study/scriptures
+Example
+https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7
+
+Final Project folder link (this will be a placeholder for now).
+The <main> element contains the following:
+The h1 tag with your name as the content.
+Two section tags each with the class attribute named "card". These sections should include a heading, images, and content as shown in the example figure above.
+In this class, all images must be optimized and must be local (no external, absolute references to images).
+
+The <footer> has two paragraphs p:
+The first paragraph contains the following:
+The copyright symbol and current year where the year will be dynamically populated using JavaScript code. Provide a blank <span> tag to do this.
+Example
+<span id="currentyear"></span>
+
+Your name.
+Your state or country.
+The second paragraph has an id of "lastModified" and will be populated with JavaScript code.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 131 – Dynamic Web Fundamentals – Adam Cottam</title>
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals, Adam Cottam, HTML, CSS, JavaScript">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="author" content="Adam Cottam">
+  <link rel="stylesheet" href="styles/base.css">
+  <script src="scripts/getdates.js" defer></script>
+</head>
+<body>
+  <header>
+    <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
+    <nav>
+      <a href="https://www.linkedin.com/in/adamcottampdx">LinkedIn</a>
+      <a href="https://byupw.instructure.com/">Canvas</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7">Scripture</a>
+      <a href="#">Final Project</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Adam Cottam</h1>
+    <section class="card">
+      <h2>Section 1</h2>
+      <p>Content for first card section.</p>
+    </section>
+    <section class="card">
+      <h2>Section 2</h2>
+      <p>Content for second card section.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; <span id="currentyear"></span> Adam Cottam, Oregon</p>
+    <p id="lastModified"></p>
+  </footer> 
+</body>
+</html>
