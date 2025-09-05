@@ -9,4 +9,4 @@ const today = new Date();
 currentyear.textContent = today.getFullYear();
 
 // set the text content of the span element with the last modified date
-lastmodified.textContent = document.lastModified;
+lastmodified.textContent = 'Last Modified: ' + document.lastModified;
