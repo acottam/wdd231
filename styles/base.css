@@ -136,7 +136,7 @@ h3 {
 }
 figure {
   float: left;
-  margin: 0 2rem 2rem 2rem 0;
+  margin: 2rem 2rem 2rem 0;
   padding: 0rem;
   max-width: 250px;
 } 
