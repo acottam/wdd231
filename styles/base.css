@@ -1,9 +1,13 @@
 /* ----- CSS Variables ----- */
 :root {
-  --header-footer: #2f2f2f;   
-  --nav: #000000;             
+  --body: #4f4f4f;   
+  --header: #1f4f6e;
+  --footer: #1f4f6e;
+  --nav: #0f0f0f;
+  --nav-hover: #2f2f2f;             
   --main-bg: #d4d4d4;         
-  --section-bg: #ffffff;      
+  --section-bg: #fff;
+  --white: #fff;      
   --text: #222;               
   --heading-font: "Raleway", sans-serif;
   --body-font: "Open Sans", sans-serif;
@@ -15,14 +19,16 @@ html, body {
 }
 body {
   margin: 0;
+  padding: 0;
   font-family: var(--body-font);
   color: var(--text);
-  background: var(--header-footer);                
+  background: var(--body);                
 }
 
 /* ----- Header ----- */
 header {
   text-align: center;
+  background: var(--header);
 }
 #course-title {
   display: block;
@@ -30,36 +36,36 @@ header {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.5em;
-  color: #fff;
+  color: var(--white);
   text-align: center;
-  background: #1f4f6e;
 }
 header nav {
   background: var(--nav);
   display: flex;
-  justify-content: space-around;
-  gap: 2rem;
-  padding: 0.9rem 0.75rem;
+ 
 }
 header nav a {
-  color: #fff;
+  display: block;
+  color: var(--white);
   text-decoration: none;
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: .2px;
+  line-height: 3em;
+  flex: 1 1 100%;
 }
 header nav a:hover, header nav a:focus-visible { 
-  text-decoration: underline; 
+  text-decoration: none; 
+  background-color: var(--nav-hover);
 }
 
 /* ----- Main ----- */
 main {
-  background: var(--main-bg);
-  padding: 1.25rem;
-  min-height: 28rem;
   display: grid;
   grid-template-columns: 5fr 1fr; 
   gap: 1.25rem;
+  background: var(--main-bg);
+  min-height: 28rem;
   max-width: 1100px;
   margin: 0 auto;
   padding: .75rem 1.25rem 1.25rem 1.25rem;
@@ -70,7 +76,7 @@ main h1 {
   font-family: var(--heading-font);
   font-size: 2rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   text-align: center;
   background: #2b5d84;
   border: 1px solid #2b5d84;
@@ -99,12 +105,11 @@ main h1 {
 }
 /* About Me (left)  */
 main .card:first-of-type { 
-  grid-column: 1 / 1; 
+  grid-column: 1 / 2; 
 }
 /* Resources (right) */
 main .card:nth-of-type(2) { 
-  grid-column: 2 / 2; 
-  align-self: start; 
+  grid-column: 2 / 3; 
 } 
 main .about {
   clear: both;
@@ -114,7 +119,7 @@ main .about {
 .portrait {
   float: right;
   display: block;
-  max-width: 200px;
+  max-width: 180px;
   height: auto;
   border-radius: 10px;
   margin: 1rem 2rem 2rem 2rem;
@@ -136,9 +141,9 @@ h3 {
 }
 figure {
   float: left;
-  margin: 2rem 2rem 2rem 0;
-  padding: 0rem;
-  max-width: 250px;
+  margin: 1rem 2rem 2rem 2rem;
+  padding: 0;
+  max-width: 325px;
 } 
 figure img {
   display: block;
@@ -176,22 +181,20 @@ figure figcaption {
 
 /* ----- Footer ----- */
 footer {
-  background: #1f4f6e;
-  color: #fff;
-  text-align: center;
-  padding: 1.75rem 1rem;
+  background: var(--footer); 
+  color: var(--white); 
   font-family: var(--heading-font);
   font-weight: 700;
   font-size: 1.5rem;
+  text-align: center;
+  padding: 1.75rem 1rem;
 }
 footer p {
   margin: 0.25rem 0;
 }
-#currentyear {
-
-}
 footer p span {
-  padding: 0 0.25rem;}
+  padding: 0 0.25rem;
+}
 #lastmodified {
   font-size: 0.85rem;
   font-weight: 400;

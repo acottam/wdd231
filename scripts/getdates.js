@@ -1,12 +1,8 @@
-// getdates.js
-const currentyear = document.querySelector("#currentyear");
-const lastmodified = document.querySelector("#lastmodified");
-
 // use the date object
-const today = new Date();
+let today = new Date();
 
 // set the text content of the span element with the current year
-currentyear.textContent = today.getFullYear();
+document.getElementById("currentyear").innerHTML = `&copy;${today.getFullYear()}`;
 
 // set the text content of the span element with the last modified date
-lastmodified.textContent = 'Last Modified: ' + document.lastModified;
+document.querySelector('#lastmodified').textContent = `Last Modification: ${document.lastModified}`;
