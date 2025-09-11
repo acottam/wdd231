@@ -46,6 +46,3 @@ document.addEventListener('DOMContentLoaded', function() {
     const input = document.querySelector('#favchap');
     input.focus();
 });
-
-
-
