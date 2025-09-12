@@ -33,8 +33,7 @@ header {
     text-align: center;
     background: var(--header)
 }
-#course-title {
-    display: block;
+h1 {
     padding: 16px 0;
     font-size: 1.8rem;
     font-weight: 700;
@@ -116,9 +115,9 @@ main {
     margin: 0 auto;
     padding: 1rem 1rem 5rem 1rem;
 }
-main h1 {
+main h2 {
     grid-column: 1 / -1;
-    margin: 0;
+    margin: 2rem 0 1rem 0;
     font-family: var(--heading-font);
     font-size: 2rem;
     font-weight: 400;
