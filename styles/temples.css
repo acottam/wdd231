@@ -1,0 +1,132 @@
+/* ----- CSS Variables ----- */
+:root {
+  --body: #4f4f4f;   
+  --header: #1f4f6e;
+  --footer: #1f4f6e;
+  --nav: #0f0f0f;
+  --nav-hover: #2f2f2f;             
+  --main-bg: #d4d4d4;         
+  --section-bg: #fff;
+  --white: #fff;      
+  --text: #222;               
+  --heading-font: "Raleway", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+}
+
+/* ----- Global ----- */
+html, body { 
+  height: 100%; 
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  color: var(--text);
+  background: var(--body);                
+}
+
+/* ----- Header ----- */
+header {
+  text-align: center;
+  background: var(--header);
+}
+#course-title {
+  display: block;
+  padding: 20px 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: var(--white);
+  text-align: center;
+}
+header nav {
+  background: var(--nav);
+  display: flex;
+ 
+}
+header nav a {
+  display: block;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: .2px;
+  line-height: 3em;
+  flex: 1 1 100%;
+}
+header nav a:hover, header nav a:focus-visible { 
+  text-decoration: none; 
+  background-color: var(--nav-hover);
+}
+
+/* ----- Main ----- */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 1.25rem;
+  background: var(--main-bg);
+  min-height: 28rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: .75rem 1.25rem 1.25rem 1.25rem;
+}
+main h1 {
+  grid-column: 1 / -1;           
+  margin: 0; 
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  background: #2b5d84;
+  border: 1px solid #2b5d84;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.08);
+  padding: 1rem 1.25rem;
+}
+
+figure {
+  margin: 1rem;
+  padding: 0;
+  max-width: 300px;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+} 
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+figure figcaption {
+  font-size: .85rem;
+  line-height: 1.5em;
+  color: #666;
+  margin-top: .35rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ----- Footer ----- */
+footer {
+  background: var(--footer); 
+  color: var(--white); 
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1.75rem 1rem;
+}
+footer p {
+  margin: 0.25rem 0;
+}
+footer p span {
+  padding: 0 0.25rem;
+}
+#lastmodified {
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: .35rem;
+} 
