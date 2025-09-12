@@ -9,18 +9,25 @@
     <meta name="author" content="Adam Cottam">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/temples.css">
-    <link rel="stylesheet" href="styles/temples-large.css">
+    <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 700px)">
     <script src="scripts/temples.js" defer></script>
 </head>
 
 <body>
     <header>
         <span id="course-title">Temple Album</span>
-        <nav>
+
+        <!-- Navigation (hamburger) -->
+        <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+            <span class="bar" aria-hidden="true"></span>
+        </button>
+        
+        <!-- Primary Nav -->
+        <nav id="primary-nav" class="nav closed">
             <a href="#">Home</a>
             <a href="#">Old</a>
             <a href="#">New</a>
@@ -28,8 +35,9 @@
             <a href="#">Small</a>
         </nav>
     </header>
+    
     <main>
-        <h1>Temples Throughout the world</h1>
+        <h1>Holiness to the Lord</h1>
 
         <figure>
             <img src="images/portland-oregon-temple-01.jpg" width="350" alt="Portland Oregon Temple">
