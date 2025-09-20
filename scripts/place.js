@@ -45,14 +45,14 @@ document.querySelector("#lastmodified").textContent = `Last modified: ${document
       return "⛅";
     };
 
-    document.getElementById("wx-temp").textContent = Math.round(c.temperature_2m);
-    document.getElementById("wx-desc").textContent = descMap[code] || "—";
-    document.getElementById("wx-wind").textContent = Math.round(c.wind_speed_10m ?? 0);
-    document.getElementById("wx-hum").textContent = Math.round(c.relative_humidity_2m ?? 0);
-    document.getElementById("wx-time").textContent = new Date(c.time || Date.now()).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-    document.getElementById("wx-icon").textContent = iconMap(code);
+    document.getElementById("weather-temp").textContent = Math.round(c.temperature_2m);
+    document.getElementById("weather-desc").textContent = descMap[code] || "—";
+    document.getElementById("weather-wind").textContent = Math.round(c.wind_speed_10m ?? 0);
+    document.getElementById("weather-hum").textContent = Math.round(c.relative_humidity_2m ?? 0);
+    document.getElementById("weather-time").textContent = new Date(c.time || Date.now()).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    document.getElementById("weather-icon").textContent = iconMap(code);
   } catch (err) {
-    document.getElementById("wx-desc").textContent = "Weather unavailable";
+    document.getElementById("weather-desc").textContent = "Weather unavailable";
     console.error(err);
   }
 })();

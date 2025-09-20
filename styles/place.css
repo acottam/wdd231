@@ -106,22 +106,22 @@ main {
 }
 
 /* Data list */
-.kv {
+.key-value {
     margin: 0;
     display: grid;
     gap: .5rem
 }
-.kv>div {
+.key-value>div {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: .5rem;
     align-items: center
 }
-.kv dt {
+.key-value dt {
     font-weight: 700;
     color: #203447
 }
-.kv dd {
+.key-value dd {
     margin: 0
 }
 .flag {
@@ -155,21 +155,21 @@ main {
     color: var(--muted);
     margin-left: .15rem
 }
-.wx-list {
+.weather-list {
     list-style: none;
     margin: .5rem 0 0;
     padding: 0;
     display: grid;
     gap: .25rem
 }
-.wx-list li {
+.weather-list li {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     border-top: 1px dashed #e7edf3;
     padding: .4rem 0
 }
-.wx-list span {
+.weather-list span {
     color: var(--muted)
 }
 
