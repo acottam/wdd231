@@ -31,7 +31,11 @@
 
         <!-- Hero -->
         <figure class="hero" id="gallery">
-            <img src="images/lorenzo-castagnone-S1JVabNkXP0-unsplash.jpg" alt="View of San Marino city and towers" />
+            <picture>
+                <source srcset="images/san-marino-hero-small.webp" media="(max-width: 500px)">
+                <source srcset="images/san-marino-hero-medium.webp" media="(max-width: 1000px)">
+                <img src="images/san-marino-hero-large.webp" alt="View of San Marino city and towers" width="1400" height="933">
+            </picture>
             <figcaption>Guaita Tower Overlooking San Marino</figcaption>
         </figure>
 
@@ -90,6 +94,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <p class="copyright"><span id="currentyear"></span> • Adam Cottam • San Marino</p>
         <p id="lastmodified"></p>
