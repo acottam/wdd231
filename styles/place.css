@@ -95,7 +95,7 @@ main {
 }
 .hero figcaption {
     text-align: center;
-    color: var(--muted);
+    color: var(--ink);
     font-size: .9rem;
     font-style: italic;
 }
