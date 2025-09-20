@@ -49,6 +49,7 @@ body {
     font-family: var(--heading);
     text-transform: uppercase;
     letter-spacing: .2em;
+    text-align: center;
 }
 
 /* -- Main -- */
@@ -72,9 +73,10 @@ main {
     letter-spacing: .25em;
     font-weight: 400;
     margin: .5em 1em 1em 1em;
-    /*
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
-    */
+}
+.banner span {
+    display: block;
+    padding: .35em;
 }
 .hero {
     margin: 0;

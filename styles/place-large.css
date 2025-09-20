@@ -15,6 +15,10 @@
     .banner {
         grid-area: banner
     }
+    .banner span {
+        display: initial;
+        padding: initial; 
+    }
     .hero {
         grid-area: hero;
         position: relative;
