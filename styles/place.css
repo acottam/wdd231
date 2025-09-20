@@ -1,7 +1,7 @@
 /* -- Vars -- */
 :root {
-    --azure: #62B5E5;  /* flag blue */
-    --azure-dark: #2b5d84;  /* header band */
+    --azure: #62B5E5; 
+    --azure-dark: #2b5d84;
     --sky: #e8f6ff;
     --ink: #1b1f23;
     --muted: #6c7a89;
@@ -47,6 +47,7 @@ body {
 .site-header h1 {
     margin: .5rem 0 .75rem;
     font-family: var(--heading);
+    font-size: 1.65em;
     text-transform: uppercase;
     letter-spacing: .2em;
     text-align: center;
@@ -124,18 +125,18 @@ main {
     display: grid;
     gap: .5rem
 }
-.key-value > div {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: .5rem;
-    align-items: center
-}
 .key-value dt {
-    color: var(--muted) 
+    padding: .4rem 0;
+    clear: both;
+    float: left;
+    color: var(--ink); 
+    padding: .4rem 0; 
 }
 .key-value dd {
+    float:right;
     font-weight: 700;
     margin: 0;
+    padding: .4rem 0;
 }
 .flag {
     border: 1px solid var(--ring);
@@ -149,24 +150,12 @@ main {
     gap: .75rem;
     margin-bottom: .5rem;
 }
-.weather-card .icon {
-    inline-size: 40px;
-    block-size: 40px;
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
-    background: var(--sky);
-    color: #0a2236;
-    font-size: 1.2rem;
-}
-.weather-card .temp {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-.weather-card .deg {
-    font-size: 1rem;
-    color: var(--muted);
-    margin-left: .15rem;
+#weather-title::after {
+    display: block;
+    content: url("../images/weather-icon.svg");
+    margin: 0 auto;
+    width: 100px;
+    height: 90px;
 }
 .weather-list {
     list-style: none;
@@ -179,11 +168,10 @@ main {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    border-top: 1px dashed #e7edf3;
     padding: .4rem 0;
 }
-.weather-list li > span {
-    color: var(--muted); 
+.weather-list li > span:last-of-type {
+    font-weight: 700;
 }
 
 /* -- Footer -- */
