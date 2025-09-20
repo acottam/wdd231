@@ -1,0 +1,194 @@
+/* ---------- Vars ---------- */
+:root {
+    --azure: #62B5E5;  /* flag blue */
+    --azure-dark: #2b5d84;  /* header band */
+    --sky: #e8f6ff;
+    --ink: #1b1f23;
+    --muted: #6c7a89;
+    --card: #ffffff;
+    --ring: #e3eef6;
+    --radius: 16px;
+    --heading: "Raleway", system-ui, sans-serif;
+    --body: "Open Sans", system-ui, sans-serif;
+}
+
+/* ---------- Global ---------- */
+* {
+    box-sizing: border-box
+}
+html, body {
+    height: 100%
+}
+body {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--body);
+    background: linear-gradient(#f6fbff, #eef6fb);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+    background: var(--azure-dark);
+    color: white;
+    padding: .5rem 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    justify-content: center;
+}
+.brand .crest {
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .2));
+}
+.site-header h1 {
+    margin: .25rem 0 .75rem;
+    font-family: var(--heading);
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+/* ---------- Main Layout ---------- */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+.banner {
+    grid-column: 1/-1;
+    text-align: center;
+    font-family: var(--heading);
+    color: white;
+    background: var(--azure-dark);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    letter-spacing: .25em;
+    font-weight: 600;
+}
+.hero {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+    border: 1px solid var(--ring);
+    box-shadow: 0 4px 16px rgba(2, 48, 71, .12);
+}
+.hero figcaption {
+    text-align: center;
+    color: var(--muted);
+    font-size: .9rem;
+    font-style: italic;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: var(--card);
+    border: 1px solid var(--ring);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(2, 48, 71, .08);
+    padding: 1rem 1.25rem;
+}
+.card h3 {
+    margin: .25rem 0 1rem;
+    font-family: var(--heading);
+    letter-spacing: .08em;
+    color: var(--azure-dark);
+}
+
+/* Data list */
+.kv {
+    margin: 0;
+    display: grid;
+    gap: .5rem
+}
+.kv>div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .5rem;
+    align-items: center
+}
+.kv dt {
+    font-weight: 700;
+    color: #203447
+}
+.kv dd {
+    margin: 0
+}
+.flag {
+    border: 1px solid var(--ring);
+    border-radius: 6px
+}
+
+/* Weather */
+.weather-card .current {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: .5rem;
+}
+.weather-card .icon {
+    inline-size: 40px;
+    block-size: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: var(--sky);
+    color: #0a2236;
+    font-size: 1.2rem;
+}
+.weather-card .temp {
+    font-size: 1.8rem;
+    font-weight: 700
+}
+.weather-card .deg {
+    font-size: 1rem;
+    color: var(--muted);
+    margin-left: .15rem
+}
+.wx-list {
+    list-style: none;
+    margin: .5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: .25rem
+}
+.wx-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px dashed #e7edf3;
+    padding: .4rem 0
+}
+.wx-list span {
+    color: var(--muted)
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    text-align: center;
+    color: #0b2438;
+    background: linear-gradient(180deg, #eaf5ff, #e1f1ff);
+    border-top: 1px solid var(--ring);
+}
+.copyright {
+    font-family: var(--heading);
+    font-weight: 700;
+    letter-spacing: .08em
+}
+#lastmodified {
+    margin: .25rem 0 0;
+    color: #3b5167;
+    font-size: .95rem
+}

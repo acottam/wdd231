@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>San Marino — Country Profile</title>
+    <meta name="description" content="Country profile for San Marino with key data and live weather." />
+    <meta name="author" content="Adam Cottam" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/place.css" />
+    <link rel="stylesheet" href="styles/place-large.css" />
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="brand">
+            <img class="crest" src="images/Coat_of_arms_of_San_Marino.svg" alt="Coat of arms of San Marino" width="44" height="44" />
+            <h1>San Marino</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Title -->
+        <h2 id="place-title" class="banner">Republic of San Marino</h2>
+
+        <!-- Hero -->
+        <figure class="hero" id="gallery">
+            <img src="images/lorenzo-castagnone-S1JVabNkXP0-unsplash.jpg" alt="View of San Marino city and towers" />
+            <figcaption>Guaita tower overlooking San Marino</figcaption>
+        </figure>
+
+        <!-- Data card -->
+        <section id="data" class="card data-card" aria-labelledby="data-title">
+            <h3 id="data-title">Data</h3>
+            <dl class="kv">
+                <div>
+                    <dt>Area</dt>
+                    <dd>61.2 km²</dd>
+                </div>
+                <div>
+                    <dt>Population</dt>
+                    <dd>~33,600</dd>
+                </div>
+                <div>
+                    <dt>Capital</dt>
+                    <dd>San Marino (Città)</dd>
+                </div>
+                <div>
+                    <dt>Languages</dt>
+                    <dd>Italian</dd>
+                </div>
+                <div>
+                    <dt>Time Zone</dt>
+                    <dd>CET (UTC+1) / CEST</dd>
+                </div>
+                <div>
+                    <dt>Calling Code</dt>
+                    <dd>+378</dd>
+                </div>
+                <div>
+                    <dt>Internet TLD</dt>
+                    <dd>.sm</dd>
+                </div>
+                <div class="flag-row">
+                    <dt>Flag</dt>
+                    <dd>
+                        <img class="flag"
+                            src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Flag_of_San_Marino.svg"
+                            alt="Flag of San Marino" width="80" height="54" />
+                    </dd>
+                </div>
+            </dl>
+        </section>
+
+        <!-- Weather card -->
+        <section id="weather" class="card weather-card" aria-labelledby="weather-title">
+            <h3 id="weather-title">Weather</h3>
+            <div class="current">
+                <div class="icon" id="wx-icon" aria-hidden="true">⛅</div>
+                <div class="temp"><span id="wx-temp">--</span><span class="deg">°C</span></div>
+            </div>
+            <ul class="wx-list">
+                <li><span>Condition</span><strong id="wx-desc">—</strong></li>
+                <li><span>Wind</span><strong><span id="wx-wind">—</span> km/h</strong></li>
+                <li><span>Humidity</span><strong><span id="wx-hum">—</span>%</strong></li>
+                <li><span>Updated</span><strong id="wx-time">—</strong></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="copyright"><span id="currentyear"></span> • Adam Cottam • San Marino</p>
+        <p id="lastmodified"></p>
+    </footer>
+</body>
+
+</html>
