@@ -1,10 +1,10 @@
-// ---------------- Footer ----------------
+// --- Footer -- //
 const today = new Date();
 document.getElementById("currentyear").innerHTML = `©${today.getFullYear()}`;
 document.querySelector("#lastmodified").textContent = `Last modified: ${document.lastModified}`;
 
-// ---------------- Weather (Open-Meteo, no API key) ----------------
-// Coordinates for San Marino (approx. 43.935, 12.447)
+// -- Weather -- //
+// -- Coordinates for San Marino - 43.935, 12.447 -- //
 (async () => {
   try {
     const url = "https://api.open-meteo.com/v1/forecast?latitude=43.935&longitude=12.447&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto";
