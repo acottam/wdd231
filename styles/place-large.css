@@ -47,6 +47,10 @@
         background: rgba(255, 255, 255, .96);
     }
     #weather-title::after {
-        display: none;
+        display: inline-block;
+        content: '⛅';
+        margin: 0 0 0 .4em; 
+        width: 0;
+        height: 0;
     }
 }
