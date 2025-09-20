@@ -1,6 +1,7 @@
-/* ----- ≥ 900px: desktop wireframe layout ----- */
+/* -- ≥ 900px: desktop layout -- */
 @media (min-width: 900px) {
     main {
+        position: relative;
         grid-template-columns: 1fr 300px;
         grid-template-areas:
             "banner  banner"
@@ -24,18 +25,19 @@
         object-fit: cover
     }
     .data-card {
-        grid-area: data;
-        width: min(480px, 90%);
-        justify-self: start;
-        margin-top: -140px;
+        position: absolute;
+        left: 35px;
+        top: 170px;
+        width: min(350px, 90%);
         background: rgba(255, 255, 255, .96);
         backdrop-filter: saturate(1.2) blur(2px)
     }
     .weather-card {
-        grid-area: weather;
-        width: min(360px, 90%);
-        justify-self: end;
-        margin-top: -140px;
+        position: absolute;
+        right: 35px;
+        bottom: 85px;
+        width: min(350px, 90%);
+        max-height: 350px;
         background: rgba(255, 255, 255, .96);
     }
     .key-value {
