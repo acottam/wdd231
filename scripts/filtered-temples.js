@@ -146,7 +146,7 @@ filterOld.addEventListener("click", () => {
 // Filter: New
 filterNew.addEventListener("click", () => {
   const filteredTemples = temples.filter(
-    (temple) => new Date(temple.dedicated).getFullYear() >= 1900
+    (temple) => new Date(temple.dedicated).getFullYear() >= 2000 
   );
   createTempleCards(filteredTemples);
 });
