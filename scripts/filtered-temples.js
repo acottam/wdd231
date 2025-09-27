@@ -104,15 +104,15 @@ const temples = [
   },
   {
     templeName: "Portland Oregon Temple",
-    location: "Portland, Oregon",
+    location: "Portland, Oregon, United States",
     dedicated: "1989, August, 21",
     area: 80500,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/portland-oregon-temple/portland-oregon-temple-1629-main.jpg",
+      "https://churchofjesuschristtemples.org/assets/img/temples/portland-oregon-temple/portland-oregon-temple-1582.jpg",
   },
   {
     templeName: "Oakland California Temple",
-    location: "Oakland, California",
+    location: "Oakland, California, United States",
     dedicated: "1964, November, 19",
     area: 80157,
     imageUrl:
@@ -163,6 +163,13 @@ filterSmall.addEventListener("click", () => {
   createTempleCards(filteredTemples);
 }); 
 
+// Format Dedicated Dates
+function formatDedicatedDate(dateString) {
+  const parts = dateString.split(/\s*,\s*/); 
+  const [year, month, day] = parts;
+  return `${month} ${day}, ${year}`;
+} 
+
 // CreateTemple Cards
 function createTempleCards(filteredTemples = temples) {
   const container = document.getElementById("temple-container");
@@ -176,8 +183,8 @@ function createTempleCard(temple) {
         <figcaption>
           <h3>${temple.templeName}</h3>
           <p><strong>Location:</strong> ${temple.location}</p>
-          <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-          <p><strong>Area:</strong> ${temple.area} sq ft</p>
+          <p><strong>Dedicated:</strong> ${formatDedicatedDate(temple.dedicated)}</p>
+          <p><strong>Area:</strong> ${temple.area.toLocaleString("en-US")} sq ft</p>
         </figcaption>
         <img src="${temple.imageUrl}" alt="${temple.templeName}" width="350" loading="lazy">
     </figure>
