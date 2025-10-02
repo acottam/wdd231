@@ -1,36 +1,42 @@
-// ---------------- Footer ----------------
-const today = new Date();
-document.getElementById(
-  "currentyear"
-).innerHTML = `&copy;${today.getFullYear()}`;
-document.querySelector(
-  "#lastmodified"
-).textContent = `Last Modification: ${document.lastModified}`;
+// ---- Color Legend Injection ----
+(function addColorLegend() {
+  const branding = document.querySelector("#branding");
+  if (!branding) return;
 
-// ---------------- Navigation (hamburger) ----------------
-const toggleBtn = document.getElementById("menu-toggle");
-const nav = document.getElementById("primary-nav");
+  // Create a small legend after the Branding heading
+  const h2 = branding.querySelector("h2");
+  const legend = document.createElement("div");
+  legend.className = "color-legend";
+  legend.setAttribute("aria-label", "Color swatch legend");
 
-if (toggleBtn && nav) {
-  // Set Expanded
-  const setExpanded = (isOpen) => {
-    toggleBtn.classList.toggle("is-open", isOpen);
-    nav.classList.toggle("open", isOpen);
-    nav.classList.toggle("closed", !isOpen);
-    toggleBtn.setAttribute("aria-expanded", String(isOpen));
-    toggleBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-  };
+  const items = [
+    { hex: "#1B4965", label: "Deep Blue — headers/nav/bars" },
+    { hex: "#2E7D32", label: "Forest Green — accents/links" },
+    { hex: "#CAE9FF", label: "Sky Tint — highlights/cards" },
+    { hex: "#F2E8CF", label: "Sand — base/background" },
+  ];
 
-  //  Open Menu
-  toggleBtn.addEventListener("click", () => {
-    const isOpen = !nav.classList.contains("open");
-    setExpanded(isOpen);
+  items.forEach(({ hex, label }) => {
+    const item = document.createElement("div");
+    item.className = "legend-item";
+
+    const chip = document.createElement("span");
+    chip.className = "swatch";
+    chip.style.setProperty("--sw", hex);
+
+    const text = document.createElement("span");
+    text.className = "legend-label";
+    text.innerHTML = `<code>${hex}</code> — ${label}`;
+
+    item.appendChild(chip);
+    item.appendChild(text);
+    legend.appendChild(item);
   });
 
-  // Close Menu
-  nav.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => {
-      if (window.matchMedia("(max-width: 699px)").matches) setExpanded(false);
-    })
-  );
-}
+  // Insert after the H2 (or at end of section if H2 missing)
+  if (h2 && h2.nextSibling) {
+    h2.parentNode.insertBefore(legend, h2.nextSibling);
+  } else {
+    branding.appendChild(legend);
+  }
+})();

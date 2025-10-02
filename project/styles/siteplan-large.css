@@ -1,21 +1,53 @@
-/* ----- Min Width of 500px ----- */
-@media screen and (min-width: 500px) {
+/* Base breakpoint */
+@media (min-width: 48rem) {
+
+    /* Show nav inline, hide hamburger */
     .menu-toggle {
-        display: none
+        display: none;
     }
+
     .nav {
-        display: flex;
-        flex-direction: row;
-        max-height: none;
-        overflow: visible;
+        display: flex !important;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .5rem .75rem;
+        margin-top: .5rem;
     }
-    .nav a {
-        flex: 1 1 auto;
-        text-align: center;
-        border-top: none;
-        border-right: 1px solid rgba(255, 255, 255, .08);
+
+    main {
+        margin-top: 1.5rem;
     }
-    .nav a:last-child {
-        border-right: none
+
+    /* Section spacing & layout */
+    section {
+        padding: 1.25rem 1.25rem 1.1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    /* Larger “pill” headers */
+    section>h2 {
+        font-size: 1.15rem;
+        padding: .7rem 1rem;
+    }
+
+    /* Branding / legend: widen to 3 columns on large */
+    .color-legend {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Wider desktop refinements */
+@media (min-width: 70rem) {
+    main {
+        width: min(1100px, 90%);
+    }
+
+    /* Slightly larger headings for roomy screens */
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    section>h2 {
+        font-size: 1.2rem;
     }
 }
