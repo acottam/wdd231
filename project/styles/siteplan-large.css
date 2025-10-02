@@ -1,11 +1,11 @@
-/* Base breakpoint */
+/* ---- Base breakpoint ---- */
 @media (min-width: 48rem) {
-
-    /* Show nav inline, hide hamburger */
     .menu-toggle {
         display: none;
     }
-
+    header {
+        grid-template-columns: 1fr;
+    }
     .nav {
         display: flex !important;
         align-items: center;
@@ -13,41 +13,28 @@
         gap: .5rem .75rem;
         margin-top: .5rem;
     }
-
     main {
         margin-top: 1.5rem;
     }
-
-    /* Section spacing & layout */
     section {
         padding: 1.25rem 1.25rem 1.1rem;
         margin-bottom: 1.25rem;
     }
-
-    /* Larger “pill” headers */
-    section>h2 {
-        font-size: 1.15rem;
-        padding: .7rem 1rem;
-    }
-
-    /* Branding / legend: widen to 3 columns on large */
-    .color-legend {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    section > h2 {
+        font-size: 1.5rem;
+        padding: .7rem 0;
     }
 }
 
-/* Wider desktop refinements */
+/* ---- Wider ---- */
 @media (min-width: 70rem) {
     main {
         width: min(1100px, 90%);
     }
-
-    /* Slightly larger headings for roomy screens */
     header h1 {
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
-
-    section>h2 {
-        font-size: 1.2rem;
+    section > h2 {
+        font-size: 1.75rem;
     }
 }

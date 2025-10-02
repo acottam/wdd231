@@ -1,215 +1,143 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WDD 131 - Project: Website Planning Document - Adam Cottam</title>
-    <meta name="description" content="WDD 131 - Project: Website Planning Document - Adam Cottam" />
-    <meta name="author" content="Adam Cottam" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/siteplan.css" />
-    <link rel="stylesheet" href="styles/siteplan-large.css" />
-    <script src="scripts/siteplan.js" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WDD 131 - Project: Website Planning Document - Adam Cottam</title>
+  <meta name="description" content="WDD 131 - Project: Website Planning Document - Adam Cottam" />
+  <meta name="author" content="Adam Cottam" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/siteplan.css" />
+  <link rel="stylesheet" href="styles/siteplan-large.css" />
+  <script src="scripts/siteplan.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <h1>Website Planning Document</h1>
+  <header>
+    <h1>Website Planning Document</h1>
 
-        <!-- Navigation (hamburger) -->
-        <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav"
-            aria-expanded="false">
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
-        </button>
+    <!-- Navigation (hamburger) -->
+    <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
 
-        <!-- Primary Nav -->
-        <nav id="primary-nav" class="nav closed">
-            <a href="#subject">Subject</a>
-            <a href="#description">Description</a>
-            <a href="#audience">Audience</a>
-            <a href="#goals">Purpose & Goals</a>
-            <a href="#structure">Site Structure</a>
-            <a href="#features">Planned Features</a>
-            <a href="#branding">Branding Notes</a>
-            <a href="#scenarios">Scenarios</a>
-            <a href="#colors">Color Schema</a>
-            <a href="#color-usage">Color Usage</a>
-            <a href="#wireframes">Wireframes</a>
-        </nav>
-    </header>
+    <!-- Primary Nav -->
+    <nav id="primary-nav" class="nav closed" aria-label="Primary">
+      <a href="#site-name">Site Name</a>
+      <a href="#site-purpose">Site Purpose</a>
+      <a href="#scenarios">Scenarios</a>
+      <a href="#color-schema">Color Schema</a>
+      <a href="#typography">Typography</a>
+      <a href="#wireframes">Wireframes</a>
+    </nav>
+  </header>
 
-    <main>
-        <!-- Subject -->
-        <section id="subject">
-            <h2>Website Project Subject</h2>
-            <figure>
-                <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop" alt="Family hiking a forested Pacific Northwest trail" />
-                <figcaption>
-                    <h3>Pacific Northwest Family Adventures</h3>
-                    <p>A curated guide to kid-friendly hikes, museums, and hidden gems across Oregon and Washington.</p>
-                </figcaption>
-            </figure>
-        </section>
+  <main>
+    <!-- Site Name -->
+    <section id="site-name">
+      <h2>Site Name</h2>
+      <p><strong>Name:</strong> Pacific Northwest Family Adventures</p>
+      <p><strong>Tagline:</strong> A curated guide to kid-friendly hikes, museums, and hidden gems across Oregon and Washington.</p>
+    </section>
 
-        <!-- Description -->
-        <section id="description">
-            <h2>Brief Description of Planned Site Content</h2>
-            <p>
-                This website will highlight family-friendly hikes, museums, and hidden gems across Oregon and
-                Washington. The site will feature interactive maps, a weather widget for planning outings, and a dynamic
-                photo gallery showcasing unique destinations. Content will be organized into categories such as outdoor
-                activities, cultural attractions, and off-the-beaten-path discoveries, with responsive design for easy
-                viewing on both desktop and mobile devices.
-            </p>
-        </section>
+    <!-- Site Purpose -->
+    <section id="site-purpose">
+      <h2>Site Purpose</h2>
+      <p>
+        I chose this subject because exploring the Pacific Northwest with my family is one of my favorite pastimes.
+        This project lets me combine local adventures with web development skills—responsive design, JS interactivity,
+        and a polished, accessible presentation.
+      </p>
+    </section>
 
-        <!-- Audience -->
-        <section id="audience">
-            <h2>Target Audience</h2>
-            <ul>
-                <li>Families with children looking for weekend adventures</li>
-                <li>Travelers and newcomers to the Pacific Northwest</li>
-                <li>Outdoor enthusiasts seeking accessible trails and activities</li>
-            </ul>
-        </section>
+    <!-- Scenarios -->
+    <section id="scenarios">
+      <h2>Scenarios</h2>
+      <ol>
+        <li>As a parent with two kids under 10, I want easy hikes with restrooms and picnic areas so we can plan a half-day trip without meltdowns.</li>
+        <li>As a first-time visitor to Seattle, I want kid-friendly museums near public transit so the day stays simple.</li>
+        <li>As a weekend warrior, I want to check trail conditions and a 48-hour forecast for a hidden gem within 90 minutes of Portland.</li>
+      </ol>
+    </section>
 
-        <!-- Purpose -->
-        <section id="goals">
-            <h2>Site Purpose & Goals</h2>
-            <ul>
-                <li>Provide an easy, trustworthy resource for planning memorable family outings.</li>
-                <li>Surface practical details (maps, conditions, tips) to reduce planning friction.</li>
-                <li>Practice and demonstrate responsive design and JavaScript interactivity.</li>
-            </ul>
-        </section>
+    <!-- Color Schema -->
+    <section id="color-schema">
+      <h2>Color Schema</h2>
+      <p>Primary palette and how each color is used:</p>
+      <ul class="color-list">
+        <li><span class="swatch" style="--sw:#1B4965"></span><code>#1B4965</code> — Deep Blue (headers, nav)</li>
+        <li><span class="swatch" style="--sw:#2E7D32"></span><code>#2E7D32</code> — Forest Green (links, buttons)</li>
+        <li><span class="swatch" style="--sw:#CAE9FF"></span><code>#CAE9FF</code> — Sky Tint (cards, callouts)</li>
+        <li><span class="swatch" style="--sw:#F2E8CF"></span><code>#F2E8CF</code> — Sand Neutral (page background)</li>
+      </ul>
 
-        <!-- Structure -->
-        <section id="structure">
-            <h2>Site Structure / Pages Outline</h2>
-            <ol>
-                <li><strong>Home</strong> — featured spots and quick links</li>
-                <li><strong>Hikes &amp; Outdoor Adventures</strong></li>
-                <li><strong>Museums &amp; Cultural Attractions</strong></li>
-                <li><strong>Hidden Gems</strong></li>
-                <li><strong>Weather &amp; Trip Planner</strong></li>
-                <li><strong>Photo Gallery</strong></li>
-                <li><strong>About / Contact</strong></li>
-            </ol>
-        </section>
+      <!-- Auto-injected tiny legend lands here -->
+      <div id="color-legend" class="color-legend" aria-label="Color legend"></div>
+    </section>
 
-        <!-- Features -->
-        <section id="features">
-            <h2>Planned Features / Functionality</h2>
-            <ul>
-                <li>Interactive map with location markers and basic filters</li>
-                <li>Real-time weather widget for destination planning</li>
-                <li>Responsive, accessible photo galleries</li>
-                <li>Mobile-first layout with semantic HTML and ARIA where helpful</li>
-            </ul>
-        </section>
+    <!-- Typography -->
+    <section id="typography">
+      <h2>Typography</h2>
+      <ul>
+        <li><strong>Headings:</strong> Raleway — friendly, modern sans-serif
+            <p class="h1"><strong>h1:</strong> Raleway, 2.5rem, 800</p>
+            <p class="h2"><strong>h2:</strong> Raleway, 2rem, 700</p>
+            <p class="h3"><strong>h3:</strong> Raleway, 1.5rem, 600</p>
+            <p class="h4"><strong>h4:</strong> Raleway, 1.5rem, 600</p>
+            <p class="h5"><strong>h5:</strong> Raleway, 1.5rem, 600</p>
+        </li>
+        <li><p><strong>Body:</strong> Open Sans — highly readable for longer text</p>
+            <p class="body-elements"><strong>p, li:</strong> Open Sans, 1rem, 400</p>
+            <p class="body-elements"><strong>a:</strong> Open Sans, 1rem, 700 (forest green)</p>
+            <p class="body-elements"><strong>button:</strong> Open Sans, 1rem, 700 (white text on forest green)</p>
+            <p class="body-elements"><strong>Sizes:</strong> 1rem = 16px, 1.5rem = 24px, 2rem = 32px, 2.5rem = 40px</p>
+            <p class="body-elements"><strong>Line height:</strong> 1.6 body, ~1.2 headings</p>
+            <p class="body-elements"><strong>Max line length:</strong> ~65ch for readability</p></li>
+        <li><p class="italics">Both fonts are included via Google Fonts.</p></li>
+      </ul>
+    </section>
 
-        <!-- Branding -->
-        <section id="branding">
-            <h2>Branding &amp; Design Notes</h2>
-            <ul>
-                <li><strong>Voice:</strong> friendly, encouraging, family-centric (with a dash of trail humor)</li>
-                <li><strong>Imagery:</strong> forest trails, coastal views, museums, family moments</li>
-                <li><strong>Typography:</strong> Raleway for headings, Open Sans for body (already included)</li>
-                <li><strong>Color Direction (in CSS variables):</strong> deep blues/greens with light neutrals for readability</li>
-            </ul>
-        </section>
+    <!-- Wireframes -->
+    <section id="wireframes">
+      <h2>Wireframes</h2>
 
-        <!-- Scenarios -->
-        <section id="scenarios">
-            <h2>Scenarios</h2>
-            <ol>
-                <li>As a parent with two kids under 10, I want a list of easy hikes with restrooms and picnic areas so
-                    we can plan a half-day trip without meltdowns.</li>
-                <li>As a first-time visitor to Seattle, I want to discover kid-friendly museums near public transit so
-                    we can keep the day simple.</li>
-                <li>As a weekend warrior, I want to check trail conditions and the 48-hour weather forecast for a hidden
-                    gem within 90 minutes of Portland.</li>
-            </ol>
-        </section>
+      <figure class="wf">
+        <figcaption><strong>Mobile Wireframe (Home)</strong></figcaption>
+        <svg viewBox="0 0 360 720" role="img" aria-label="Mobile wireframe of homepage layout">
+          <rect x="1" y="1" width="358" height="718" fill="none" stroke="#1B4965" stroke-width="2" />
+          <rect x="10" y="10" width="340" height="56" fill="#1B4965" opacity="0.15" />
+          <rect x="10" y="80" width="340" height="160" fill="#CAE9FF" opacity="0.7" />
+          <rect x="10" y="252" width="220" height="28" fill="#1B4965" opacity="0.25" />
+          <rect x="10" y="290" width="340" height="90" fill="#F2E8CF" opacity="0.9" />
+          <rect x="10" y="388" width="340" height="90" fill="#F2E8CF" opacity="0.9" />
+          <rect x="10" y="486" width="340" height="90" fill="#F2E8CF" opacity="0.9" />
+          <rect x="10" y="600" width="340" height="90" fill="#1B4965" opacity="0.15" />
+        </svg>
+      </figure>
 
-        <!-- Color Schema -->
-        <section id="colors">
-            <h2>Color Schema</h2>
-            <p>Primary palette and where each color will be applied:</p>
-            <ul class="color-list">
-                <li><span class="swatch" style="--sw:#1B4965"></span><code>#1B4965</code> — Deep Blue (headers, nav
-                    background, section title bars)</li>
-                <li><span class="swatch" style="--sw:#2E7D32"></span><code>#2E7D32</code> — Forest Green (buttons/links,
-                    accents)</li>
-                <li><span class="swatch" style="--sw:#CAE9FF"></span><code>#CAE9FF</code> — Sky Tint (section
-                    highlights, cards)</li>
-                <li><span class="swatch" style="--sw:#F2E8CF"></span><code>#F2E8CF</code> — Sand Neutral (page
-                    background)</li>
-            </ul>
-        </section>
+      <figure class="wf">
+        <figcaption><strong>Desktop Wireframe (Home)</strong></figcaption>
+        <svg viewBox="0 0 1200 700" role="img" aria-label="Desktop wireframe of homepage layout">
+          <rect x="1" y="1" width="1198" height="698" fill="none" stroke="#1B4965" stroke-width="2" />
+          <rect x="10" y="10" width="1180" height="70" fill="#1B4965" opacity="0.15" />
+          <rect x="10" y="90" width="1180" height="220" fill="#CAE9FF" opacity="0.7" />
+          <rect x="10" y="320" width="360" height="34" fill="#1B4965" opacity="0.25" />
+          <rect x="10" y="364" width="380" height="160" fill="#F2E8CF" opacity="0.9" />
+          <rect x="410" y="364" width="380" height="160" fill="#F2E8CF" opacity="0.9" />
+          <rect x="810" y="364" width="380" height="160" fill="#F2E8CF" opacity="0.9" />
+          <rect x="10" y="540" width="1180" height="150" fill="#1B4965" opacity="0.15" />
+        </svg>
+      </figure>
+    </section>
+  </main>
 
-        <!-- Color Usage -->
-        <section id="color-usage">
-            <h2>Color Usage Demonstration</h2>
-            <p>This document applies the schema above: header/nav and section title bars use <code>#1B4965</code>,
-                accents and links use <code>#2E7D32</code>, highlighted panels use <code>#CAE9FF</code>, and the base
-                canvas uses <code>#F2E8CF</code>.</p>
-        </section>
-
-        <!-- Wireframes -->
-        <section id="wireframes">
-            <h2>Wireframes</h2>
-
-            <figure class="wf">
-                <figcaption><strong>Mobile Wireframe (Home)</strong></figcaption>
-                <svg viewBox="0 0 360 720" role="img" aria-label="Mobile wireframe of homepage layout">
-                    <rect x="1" y="1" width="358" height="718" fill="none" stroke="#1B4965" stroke-width="2" />
-                    <rect x="10" y="10" width="340" height="56" fill="#1B4965" opacity="0.15" />
-                    <rect x="10" y="80" width="340" height="160" fill="#CAE9FF" opacity="0.7" />
-                    <rect x="10" y="252" width="220" height="28" fill="#1B4965" opacity="0.25" />
-                    <rect x="10" y="290" width="340" height="90" fill="#F2E8CF" opacity="0.9" />
-                    <rect x="10" y="388" width="340" height="90" fill="#F2E8CF" opacity="0.9" />
-                    <rect x="10" y="486" width="340" height="90" fill="#F2E8CF" opacity="0.9" />
-                    <rect x="10" y="600" width="340" height="90" fill="#1B4965" opacity="0.15" />
-                </svg>
-            </figure>
-
-            <figure class="wf">
-                <figcaption><strong>Desktop Wireframe (Home)</strong></figcaption>
-                <svg viewBox="0 0 1200 700" role="img" aria-label="Desktop wireframe of homepage layout">
-                    <rect x="1" y="1" width="1198" height="698" fill="none" stroke="#1B4965" stroke-width="2" />
-                    <rect x="10" y="10" width="1180" height="70" fill="#1B4965" opacity="0.15" />
-                    <rect x="10" y="90" width="1180" height="220" fill="#CAE9FF" opacity="0.7" />
-                    <rect x="10" y="320" width="360" height="34" fill="#1B4965" opacity="0.25" />
-                    <rect x="10" y="364" width="380" height="160" fill="#F2E8CF" opacity="0.9" />
-                    <rect x="410" y="364" width="380" height="160" fill="#F2E8CF" opacity="0.9" />
-                    <rect x="810" y="364" width="380" height="160" fill="#F2E8CF" opacity="0.9" />
-                    <rect x="10" y="540" width="1180" height="150" fill="#1B4965" opacity="0.15" />
-                </svg>
-            </figure>
-        </section>
-
-        <!-- Reason -->
-        <section id="reason">
-            <h2>Reason for Choosing This Subject</h2>
-            <p>
-                I chose this subject because exploring the Pacific Northwest with my family is one of my favorite
-                pastimes. This project allows me to combine my personal interest in local adventures with the technical
-                skills I'm learning in web development. It gives me a meaningful and creative context to practice
-                responsive design, JavaScript interactivity, and professional presentation.
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p><span id="currentyear"></span> <span>🌲🌲🌲</span> Adam Cottam <span>🌲🌲🌲</span> Portland, Oregon USA</p>
-        <p id="lastmodified"></p>
-    </footer>
+  <footer>
+    <p><span id="currentyear"></span> <span>🌲🌲🌲</span> Adam Cottam <span>🌲🌲🌲</span> Portland, Oregon USA</p>
+    <p id="lastmodified"></p>
+  </footer>
 </body>
-
 </html>
