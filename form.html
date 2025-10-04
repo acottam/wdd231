@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>WDD 131 - Product Review Form - Adam Cottam</title>
+    <meta name="description" content="W05 Assignment: Product Review Form">
+    <meta name="author" content="Adam Cottam">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/form-large.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+
+    <main>
+        <h2>Form Header</h2>
+
+        <form method="get" action="review.html" class="wf1">
+            <fieldset class="form-grid">
+                <legend>Product Information</legend>
+
+                <div class="form-row">
+                    <label for="productname">Product Name</label>
+                    <select id="productname" name="productname" required>
+                        <option value="" disabled selected>Select a Product…</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="label">Overall Rating</div>
+                    <div class="star-rating rating-inline" aria-label="Overall rating">
+                        <input type="radio" id="rating5" name="rating" value="5" required>
+                        <label for="rating5" title="5 stars"></label>
+                        <input type="radio" id="rating4" name="rating" value="4">
+                        <label for="rating4" title="4 stars"></label>
+                        <input type="radio" id="rating3" name="rating" value="3">
+                        <label for="rating3" title="3 stars"></label>
+                        <input type="radio" id="rating2" name="rating" value="2">
+                        <label for="rating2" title="2 stars"></label>
+                        <input type="radio" id="rating1" name="rating" value="1">
+                        <label for="rating1" title="1 star"></label>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="date_of_installation">Date of Installation</label>
+                    <input type="date" id="date_of_installation" name="date_of_installation" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="label">Useful Features (check all that apply)</div>
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" id="feat_durability" name="features" value="durability">
+                            Durability</label>
+                        <label><input type="checkbox" id="feat_ease" name="features" value="ease_of_use"> Ease of
+                            Use</label>
+                        <label><input type="checkbox" id="feat_perf" name="features" value="performance">
+                            Performance</label>
+                        <label><input type="checkbox" id="feat_design" name="features" value="design"> Design</label>
+                    </div>
+                </div>
+
+                <div class="form-row form-row--full">
+                    <label for="written_review">Written Review (optional)</label>
+                    <textarea id="written_review" name="written_review" rows="5"
+                        placeholder="Write your review here…"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="username">Your Name (optional)</label>
+                    <input type="text" id="username" name="username" placeholder="Jane Doe">
+                </div>
+
+                <div class="form-actions form-row--full">
+                    <input type="submit" value="Post Review">
+                </div>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>
+        <p><span id="currentyear"></span> <span>🌲🌲🌲</span> Adam Cottam <span>🌲🌲🌲</span> Portland, Oregon USA</p>
+        <p id="lastmodified"></p>
+    </footer>
+</body>
+
+</html>
