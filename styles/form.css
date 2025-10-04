@@ -70,6 +70,13 @@ main h2 {
     text-align: center;
     padding: 1rem 1.25rem;
 }
+main a {
+    color: var(--nav);
+}
+main a:hover {
+    color: var(--nav-hover);
+    text-decoration: none;
+}
 
 /* ----- Form Styling ---- */
 .wf1 fieldset, .success fieldset {
@@ -135,18 +142,31 @@ main h2 {
 .wf1 input[type="submit"]:hover {
     background-color: var(--nav-hover);
 }
-.wf1 input:required, .wf1 select:required, .wf1 textarea:required {
+.wf1 span.required {
+    color: red;
+}
+.wf1 span.check-all {
+    display: block;
+    font-weight: normal;
+    font-size: .8rem;
+    color: var(--text);
+    margin-left: .5rem;
+}
+.wf1 input:focus, 
+.wf1 select:focus, 
+.wf1 textarea:focus {
+    outline: solid 1px var(--header);
+}
+.wf1 input:required, 
+.wf1 select:required,
+.wf1 textarea:required {
     border-left: solid 6px red;
 }
-.wf1 input[type="text"]:required:valid, .wf1 select:required:valid, .wf1 textarea:required:valid {
-    background-color: #dfd;
-}
-.wf1 input[type="text"]:valid, .wf1 input[type="date"]:valid, .wf1 select:valid, .wf1 textarea:valid {
+.wf1 input[type="text"]:required:valid, 
+.wf1 input[type="date"]:required:valid, 
+.wf1 select:required:valid, 
+.wf1 textarea:required:valid {
     border-left: solid 6px green;
-    background-color: #dfd;
-}
-.wf1 input:focus, .wf1 select:focus, .wf1 textarea:focus {
-    outline: solid 2px var(--header);
 }
 .star-rating {
     display: flex;
@@ -201,15 +221,12 @@ footer {
     text-align: center;
     padding: 1.5rem 1rem;
 }
-
 footer p {
     margin: .25rem 0
 }
-
 footer p span {
     padding: 0 .25rem
 }
-
 #lastmodified {
     font-size: .9rem;
     font-weight: 400;
