@@ -72,18 +72,18 @@ main h2 {
 }
 
 /* ----- Form Styling ---- */
-.wf1 fieldset {
+.wf1 fieldset, .success fieldset {
     border: solid 1px var(--header);
     border-radius: 6px;
     margin-bottom: 1rem;
     padding: .5rem 2%;
 }
-.wf1 legend {
+.wf1 legend, .success legend {
     font-weight: bold;
     padding: 0 .5rem;
     color: var(--header); 
 }
-.wf1 label {
+.wf1 label, .success label {
     display: block;
     margin-bottom: .5rem;
     font-weight: bold;
@@ -92,7 +92,8 @@ main h2 {
 .wf1 div {
     padding-top: 1rem;
     color: var(--header); 
-    font-size: 1rem;
+    font-size: .9rem;
+    font-weight: bold;
 }
 .wf1 input[type="text"],
 .wf1 input[type="email"],
@@ -134,19 +135,23 @@ main h2 {
 .wf1 input[type="submit"]:hover {
     background-color: var(--nav-hover);
 }
-.wfq input:required {
-    background-color: #fdd;
+.wf1 input:required, .wf1 select:required, .wf1 textarea:required {
+    border-left: solid 6px red;
 }
-.wfq input:required:valid {
+.wf1 input[type="text"]:required:valid, .wf1 select:required:valid, .wf1 textarea:required:valid {
     background-color: #dfd;
 }
-.wfq input:focus {
+.wf1 input[type="text"]:valid, .wf1 input[type="date"]:valid, .wf1 select:valid, .wf1 textarea:valid {
+    border-left: solid 6px green;
+    background-color: #dfd;
+}
+.wf1 input:focus, .wf1 select:focus, .wf1 textarea:focus {
     outline: solid 2px var(--header);
 }
 .star-rating {
     display: flex;
     align-items: center;
-    width: 160px;
+    width: 300px;
     flex-direction: row-reverse;
     justify-content: space-between;
     margin: 1rem 0;
@@ -156,9 +161,9 @@ main h2 {
     display: none;
 }
 .star-rating > label {
-    width: 30px;
-    height: 30px;
-    font-size: 30px;
+    width: 40px;
+    height: 25px;
+    font-size: 40px;
     transition: 0.2s ease;
     color: var(--header);
 }
@@ -173,7 +178,7 @@ main h2 {
     content: '\2606';
     position: absolute;
     top: 0px;
-    line-height: 26px;
+    line-height: 40px;
 }
 .star-rating input:checked~label:before {
     content: '\2605';
