@@ -25,7 +25,7 @@ if (toggleBtn && nav) {
     setExpanded(isOpen);
   });
 
-  // Close on link click (mobile only)
+  // ---- Close Nav ---- //
   nav.querySelectorAll("a").forEach((a) =>
     a.addEventListener("click", () => {
       if (window.matchMedia("(max-width: 699px)").matches) setExpanded(false);
@@ -33,7 +33,7 @@ if (toggleBtn && nav) {
   );
 }
 
-// ---- Active nav ----
+// ---- Active nav ---- //
 (function setActiveNav() {
   const path = location.pathname.replace(/\/+$/, "") || "/";
   document.querySelectorAll("#primary-nav a").forEach((a) => {
@@ -42,7 +42,7 @@ if (toggleBtn && nav) {
   });
 })();
 
-// ---- Featured (Home) demo content ----
+// ---- Featured (Home Page) ---- //
 (function mountFeatured() {
   const el = document.getElementById("featured-grid");
   if (!el) return;
@@ -68,6 +68,8 @@ if (toggleBtn && nav) {
       img: "images/mt-tabor-park-01.jpg",
     },
   ];
+  
+  // ---- Set Content ---- //
   el.innerHTML = items
     .map(
       (i) => `
@@ -82,11 +84,14 @@ if (toggleBtn && nav) {
     .join("");
 })();
 
-// ---- Adventures list (placeholder filter) ----
+
+// ---- Adventures ---- //
 (function adventuresList() {
   const grid = document.getElementById("adventures-grid");
   const form = document.getElementById("filters-form");
   if (!grid || !form) return;
+  
+  // ---- List of Adventures ---- //
   const data = [
     {
       title: "Latourell Falls",
@@ -94,7 +99,7 @@ if (toggleBtn && nav) {
       type: "hike",
       difficulty: "easy",
       meta: "1.9 mi loop • Stroller friendly",
-      img: "images/portland-walking-tours-01.jpg",
+      img: "images/latourell-falls-01.jpg",
     },
     {
       title: "OMSI",
@@ -121,7 +126,7 @@ if (toggleBtn && nav) {
       img: "images/multnomah-falls-01.jpg",
     },
     {
-      title: "Silver Falls – South Falls Loop",
+      title: "Silver Falls - South Falls Loop",
       state: "OR",
       type: "hike",
       difficulty: "moderate",
@@ -129,7 +134,7 @@ if (toggleBtn && nav) {
       img: "images/silver-falls-south-falls-01.jpg",
     },
     {
-      title: "Cannon Beach – Haystack Rock",
+      title: "Cannon Beach - Haystack Rock",
       state: "OR",
       type: "park",
       difficulty: "easy",
@@ -137,7 +142,7 @@ if (toggleBtn && nav) {
       img: "images/cannon-beach-haystack-01.jpg",
     },
     {
-      title: "Fort Stevens – Peter Iredale Shipwreck",
+      title: "Fort Stevens - Peter Iredale Shipwreck",
       state: "OR",
       type: "park",
       difficulty: "easy",
@@ -161,7 +166,7 @@ if (toggleBtn && nav) {
       img: "images/ape-cave-01.webp",
     },
     {
-      title: "Hoh Rain Forest – Hall of Mosses",
+      title: "Hoh Rain Forest - Hall of Mosses",
       state: "WA",
       type: "hike",
       difficulty: "easy",
@@ -185,7 +190,7 @@ if (toggleBtn && nav) {
       img: "images/museum-of-flight-01.webp",
     },
     {
-      title: "MOHAI – Museum of History & Industry",
+      title: "MOHAI - Museum of History & Industry",
       state: "WA",
       type: "museum",
       difficulty: "easy",
@@ -205,7 +210,7 @@ if (toggleBtn && nav) {
       state: "OR",
       type: "hike",
       difficulty: "easy",
-      meta: "2–4 mi options • Meadow loop • Mt. Hood views",
+      meta: "2-4 mi options • Meadow loop • Mt. Hood views",
       img: "images/powell-butte-01.webp",
     },
     {
@@ -218,6 +223,7 @@ if (toggleBtn && nav) {
     },
   ];
 
+  // ---- Render Content ---- //
   const render = (items) => {
     grid.innerHTML = items
       .map(
@@ -234,6 +240,7 @@ if (toggleBtn && nav) {
   };
   render(data);
 
+  // ---- Filters on Adventures Page ---- //
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const fd = new FormData(form);
@@ -249,11 +256,12 @@ if (toggleBtn && nav) {
   });
 })();
 
-// ---- Contact form: validate + thank you message ----
+// ---- Contact form ---- //
 (function contactForm() {
   const form = document.getElementById("contact-form");
   if (!form) return;
 
+  // ---- Form Fields ---- //
   const els = {
     name: document.getElementById("name"),
     email: document.getElementById("email"),
@@ -261,44 +269,55 @@ if (toggleBtn && nav) {
     errName: document.getElementById("err-name"),
     errEmail: document.getElementById("err-email"),
     errMessage: document.getElementById("err-message"),
-    success: document.getElementById("form-success"),
+    success: document.getElementById("contact-form-success"),
     count: document.getElementById("submission-count"),
   };
 
+  // ---- Show Error ---- //
   const showError = (el, msg) => {
     el.textContent = msg || "";
   };
+
+  // ---- Clear Errors ---- //
   const clearErrors = () =>
     [els.errName, els.errEmail, els.errMessage].forEach((e) =>
       showError(e, "")
     );
 
+  // ---- Contact Submit Button ---- //
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     clearErrors();
 
     let valid = true;
+    // Name
     if (!els.name.value.trim()) {
       showError(els.errName, "Please enter your name.");
       valid = false;
     }
+    // Email
     if (!els.email.value.trim() || !els.email.checkValidity()) {
       showError(els.errEmail, "Please enter a valid email.");
       valid = false;
     }
+    // Messag
     if (!els.message.value.trim()) {
       showError(els.errMessage, "Please include a message.");
       valid = false;
     }
 
+    // No Errors
     if (!valid) return;
 
-    // Demo success (replace with real backend later)
+    // Submission Tracking 
     const key = "pnw-submission-count";
     const newCount = parseInt(localStorage.getItem(key) || "0", 10) + 1;
+    
+    // Store Contents in Local Storage
     localStorage.setItem(key, String(newCount));
     els.count.textContent = newCount;
     els.success.hidden = false;
     form.reset();
+
   });
 })();
