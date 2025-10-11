@@ -74,7 +74,7 @@ if (toggleBtn && nav) {
     .map(
       (i) => `
     <article class="card">
-      <img src="${i.img}" alt="${i.title}" />
+      <img src="${i.img}" alt="${i.title}" loading="lazy">
       <div class="card__body">
         <h3>${i.title}</h3>
         <p class="card__meta">${i.meta}</p>
@@ -229,7 +229,7 @@ if (toggleBtn && nav) {
       .map(
         (i) => `
       <article class="card">
-        <img src="${i.img}" alt="${i.title}" />
+        <img src="${i.img}" alt="${i.title}" loading="lazy">
         <div class="card__body">
           <h3>${i.title}</h3>
           <p class="card__meta">${i.state} • ${i.type} • ${i.meta}</p>
