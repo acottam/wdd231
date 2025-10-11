@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PNW Family Adventures</title>
+  <meta name="description" content="Kid-friendly hikes, museums, and hidden gems across Oregon and Washington." />
+  <meta name="author" content="Adam Cottam" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/pnw-family-adventures.css" />
+  <link rel="stylesheet" href="styles/pnw-family-adventures-large.css" />
+  <script src="scripts/pnw-family-adventures.js" defer></script>
+</head>
+
+<body>
+  
+  <!-- Header -->
+  <header>
+
+    <!-- Nav Container -->
+    <div class="nav-container">
+      <a href="index.html"><img src="images/pnw-family-adventures-logo-v2.png" alt="PNW Family Adventures" width="200" class="logo"></a>
+      <p class="tagline">Northwest Family-Friendly Adventures</p>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+      <nav id="primary-nav" class="nav closed" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="adventures.html" data-nav="adventures">Adventures</a>
+        <a href="contact.html" data-nav="contact">Suggest a Spot</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1>Find Easy, Memory-Making <span class="large">Northwest Adventures!</span></h1>
+        <p>Discover kid-friendly hikes, museums, and hidden gems across
+          <strong>Oregon &amp; Washington</strong></p>
+        <div class="actions">
+          <a class="btn" href="adventures.html">Explore Adventures</a>
+          <a class="btn btn--ghost" href="contact.html">Suggest a Spot</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES / VALUE PROPS -->
+    <section>
+      <h2>Why this guide?</h2>
+      <div class="grid grid--3">
+
+        <!-- Card #1 -->
+        <article class="card">
+          <img src="images/family-hiking-01.jpg" alt="Trail through a green PNW forest" />
+          <div class="card__body">
+            <h3>Kid-tested picks</h3>
+            <p>Trail lengths, bathrooms, parking, and stroller notes — the details parents actually need.</p>
+          </div>
+        </article>
+        
+        <!-- Card #2 -->
+        <article class="card">
+          <img src="images/beach-family-01.jpg" alt="Family walking on the Oregon Coast" />
+          <div class="card__body">
+            <h3>Filter fast</h3>
+            <p>Zero in by drive time, difficulty, weather, or “rainy-day museum” in seconds.</p>
+          </div>
+        </article>
+        
+        <!-- Card #3 -->
+        <article class="card">
+          <img src="images/museums-of-northwest-01.jpg" alt="Hands-on museum exhibit" />
+          <div class="card__body">
+            <h3>Weekend-ready</h3>
+            <p>Each listing includes a quick-plan: best time to go, snacks, and nearby treats.</p>
+          </div>
+        </article>
+        
+        <!-- Card #4 -->
+        <article class="card">
+          <img src="images/portland-walking-tours-01.jpg" alt="Portland Walking Tours" />
+          <div class="card__body">
+            <h3>Friend-ready</h3>
+            <p>Time with friends and quik places to go.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FEATURED ADVENTURES -->
+    <section>
+      <h2>Featured Adventures</h2>
+      <div class="grid grid--3" id="featured-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <img src="images/pnw-family-adventures-logo-footer.svg" alt="PNW Family Adventures" width="200" class="footer-logo">
+    <div class="footer-bar">
+      <p><span id="currentyear"></span> <span>🌲🌲🌲</span> Adam Cottam <span>🌲🌲🌲</span> Portland, Oregon USA</p>
+      <p id="lastmodified"></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
