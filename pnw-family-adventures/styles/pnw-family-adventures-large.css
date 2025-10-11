@@ -1,10 +1,32 @@
+/* ---- Transition between mobile and base breakpoint ---- */
+@media (min-width: 30rem) { 
+    .filters__form fieldset {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .nav a {
+        min-width: 92.5%;
+    }
+}
 /* ---- Base breakpoint ---- */
-@media (min-width: 48rem) {
+@media (min-width: 52rem) {
     .menu-toggle {
         display: none;
     }
     header {
         grid-template-columns: 1fr;
+    }
+    .nav-container {
+        width: min(1050px, 92%);
+        margin: 0 auto;
+    }
+    .logo {
+        max-width: 130px;
+        max-height: 130px;
+    }
+    .tagline {
+        display: block;
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        text-align: center; 
     }
     .nav {
         display: flex !important;
@@ -13,6 +35,10 @@
         gap: .5rem 1.5rem;
         margin-top: 1.25rem;
     }
+    .nav a {
+
+    min-width: 30%;
+}
     main {
         margin-top: 1.5rem;
     }
@@ -23,6 +49,18 @@
     section > h2 {
         font-size: 1.5rem;
         padding: .7rem 0;
+    }
+    .contact-information {
+        max-width: 50%;
+        float: right;
+        padding: 25px 50px;
+    }
+    .contact__form {
+        max-width: 50%;
+    }
+    .filters__form fieldset {
+        gap: .75rem;
+        grid-template-columns: repeat(6, 1fr);
     }
 }
 
