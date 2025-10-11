@@ -265,9 +265,11 @@ if (toggleBtn && nav) {
   const els = {
     name: document.getElementById("name"),
     email: document.getElementById("email"),
+    topic: document.getElementById("topic"),
     message: document.getElementById("message"),
     errName: document.getElementById("err-name"),
     errEmail: document.getElementById("err-email"),
+    errTopic: document.getElementById("err-topic"),
     errMessage: document.getElementById("err-message"),
     success: document.getElementById("contact-form-success"),
     count: document.getElementById("submission-count"),
@@ -280,9 +282,16 @@ if (toggleBtn && nav) {
 
   // ---- Clear Errors ---- //
   const clearErrors = () =>
-    [els.errName, els.errEmail, els.errMessage].forEach((e) =>
+    [els.errName, els.errEmail, els.errTopic, els.errMessage].forEach((e) =>
       showError(e, "")
     );
+
+  // ---- Handle Topic Select ---- //
+  function updateTopicClass() {
+    els.topic.classList.toggle('has-value', els.topic.value !== '');
+  }
+  els.topic.addEventListener('change', updateTopicClass);
+  els.topic.addEventListener('input', updateTopicClass);
 
   // ---- Contact Submit Button ---- //
   form.addEventListener("submit", (e) => {
@@ -300,7 +309,14 @@ if (toggleBtn && nav) {
       showError(els.errEmail, "Please enter a valid email.");
       valid = false;
     }
-    // Messag
+    // Topic
+    if (!els.topic.value.trim()) {
+      showError(els.errTopic, "Please select a topic.");
+      valid = false;
+    } else {
+      els.topic.className = "has-value";
+    }
+    // Message
     if (!els.message.value.trim()) {
       showError(els.errMessage, "Please include a message.");
       valid = false;
@@ -318,6 +334,7 @@ if (toggleBtn && nav) {
     els.count.textContent = newCount;
     els.success.hidden = false;
     form.reset();
+    els.topic.className = "";
 
   });
 })();
