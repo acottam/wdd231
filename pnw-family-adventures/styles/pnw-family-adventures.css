@@ -244,7 +244,7 @@ section ul li {
 /* --- Hero --- */
 .hero {
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(27,73,101,.65), rgba(27,73,101,.65)), url('../images/woman-and-baby-01.jpg') center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(27,73,101,.65), rgba(27,73,101,.65)), url('../images/woman-and-baby-01.webp') center/cover no-repeat;
   color: var(--ink-000);
   padding: clamp(1rem, 4vw, 1.75rem);
   box-shadow: var(--shadow-2);
@@ -344,7 +344,7 @@ input::placeholder, textarea::placeholder {
 
 /* --- Contact Form --- */
 .contact-section {
-    background: linear-gradient(180deg, rgba(27,73,101,.65), rgba(27,73,101,.65)), url('../images/mt-hood-view-01.jpg') center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(27,73,101,.65), rgba(27,73,101,.65)), url('../images/mt-hood-view-01.webp') center/cover no-repeat;
 }
 .contact-section h1, .contact-section p {
     color: var(--ink-000)
@@ -427,7 +427,7 @@ input::placeholder, textarea::placeholder {
     border-radius: var(--radius);
     padding: 1rem;
     box-shadow: var(--shadow-1);
-    background: linear-gradient(180deg, rgba(27,73,101,.65), rgba(27,73,101,.65)), url('../images/cannon-beach-02.jpg') center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(27,73,101,.65), rgba(27,73,101,.65)), url('../images/cannon-beach-02.webp') center/cover no-repeat;
 }
 .filters h1, .filters p {
     color: var(--ink-000)

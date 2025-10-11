@@ -49,8 +49,8 @@ if (toggleBtn && nav) {
   const items = [
     {
       title: "Cannon Beach Tidepools",
-      meta: "Oregon • Easy • 1–2 hrs",
-      img: "images/tide-pools-01.jpg",
+      meta: "Oregon • Easy • 1-2 hrs",
+      img: "images/tide-pools-01.webp",
     },
     {
       title: "Forest Park Loop",
@@ -59,13 +59,13 @@ if (toggleBtn && nav) {
     },
     {
       title: "MOHAI (Seattle)",
-      meta: "Washington • Museum • 2–3 hrs",
+      meta: "Washington • Museum • 2-3 hrs",
       img: "images/mohai-01.webp",
     },
     {
       title: "Mount Tabor Park",
-      meta: "Oregon • Easy • 1–2 hrs",
-      img: "images/mt-tabor-park-01.jpg",
+      meta: "Oregon • Easy • 1-2 hrs",
+      img: "images/mt-tabor-park-01.webp",
     },
   ];
   
@@ -99,7 +99,7 @@ if (toggleBtn && nav) {
       type: "hike",
       difficulty: "easy",
       meta: "1.9 mi loop • Stroller friendly",
-      img: "images/latourell-falls-01.jpg",
+      img: "images/latourell-falls-01.webp",
     },
     {
       title: "OMSI",
@@ -107,7 +107,7 @@ if (toggleBtn && nav) {
       type: "museum",
       difficulty: "easy",
       meta: "Rainy day • Hands-on exhibits",
-      img: "images/omsi-01.jpg",
+      img: "images/omsi-01.webp",
     },
     {
       title: "Rattlesnake Ledge",
@@ -123,7 +123,7 @@ if (toggleBtn && nav) {
       type: "hike",
       difficulty: "easy",
       meta: "Paved path to viewpoint • Restrooms • Crowds on weekends",
-      img: "images/multnomah-falls-01.jpg",
+      img: "images/multnomah-falls-01.webp",
     },
     {
       title: "Silver Falls - South Falls Loop",
@@ -131,7 +131,7 @@ if (toggleBtn && nav) {
       type: "hike",
       difficulty: "moderate",
       meta: "2.6 mi loop • Walk behind a waterfall • Picnic spots",
-      img: "images/silver-falls-south-falls-01.jpg",
+      img: "images/silver-falls-south-falls-01.webp",
     },
     {
       title: "Cannon Beach - Haystack Rock",
@@ -139,7 +139,7 @@ if (toggleBtn && nav) {
       type: "park",
       difficulty: "easy",
       meta: "Beach walk • Tidepools at low tide • Parking fills fast",
-      img: "images/cannon-beach-haystack-01.jpg",
+      img: "images/cannon-beach-haystack-01.webp",
     },
     {
       title: "Fort Stevens - Peter Iredale Shipwreck",
@@ -155,7 +155,7 @@ if (toggleBtn && nav) {
       type: "hike",
       difficulty: "easy",
       meta: "Stroller-friendly segments • Wood bridges • Parking lot",
-      img: "images/hoyt-arboretum-01.jpg",
+      img: "images/hoyt-arboretum-01.webp",
     },
     {
       title: "Ape Cave Lava Tube",
@@ -171,7 +171,7 @@ if (toggleBtn && nav) {
       type: "hike",
       difficulty: "easy",
       meta: "0.8 mi loop • Fairy-forest vibe • Rain-ready",
-      img: "images/hoh-hall-of-mosses-01.jpg",
+      img: "images/hoh-hall-of-mosses-01.webp",
     },
     {
       title: "Discovery Park Loop (Seattle)",
@@ -179,7 +179,7 @@ if (toggleBtn && nav) {
       type: "hike",
       difficulty: "moderate",
       meta: "2.8 mi loop • Lighthouse & bluff views • Bathrooms",
-      img: "images/discovery-park-loop-01.jpg",
+      img: "images/discovery-park-loop-01.webp",
     },
     {
       title: "Museum of Flight (Seattle)",
@@ -195,7 +195,7 @@ if (toggleBtn && nav) {
       type: "museum",
       difficulty: "easy",
       meta: "Interactive exhibits • Lake Union views • Great rainy-day pick",
-      img: "images/museums-of-northwest-01.jpg",
+      img: "images/museums-of-northwest-01.webp",
     },
     {
       title: "Wooden Shoe Tulip Festival",
@@ -203,7 +203,7 @@ if (toggleBtn && nav) {
       type: "park",
       difficulty: "easy",
       meta: "Seasonal • Fields of tulips • Photos & food",
-      img: "images/wooden-shoe-tulip-festival-01.jpg",
+      img: "images/wooden-shoe-tulip-festival-01.webp",
     },
     {
       title: "Powell Butte Nature Park",
@@ -219,7 +219,7 @@ if (toggleBtn && nav) {
       type: "hike",
       difficulty: "easy",
       meta: "Paved viewpoints • Short forest trail • Busy weekends",
-      img: "images/snoqualmie-falls-01.jpg",
+      img: "images/snoqualmie-falls-01.webp",
     },
   ];
 

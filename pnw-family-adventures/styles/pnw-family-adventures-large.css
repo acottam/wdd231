@@ -78,4 +78,7 @@
     section > h2 {
         font-size: 1.75rem;
     }
+    footer {
+        font-size: 1em;
+    }
 }
