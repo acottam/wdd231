@@ -254,6 +254,7 @@ if (toggleBtn && nav) {
     );
     render(filtered);
   });
+
 })();
 
 // ---- Contact form ---- //
@@ -333,6 +334,11 @@ if (toggleBtn && nav) {
     localStorage.setItem(key, String(newCount));
     els.count.textContent = newCount;
     els.success.hidden = false;
+
+    // Back to top
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+    
+    // Reset Form
     form.reset();
     els.topic.className = "";
 
