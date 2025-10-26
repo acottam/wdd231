@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adventures | Pacific Northwest Family Adventures</title>
+  <meta name="description" content="Kid-friendly hikes, museums, and hidden gems across Oregon and Washington.">
+  <meta name="author" content="Adam Cottam">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/pnw-family-adventures.css">
+  <link rel="stylesheet" href="styles/pnw-family-adventures-large.css">
+  <script src="scripts/pnw-family-adventures.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+
+    <!-- Nav Container -->
+    <div class="nav-container">
+      <a href="index.html"><img src="images/pnw-family-adventures-logo.png" alt="PNW Family Adventures" width="200" class="logo"></a>
+      <p class="tagline">Family-Friendly Adventures</p>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+      <nav id="primary-nav" class="nav closed" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="adventures.html" data-nav="adventures">Adventures</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    
+    <!-- Filters -->
+    <section class="filters">
+      <h1>Adventures</h1>
+      <p>Find kid-friendly hikes, museums, and hidden gems across Oregon and Washington.</p>
+      <p>Use the filters to zero in fast and get practical tips for an easy day out.</p>
+    
+      <!-- Filter Form -->
+      <form id="filters-form" class="filters__form" aria-label="Filter adventures">
+    
+        <fieldset>
+    
+          <legend>Search</legend>
+    
+          <!-- State Filter -->
+          <label>
+            <span class="label">State</span>
+            <select id="state" name="state">
+              <option value="">All</option>
+              <option value="OR">Oregon</option>
+              <option value="WA">Washington</option>
+            </select>
+          </label>
+    
+          <!-- Difficulty Filter -->
+          <label>
+            <span class="label">Difficulty</span>
+            <select id="difficulty" name="difficulty">
+              <option value="">Any</option>
+              <option value="easy">Easy</option>
+              <option value="moderate">Moderate</option>
+            </select>
+          </label>
+    
+          <!-- Type Filter -->
+          <label>
+            <span class="label">Type</span>
+            <select id="type" name="type">
+              <option value="">Any</option>
+              <option value="hike">Hike</option>
+              <option value="museum">Museum</option>
+              <option value="park">Park</option>
+            </select>
+          </label>
+    
+          <!-- Search Buttons -->
+          <label class="grow">
+            <span class="label">Search</span>
+            <input name="q" type="search" placeholder="Try: tulip, waterfall, stroller">
+          </label>
+          <button class="btn" type="submit">Apply</button>
+        </fieldset>
+    
+      </form>
+    </section>
+
+    <!-- Adventures Grid -->
+    <section>
+      <h2>Your Adventure Awaits!</h2>
+      <div id="adventures-grid" class="grid grid--3"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <img src="images/pnw-family-adventures-logo-footer.png" alt="PNW Family Adventures" width="200" class="footer-logo">
+    <div class="footer-bar">
+      <p><span id="currentyear"></span> <span>🌲🌲🌲</span> PNW Family Adventures <span>🌲🌲🌲</span> Portland, Oregon USA</p>
+      <p id="lastmodified"></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
