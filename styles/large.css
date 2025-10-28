@@ -1,0 +1,44 @@
+/* ---- Transition between mobile and base breakpoint ---- */
+@media only screen and (min-width: 50rem) { 
+    header, main, nav, footer {
+        margin: 0 auto;
+    }
+    header {
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        padding: 10px auto;
+    }
+    .logo {
+        max-width: 120px;
+        max-height: 120px;
+    }
+    .tagline {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        text-align: center;
+        margin-left: 1rem;
+        color: #fff;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .nav {
+        display: flex;
+        align-items: start;
+        flex-wrap: wrap;
+        gap: .5rem 1rem;
+    }
+    .nav ul {
+        justify-content: center;
+        display: flex;
+        gap: 1rem; 
+    }
+    .nav a {
+        border: none;
+        padding: .5rem 0;
+    }
+    main {
+        padding: 75px 1rem;
+    }
+
+}
+

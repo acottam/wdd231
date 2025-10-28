@@ -1,70 +1,100 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WDD 231 – Web Frontend Development I – Adam Cottam</title>
-  <meta name="description" content="WDD 231 – Web Frontend Development I, Adam Cottam, HTML, CSS, JavaScript">
+  <title>WDD 231 - Web Frontend Development I - Adam Cottam</title>
+  <meta name="description" content="WDD 231 - Web Frontend Development I, Adam Cottam, HTML, CSS, JavaScript">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
   <meta name="author" content="Adam Cottam">
   <link rel="stylesheet" href="styles/normalize.min.css">
   <link rel="stylesheet" href="styles/base.css">
-  <script src="scripts/getdates.js" defer></script>
+   <link rel="stylesheet" href="styles/large.css">
+  <script src="scripts/main.js" defer></script>
 </head>
+
 <body>
+
+  <!-- Header -->
   <header>
-    <span id="course-title">WDD 231 – Web Frontend Development I</span>
-    <nav>
-      <a href="https://www.linkedin.com/in/adamcottampdx" target="_blank">LinkedIn</a>
-      <a href="https://byupw.instructure.com/" target="_blank">Canvas</a>
-      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/4?lang=eng&id=p27#p27" target="_blank">Scripture</a>
-      <a href="https://acottam.github.io/wdd131/finalproject/">Final Project</a>
-    </nav>
+
+    <!-- Nav Container -->
+    <div class="nav-container">
+      
+      <!-- Logo -->
+      <a href="index.html"><img src="images/pnw-family-adventures-logo.png" alt="PNW Family Adventures" width="200" class="logo"></a>
+      
+      <!-- Tagline -->
+      <span class="tagline">Pacific Northwest</span>
+
+      <!-- Hamburger Menu -->
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"></button>
+
+    </div>
+
+  
+
+
+  <!-- Primary Nav -->
+  <nav id="primary-nav" class="nav closed" aria-label="Primary">
+    <ul>
+      <li><a href="index.html" data-nav="home" class="is-active">Home</a></li>
+      <li><a href="#" data-nav="chamber">Chamber</a></li>
+      <li><a href="#" data-nav="final">Final</a></li>
+    </ul>
+  </nav>
+
   </header>
+
+
+  <!-- Main -->
   <main>
-    <h1>Adam Cottam</h1>
+
+    <h1>Home</h1>
 
     <!-- About Me Card -->
     <section class="card">
-      
-      <div class="about"> 
+
+      <div class="about">
         <h2>About Me</h2>
-        <img class="portrait" src="images/profile.jpg" width="180" height="180" alt="Portrait of Adam Cottam">
-        <p>Hey there, I'm Adam—a family guy first, digital adventurer second! Proud dad of two spirited daughters (16 and 13) and an energetic 9-year-old son, you'll often find me exploring the breathtaking trails, hidden sushi spots, and fascinating museums around the Pacific Northwest with my wife and kiddos. While I'm passionate about my day job architecting innovative digital solutions, mentoring teams, and collecting Salesforce badges (like pancakes!), nothing beats family road trips and weekend adventures. Always curious, always learning, and occasionally sneaking dad jokes into daily stand-ups—let's connect and swap adventure stories!</p>
-      </div>
-      <div class="portland">
-        <h3>Portland, Oregon</h3>
-        <figure>
-          <img src="images/portland-japanese-garden.jpg" width="650" height="433" alt="Portland Japanese Garden">
-          <figcaption><strong>Portland Japanese Garden</strong><br> one of our favorite family spots</figcaption>
-        </figure>
-        <p>Oregon is a stunningly diverse state in the Pacific Northwest, known for its rugged coastline, lush forests, volcanic mountains, and high desert plains. Home to Crater Lake—the deepest lake in the U.S.—and iconic spots like Mount Hood and the Columbia River Gorge, it offers endless opportunities for outdoor adventure. With a culture that blends laid-back charm, local artisans, and a fierce love of the environment, Oregon is as eclectic as it is beautiful.</p>
+        <p>Hey there, I'm Adam—a family guy first, digital adventurer second! Proud dad of two spirited daughters (16
+          and 13) and an energetic 9-year-old son, you'll often find me exploring the breathtaking trails, hidden sushi
+          spots, and fascinating museums around the Pacific Northwest with my wife and kiddos. While I'm passionate
+          about my day job architecting innovative digital solutions, mentoring teams, and collecting Salesforce badges
+          (like pancakes!), nothing beats family road trips and weekend adventures. Always curious, always learning, and
+          occasionally sneaking dad jokes into daily stand-ups—let's connect and swap adventure stories!</p>
       </div>
     </section>
 
     <!-- Web Dev Resources Card -->
     <section class="card">
-      <h2>Web Dev Resources</h2>
-      <ul class="resources">
-        <li><a href="https://cssgridgarden.com/" target="_blank">Grid Garden</a></li>
-        <li><a href="https://www.w3schools.com/" target="_blank">W3 Schools</a></li>
-        <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a></li>
-        <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></li>
-        <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
-        <li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
-        <li><a href="https://caniuse.com/" target="_blank">Can I use...</a></li>
-        <li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
-        <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
-        <li><a href="https://www.pluralsight.com/" target="_blank">Pluralsight</a></li>
-      </ul>
+      <h2>Student Photo</h2>
+      <img class="portrait" src="images/profile.jpg" width="180" height="180" alt="Portrait of Adam Cottam">
     </section>
+
+    <section class="card">
+      <h2>Web Certificate Courses</h2>
+    </section>
+
   </main>
+
+  <!-- Footer -->
   <footer>
-    <p><span id="currentyear"></span> <span>🌲🌲🌲</span> Adam Cottam <span>🌲🌲🌲</span> Portland, Oregon USA</p>
-    <p id="lastmodified"></p>
-  </footer> 
+    <div class="social">
+      <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank"><img src="images/facebook-icon.png" alt="Facebook" width="32" height="32"></a>
+      <a href="https://www.twitter.com/" aria-label="Twitter" target="_blank"><img src="images/twitter-icon.png" alt="Twitter" width="32" height="32"></a>
+      <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank"><img src="images/instagram-icon.png" alt="Instagram" width="32" height="32"></a>
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn" width="32" height="32"></a>
+    </div>
+    <div class="footer-bar">
+      <p><span id="currentyear"></span> <span>🌲🌲🌲</span> PNW Family Adventures <span>🌲🌲🌲</span> Portland, Oregon USA</p>
+      <p id="lastmodified"></p>
+    </div>
+  </footer>
+
 </body>
+
 </html>
