@@ -1,4 +1,41 @@
 /* ---- Transition between mobile and base breakpoint ---- */
+/* styles/large.css */
+@media (min-width: 700px) {
+    header {
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .nav {
+        display: block !important;
+    }
+    .nav ul {
+        position: static;
+        display: flex;
+        gap: 0.5rem 1rem;
+        background: transparent;
+        padding: 0.25rem 0;
+    }
+    .nav a {
+        border: 0;
+        padding: 0.8rem 0.75rem;
+    }
+    .nav a:hover,
+    .nav a.is-active {
+        background: rgba(255, 255, 255, .15);
+        border-radius: 6px;
+    }
+    footer .social {
+        display: block;
+    }
+    .grid {
+        gap: 1.25rem;
+    }
+}
+
+/*
 @media only screen and (min-width: 50rem) { 
     header, main, nav, footer {
         margin: 0 auto;
@@ -41,4 +78,4 @@
     }
 
 }
-
+*/

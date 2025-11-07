@@ -5,14 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WDD 231 - Web Frontend Development I - Adam Cottam</title>
-  <meta name="description" content="WDD 231 - Web Frontend Development I, Adam Cottam, HTML, CSS, JavaScript">
+  <meta name="description" content="Contains Coures Home Page Assignment for WDD 231. This page will demonstrate the usage of HTML, CSS, and JavaScript to create a responsive web page showcasing web development courses. ">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
   <meta name="author" content="Adam Cottam">
   <link rel="stylesheet" href="styles/normalize.min.css">
   <link rel="stylesheet" href="styles/base.css">
-   <link rel="stylesheet" href="styles/large.css">
+  <link rel="stylesheet" href="styles/large.css">
+  <script src="scripts/courses.js" defer></script>
   <script src="scripts/main.js" defer></script>
 </head>
 
@@ -34,9 +35,6 @@
       <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"></button>
 
     </div>
-
-  
-
 
   <!-- Primary Nav -->
   <nav id="primary-nav" class="nav closed" aria-label="Primary">
@@ -75,8 +73,19 @@
       <img class="portrait" src="images/profile.jpg" width="180" height="180" alt="Portrait of Adam Cottam">
     </section>
 
-    <section class="card">
+    <!-- Web Certificdate Courses -->
+    <section class="card" id="courses">
       <h2>Web Certificate Courses</h2>
+    
+      <div class="actions" role="group" aria-label="Filter courses">
+        <button class="btn filter is-active" data-filter="ALL">All</button>
+        <button class="btn filter" data-filter="WDD">WDD</button>
+        <button class="btn filter" data-filter="CSE">CSE</button>
+      </div>
+    
+      <p id="credit-total" class="card__meta" aria-live="polite"></p>
+    
+      <div id="course-grid" class="grid grid--3" style="margin-top:1rem"></div>
     </section>
 
   </main>
@@ -84,10 +93,10 @@
   <!-- Footer -->
   <footer>
     <div class="social">
-      <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank"><img src="images/facebook-icon.png" alt="Facebook" width="32" height="32"></a>
-      <a href="https://www.twitter.com/" aria-label="Twitter" target="_blank"><img src="images/twitter-icon.png" alt="Twitter" width="32" height="32"></a>
-      <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank"><img src="images/instagram-icon.png" alt="Instagram" width="32" height="32"></a>
-      <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn" width="32" height="32"></a>
+      <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank"><img src="images/facebook-icon.png" alt="Facebook" width="32" height="32" rel="noopener"></a>
+      <a href="https://www.twitter.com/" aria-label="Twitter" target="_blank"><img src="images/twitter-icon.png" alt="Twitter" width="32" height="32" rel="noopener"></a>
+      <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank"><img src="images/instagram-icon.png" alt="Instagram" width="32" height="32" rel="noopener"></a>
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn" width="32" height="32" rel="noopener"></a>
     </div>
     <div class="footer-bar">
       <p><span id="currentyear"></span> <span>🌲🌲🌲</span> PNW Family Adventures <span>🌲🌲🌲</span> Portland, Oregon USA</p>
