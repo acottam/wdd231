@@ -2,17 +2,25 @@
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>WDD 231 - Web Frontend Development I - Adam Cottam</title>
-  <meta name="description" content="Contains Coures Home Page Assignment for WDD 231. This page will demonstrate the usage of HTML, CSS, and JavaScript to create a responsive web page showcasing web development courses. ">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
-  <meta name="author" content="Adam Cottam">
-  <link rel="stylesheet" href="styles/normalize.min.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/large.css">
+  <meta name="description"
+    content="Course Home Page for WDD 231 showing responsive layout, navigation, and a dynamic list of web development courses." />
+  <meta name="author" content="Adam Cottam" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/normalize.min.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+
+  <!-- Scripts -->
   <script src="scripts/courses.js" defer></script>
   <script src="scripts/main.js" defer></script>
 </head>
@@ -21,85 +29,85 @@
 
   <!-- Header -->
   <header>
-
-    <!-- Nav Container -->
     <div class="nav-container">
-      
-      <!-- Logo -->
-      <a href="index.html"><img src="images/pnw-family-adventures-logo.png" alt="PNW Family Adventures" width="200" class="logo"></a>
-      
-      <!-- Tagline -->
-      <span class="tagline">Pacific Northwest</span>
+      <a href="index.html" class="brand" aria-label="Home">
+        <img src="images/pnw-family-adventures-logo.png" alt="PNW Family Adventures" width="200" class="logo" />
+        <span class="tagline">Pacific Northwest</span>
+      </a>
 
-      <!-- Hamburger Menu -->
-      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"></button>
-
+      <!-- Hamburger -->
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav"
+        aria-expanded="false"></button>
     </div>
 
-  <!-- Primary Nav -->
-  <nav id="primary-nav" class="nav closed" aria-label="Primary">
-    <ul>
-      <li><a href="index.html" data-nav="home" class="is-active">Home</a></li>
-      <li><a href="#" data-nav="chamber">Chamber</a></li>
-      <li><a href="#" data-nav="final">Final</a></li>
-    </ul>
-  </nav>
-
+    <!-- Primary Nav -->
+    <nav id="primary-nav" class="nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-nav="home" class="is-active">Home</a></li>
+        <li><a href="#" data-nav="chamber">Chamber</a></li>
+        <li><a href="#" data-nav="final">Final</a></li>
+      </ul>
+    </nav>
   </header>
-
 
   <!-- Main -->
   <main>
-
     <h1>Home</h1>
 
-    <!-- About Me Card -->
-    <section class="card">
+    <!-- About + Photo (stacked mobile, 2:1 on desktop) -->
+    <section class="home-grid" aria-label="About Me and Photo">
+      <article class="card about-card">
+        <div class="about">
+          <h2>About Me</h2>
+          <p>
+            Hey there, I'm Adam—a family guy first, digital adventurer second! Proud dad of two spirited daughters and an energetic son,
+            you'll often find me exploring trails, sushi spots, and museums around the Pacific Northwest with my crew. I
+            love architecting innovative digital solutions, mentoring teams, and—yes—collecting Salesforce badges. Always curious, always
+            learning.
+          </p>
+        </div>
+      </article>
 
-      <div class="about">
-        <h2>About Me</h2>
-        <p>Hey there, I'm Adam—a family guy first, digital adventurer second! Proud dad of two spirited daughters (16
-          and 13) and an energetic 9-year-old son, you'll often find me exploring the breathtaking trails, hidden sushi
-          spots, and fascinating museums around the Pacific Northwest with my wife and kiddos. While I'm passionate
-          about my day job architecting innovative digital solutions, mentoring teams, and collecting Salesforce badges
-          (like pancakes!), nothing beats family road trips and weekend adventures. Always curious, always learning, and
-          occasionally sneaking dad jokes into daily stand-ups—let's connect and swap adventure stories!</p>
-      </div>
+      <aside class="card photo-card">
+        <h2>Student Photo</h2>
+        <img class="portrait" src="images/profile.jpg" width="300" height="300" alt="Portrait of Adam Cottam" />
+      </aside>
     </section>
 
-    <!-- Web Dev Resources Card -->
-    <section class="card">
-      <h2>Student Photo</h2>
-      <img class="portrait" src="images/profile.jpg" width="180" height="180" alt="Portrait of Adam Cottam">
-    </section>
-
-    <!-- Web Certificdate Courses -->
+    <!-- Web Certificate Courses -->
     <section class="card" id="courses">
       <h2>Web Certificate Courses</h2>
-    
+
       <div class="actions" role="group" aria-label="Filter courses">
         <button class="btn filter is-active" data-filter="ALL">All</button>
         <button class="btn filter" data-filter="WDD">WDD</button>
         <button class="btn filter" data-filter="CSE">CSE</button>
       </div>
-    
-      <p id="credit-total" class="card__meta" aria-live="polite"></p>
-    
-      <div id="course-grid" class="grid grid--3" style="margin-top:1rem"></div>
-    </section>
 
+      <p id="credit-total" class="card__meta" aria-live="polite"></p>
+      <div id="course-grid" class="grid grid--3"></div>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer>
     <div class="social">
-      <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank"><img src="images/facebook-icon.png" alt="Facebook" width="32" height="32" rel="noopener"></a>
-      <a href="https://www.twitter.com/" aria-label="Twitter" target="_blank"><img src="images/twitter-icon.png" alt="Twitter" width="32" height="32" rel="noopener"></a>
-      <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank"><img src="images/instagram-icon.png" alt="Instagram" width="32" height="32" rel="noopener"></a>
-      <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn" width="32" height="32" rel="noopener"></a>
+      <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener">
+        <img src="images/facebook-icon.png" alt="Facebook" width="32" height="32" loading="lazy" />
+      </a>
+      <a href="https://www.twitter.com/" aria-label="Twitter" target="_blank" rel="noopener">
+        <img src="images/twitter-icon.png" alt="Twitter" width="32" height="32" loading="lazy" />
+      </a>
+      <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener">
+        <img src="images/instagram-icon.png" alt="Instagram" width="32" height="32" loading="lazy" />
+      </a>
+      <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <img src="images/linkedin-icon.png" alt="LinkedIn" width="32" height="32" loading="lazy" />
+      </a>
     </div>
     <div class="footer-bar">
-      <p><span id="currentyear"></span> <span>🌲🌲🌲</span> PNW Family Adventures <span>🌲🌲🌲</span> Portland, Oregon USA</p>
+      <p><span id="currentyear"></span> <span>🌲🌲🌲</span> PNW Family Adventures <span>🌲🌲🌲</span> Portland, Oregon
+        USA</p>
       <p id="lastmodified"></p>
     </div>
   </footer>
