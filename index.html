@@ -2,26 +2,17 @@
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WDD 231 - Web Frontend Development I - Adam Cottam</title>
-  <meta name="description"
-    content="Course Home Page for WDD 231 showing responsive layout, navigation, and a dynamic list of web development courses." />
-  <meta name="author" content="Adam Cottam" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles/normalize.min.css" />
-  <link rel="stylesheet" href="styles/base.css" />
-  <link rel="stylesheet" href="styles/large.css" />
-
-  <!-- Scripts -->
-  <script src="scripts/courses.js" defer></script>
+  <meta name="description" content="Course Home Page for WDD 231 showing responsive layout, navigation, and a dynamic list of web development courses.">
+  <meta name="author" content="Adam Cottam">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/normalize.min.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/large.css">
   <script src="scripts/main.js" defer></script>
 </head>
 
@@ -31,8 +22,8 @@
   <header>
     <div class="nav-container">
       <a href="index.html" class="brand" aria-label="Home">
-        <img src="images/pnw-family-adventures-logo.png" alt="PNW Family Adventures" width="200" class="logo" />
-        <span class="tagline">Pacific Northwest</span>
+        <img src="images/pnw-family-adventures-logo.png" alt="PNW Family Adventures" width="200" class="logo">
+        <span class="tagline">Adam Cottam</span>
       </a>
 
       <!-- Hamburger -->
@@ -70,7 +61,11 @@
 
       <aside class="card photo-card">
         <h2>Student Photo</h2>
-        <img class="portrait" src="images/profile.jpg" width="300" height="300" alt="Portrait of Adam Cottam" />
+        <figure>
+          <img class="portrait" src="images/profile.jpg" width="300" height="300" alt="Portrait of Adam Cottam">
+          <figcaption>Adam Cottam <span>WDD 231 Student</span></figcaption>
+        </figure> 
+        
       </aside>
     </section>
 
@@ -90,24 +85,43 @@
   </main>
 
   <!-- Footer -->
-  <footer>
-    <div class="social">
-      <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener">
-        <img src="images/facebook-icon.png" alt="Facebook" width="32" height="32" loading="lazy" />
-      </a>
-      <a href="https://www.twitter.com/" aria-label="Twitter" target="_blank" rel="noopener">
-        <img src="images/twitter-icon.png" alt="Twitter" width="32" height="32" loading="lazy" />
-      </a>
-      <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener">
-        <img src="images/instagram-icon.png" alt="Instagram" width="32" height="32" loading="lazy" />
-      </a>
-      <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener">
-        <img src="images/linkedin-icon.png" alt="LinkedIn" width="32" height="32" loading="lazy" />
-      </a>
-    </div>
+<footer>
+  <div class="social">
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/adamcottampdx/" aria-label="LinkedIn" target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M20.447 20.452h-3.237v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.01V9h3.111v1.561h.044c.435-.823 1.498-1.69 3.081-1.69 3.296 0 3.905 2.169 3.905 4.993v6.588zM5.337 7.433a1.804 1.804 0 1 1 0-3.608 1.804 1.804 0 0 1 0 3.608zM6.96 20.452H3.713V9H6.96v11.452z" />
+      </svg>
+    </a>
+    
+    <!-- GitHub -->
+    <a href="https://github.com/acottam" aria-label="GitHub" target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 0C5.37 0 0 5.373 0 12a12 12 0 0 0 8.207 11.386c.6.111.82-.261.82-.58 0-.287-.011-1.244-.017-2.257-3.338.726-4.042-1.434-4.042-1.434-.546-1.387-1.333-1.756-1.333-1.756-1.09-.744.083-.729.083-.729 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.806 1.304 3.492.997.108-.775.418-1.305.76-1.605-2.665-.304-5.467-1.335-5.467-5.935 0-1.311.469-2.381 1.236-3.221-.124-.303-.536-1.524.118-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.119 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.628-5.479 5.927.43.37.814 1.1.814 2.22 0 1.604-.014 2.897-.014 3.293 0 .321.218.696.825.578A12.003 12.003 0 0 0 24 12c0-6.627-5.373-12-12-12z"/>
+      </svg>
+    </a>
+    
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/acottam" aria-label="Facebook" target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M22.675 0H1.326C.596 0 0 .596 0 1.326v21.348C0 23.403.596 24 1.326 24H12.82v-9.294H9.692V11.01h3.128V8.41c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.404 24 24 23.403 24 22.674V1.326C24 .596 23.404 0 22.675 0z" />
+      </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/adam.cottam" aria-label="Instagram" target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-1.5 1.75a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM12 7a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7zm0 2a3 3 0 1 1-.001 6.001A3 3 0 0 1 12 9z" />
+      </svg>
+    </a>
+
+  </div>
     <div class="footer-bar">
-      <p><span id="currentyear"></span> <span>🌲🌲🌲</span> PNW Family Adventures <span>🌲🌲🌲</span> Portland, Oregon
-        USA</p>
+      <p><span id="currentyear"></span> <span>🌲🌲🌲</span> PNW Family Adventures <span>🌲🌲🌲</span> Portland, Oregon USA</p>
       <p id="lastmodified"></p>
     </div>
   </footer>

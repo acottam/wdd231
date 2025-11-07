@@ -1,3 +1,4 @@
+/* --- Course Array --- */
 const courses = [
   {
     subject: "CSE",

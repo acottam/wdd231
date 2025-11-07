@@ -1,5 +1,6 @@
 /* ---------- Desktop Styles ---------- */
 @media (min-width:700px) {
+
     .menu-toggle {
         display: none
     }
@@ -40,12 +41,15 @@
     .about-card {
         grid-column: 1 / span 2
     }
-
+    .about p {
+        padding: 0 1rem
+    }
     .photo-card {
         grid-column: 3
     }
 
     .photo-card .portrait {
-        max-width: 360px
+        max-width: 360px;
+        border-radius: 6px;
     }
 }
