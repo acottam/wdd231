@@ -1,0 +1,55 @@
+/* ---------- Desktop Styles ---------- */
+@media (min-width:700px) {
+
+    .menu-toggle {
+        display: none
+    }
+
+    .nav {
+        display: block
+    }
+
+    .nav ul {
+        position: static;
+        display: flex;
+        gap: 0.5rem 1rem;
+        background: transparent;
+        padding: 0.25rem 10px
+    }
+
+    .nav a {
+        border: 0;
+        padding: 0.8rem 0.75rem
+    }
+
+    .nav a:hover,
+    .nav a.is-active {
+        background: rgba(255, 255, 255, .15);
+        border-radius: 6px
+    }
+
+    footer .social {
+        display: block
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: start;
+        gap: var(--gap)
+    }
+
+    .about-card {
+        grid-column: 1 / span 2
+    }
+    .about p {
+        padding: 0 1rem
+    }
+    .photo-card {
+        grid-column: 3
+    }
+
+    .photo-card .portrait {
+        max-width: 360px;
+        border-radius: 6px;
+    }
+}
