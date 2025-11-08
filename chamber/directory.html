@@ -5,18 +5,18 @@
     <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chamber Directory Page</title>
-    <meta name="description" content="Chamber Directory Page for PNW Family Adventures">
+    <title>Directory - Wilsonville Chamber of Commerce</title>
+    <meta name="description" content="Directory page for Wisonsonville Chamber of Commerce - Find local businesses and services in Wilsonville, Oregon, USA">
     <meta name="author" content="Adam Cottam">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="PNW Family Adventures">
+    <meta property="og:title" content=">Wisonsonville Chamber of Commerce">
     <meta property="og:description" content="">
     <meta property="og:url" content="https://acottam.github.io/wdd231/chamber/directory.html">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://acottam.github.io/wdd231/chamber/images/pnw-family-adventures-logo.png">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="PNW Family Adventures">
+    <meta property="og:site_name" content=">Wisonsonville, Oregon's Chamber of Commerce">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,8 +40,8 @@
         <div class="nav-container">
 
             <a href="index.html" class="brand" aria-label="Home">
-                <img src="images/pnw-family-adventures-logo.png" alt="PNW Family Adventures" width="200" class="logo">
-                <span class="tagline">Adam Cottam</span>
+                <img src="images/pnw-family-adventures-logo.png" alt="Wisonsonville Chamber of Commerce" width="200" class="logo">
+                <span class="tagline">Wilsonville Chamber of Commerce</span>
             </a>
 
             <!-- Hamburger -->
@@ -53,23 +53,26 @@
         <nav id="primary-nav" class="nav" aria-label="Primary">
             <ul>
                 <li><a href="index.html" data-nav="home" class="is-active">Home</a></li>
-                <li><a href="#" data-nav="chamber">Chamber</a></li>
-                <li><a href="#" data-nav="final">Final</a></li>
+                <li><a href="discover.html" data-nav="discover">Discover</a></li>
+                <li><a href="directory.html" data-nav="directory">Directory</a></li>
+                <li><a href="join.html" data-nav="join">Join</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main -->
     <main>
-        <h1>Chamber Directory Page</h1>
-
+        <h1>Directory</h1>
+        
+        <!-- Member Cards -->
+        <div id="cards"></div>
 
     </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-bar">
-            <p><span id="currentyear"></span> <span>🌲🌲🌲</span> PNW Family Adventures <span>🌲🌲🌲</span> Portland, Oregon USA</p>
+            <p><span id="currentyear"></span> <span>🌲🌲🌲</span> Wisonsonville Chamber of Commerce <span>🌲🌲🌲</span> Portland, Oregon USA</p>
             <p id="lastmodified"></p>
         </div>
     </footer>
