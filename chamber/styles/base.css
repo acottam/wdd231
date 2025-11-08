@@ -198,6 +198,11 @@ section {
     margin-bottom: .75rem;
 }
 
+.card img {
+    max-width: 150px;
+    max-height: 150px;
+}   
+
 .home-grid {
     display: grid;
     gap: var(--gap)
