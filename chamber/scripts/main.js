@@ -2,6 +2,7 @@
 const menuBtn = document.getElementById("menu-toggle");
 const nav = document.getElementById("primary-nav");
 
+// Toggle the navigation menu on click
 if (menuBtn && nav) {
   menuBtn.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
@@ -10,20 +11,27 @@ if (menuBtn && nav) {
   });
 }
 
+/* ========== Directory Members from JSON ========== */
 const url = 'data/members.json';
 const cards = document.querySelector('#cards');
 
+// Fetch the member data from the JSON file
 async function getMemberData() { 
     const response = await fetch(url);
     const data = await response.json();
     displayMembers(data.members);
 }
 
+// Call the function to get member data
 getMemberData();
 
+// Function to display members
 const displayMembers = (members) => {
+  
+  // Loop through each member in the members array
   members.forEach((member) => {
-    // Create elements to add to the div.cards element
+    
+    // Create elements to add to the document
     let card = document.createElement('section');
     let fullName = document.createElement('h2');
     let logo = document.createElement('img');
@@ -31,13 +39,13 @@ const displayMembers = (members) => {
     let phone = document.createElement('p');
     let website = document.createElement('a');
 
-    // Build the h2 content out to show the member's full name
+    // Build the full name content 
     fullName.textContent = `${member.name}`; 
-    // Build the image logo by setting all the relevant attributes
+    
+    // Build the logo image content 
     logo.setAttribute('src', `images/${member.image}`);
     logo.setAttribute('alt', `Logo of ${member.name}`); 
     logo.setAttribute('loading', 'lazy');
-    //logo.setAttribute('width', '200');
     logo.setAttribute('height', '100');
 
     // Build the address, phone, and website content
@@ -48,15 +56,16 @@ const displayMembers = (members) => {
     website.setAttribute('target', '_blank');
     website.setAttribute('rel', 'noopener');
 
-    // Append the section(card) with the created elements
+    // Append the elements to the card section
     card.appendChild(fullName); 
     card.appendChild(logo);
     card.appendChild(address);
     card.appendChild(phone);
     card.appendChild(website);
 
+    // Append the card to the cards container
     cards.appendChild(card);
-  }); // end of arrow function and forEach loop
+  }); 
 } 
 
 /* ========== Footer ========== */
