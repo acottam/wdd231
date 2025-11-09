@@ -159,7 +159,7 @@ main {
 /* ---------- Cards / Grids ---------- */
  #cards {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	grid-gap: var(--gap);
 	align-items: start;
 }
@@ -178,6 +178,9 @@ main {
     border-radius: var(--radius);
     margin-bottom: .75rem;
     font-size: 1rem;
+    text-align: center;
+    min-height: 5rem;
+    vertical-align: middle;
 }
 #cards section img {
     max-width: 100%;
@@ -188,6 +191,23 @@ main {
     object-fit: cover;
     border-radius: var(--radius);
     background-color: #efefef;
+}
+#cards section p, #cards section a {
+    font-size: .9rem;
+    margin: 0;
+    padding: 0;
+}   
+#cards section p:first-of-type {
+    margin-top: 1rem;
+    color: var(--ink-700);
+}
+#cards section p:last-of-type {
+    margin-top: .5rem;
+    font-weight: 700;
+}
+#cards section a {
+    display: block;
+    margin-top: .5rem;
 }
 
 /* ---------- Buttons / Actions ---------- */

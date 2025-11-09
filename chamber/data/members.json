@@ -2,7 +2,8 @@
   "members": [
     {
       "name": "Wilsonville Toyota",
-      "address": "9155 Boeckman Road, Wilsonville, OR 97070",
+      "address1": "9155 Boeckman Road",
+      "address2": "Wilsonville, OR 97070",
       "phone": "503-582-9040",
       "website": "https://www.wilsonvilletoyota.com",
       "image": "wilsonville-toyota.png",
@@ -10,7 +11,8 @@
     },
     {
       "name": "Wilsonville Subaru",
-      "address": "9200 SW Bailey St, Wilsonville, OR 97070",
+      "address1": "9200 SW Bailey St",
+      "address2": "Wilsonville, OR 97070",
       "phone": "971-434-0959",
       "website": "https://www.wilsonvillesubaru.com",
       "image": "wilsonville-subaru.png",
@@ -18,7 +20,8 @@
     },
     {
       "name": "McMenamins Wilsonville Old Church & Pub",
-      "address": "30340 SW Boones Ferry Rd, Wilsonville, OR 97070",
+      "address1": "30340 SW Boones Ferry Rd",
+      "address2": "Wilsonville, OR 97070",
       "phone": "503-427-2500",
       "website": "https://www.mcmenamins.com/wilsonville-old-church-pub",
       "image": "mcmenamins-old-church-pub.png",
@@ -26,7 +29,8 @@
     },
     {
       "name": "Bullwinkle's Wilsonville",
-      "address": "29111 SW Town Center Loop W, Wilsonville, OR 97070",
+      "address1": "29111 SW Town Center Loop W",
+      "address2": "Wilsonville, OR 97070",
       "phone": "503-685-5000",
       "website": "https://bullwinkles.com/wilsonville/",
       "image": "bullwinkles-wilsonville.png",
@@ -34,7 +38,8 @@
     },
     {
       "name": "Oswego Grill - Wilsonville",
-      "address": "30080 SW Boones Ferry Road, Wilsonville, OR 97070",
+      "address1": "30080 SW Boones Ferry Road",
+      "address2": "Wilsonville, OR 97070",
       "phone": "503-427-2152",
       "website": "https://www.oswegogrill.com/wilsonville",
       "image": "oswego-grill-wilsonville.png",
@@ -42,7 +47,8 @@
     },
     {
       "name": "Teledyne FLIR",
-      "address": "27700 SW Parkway Ave, Wilsonville, OR 97070",
+      "address1": "27700 SW Parkway Ave",
+      "address2": "Wilsonville, OR 97070",
       "phone": "503-498-3547",
       "website": "https://www.flir.com",
       "image": "teledyne-flir.png",
@@ -50,7 +56,8 @@
     },
     {
       "name": "Siemens EDA (Mentor Graphics)",
-      "address": "8005 SW Boeckman Rd, Wilsonville, OR 97070",
+      "address1": "8005 SW Boeckman Rd",
+      "address2": "Wilsonville, OR 97070",
       "phone": "503-685-7000",
       "website": "https://eda.sw.siemens.com",
       "image": "siemens-eda.png",
@@ -58,7 +65,8 @@
     },
     {
       "name": "Sysco Portland (Wilsonville)",
-      "address": "26250 SW Parkway Center Dr, Wilsonville, OR 97070",
+      "address1": "26250 SW Parkway Center Dr",
+      "address2": "Wilsonville, OR 97070",
       "phone": "503-682-8700",
       "website": "https://www.sysco.com/contact/our-locations/portland",
       "image": "sysco-portland-wilsonville.png",
@@ -66,7 +74,8 @@
     },
     {
       "name": "Columbia Distributing",
-      "address": "27200 SW Parkway Ave, Wilsonville, OR 97070",
+      "address1": "27200 SW Parkway Ave",
+      "address2": "Wilsonville, OR 97070",
       "phone": "503-274-9990",
       "website": "https://www.coldist.com",
       "image": "columbia-distributing.png",
@@ -74,7 +83,8 @@
     },
     {
       "name": "Swire Coca-Cola (Wilsonville Plant)",
-      "address": "29900 SW Kinsman Rd, Wilsonville, OR 97070",
+      "address1": "29900 SW Kinsman Rd",
+      "address2": "Wilsonville, OR 97070",
       "phone": "503-207-4831",
       "website": "https://www.swirecc.com/oregon",
       "image": "swire-coca-cola-wilsonville.png",

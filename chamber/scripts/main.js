@@ -35,7 +35,8 @@ const displayMembers = (members) => {
     let card = document.createElement('section');
     let fullName = document.createElement('h2');
     let logo = document.createElement('img');
-    let address = document.createElement('p');
+    let address1 = document.createElement('p');
+    let address2 = document.createElement('p');
     let phone = document.createElement('p');
     let website = document.createElement('a');
 
@@ -49,8 +50,9 @@ const displayMembers = (members) => {
     logo.setAttribute('height', '100');
 
     // Build the address, phone, and website content
-    address.textContent = `Address: ${member.address}`;
-    phone.textContent = `Phone: ${member.phone}`;
+    address1.textContent = `${member.address1}`;
+    address2.textContent = `${member.address2}`;
+    phone.textContent = `${member.phone}`;
     //website.textContent = member.website;
     website.textContent = 'Visit Website';
     website.setAttribute('href', member.website);
@@ -60,7 +62,8 @@ const displayMembers = (members) => {
     // Append the elements to the card section
     card.appendChild(fullName); 
     card.appendChild(logo);
-    card.appendChild(address);
+    card.appendChild(address1);
+    card.appendChild(address2);
     card.appendChild(phone);
     card.appendChild(website);
 
