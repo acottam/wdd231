@@ -51,7 +51,8 @@ const displayMembers = (members) => {
     // Build the address, phone, and website content
     address.textContent = `Address: ${member.address}`;
     phone.textContent = `Phone: ${member.phone}`;
-    website.textContent = member.website;
+    //website.textContent = member.website;
+    website.textContent = 'Visit Website';
     website.setAttribute('href', member.website);
     website.setAttribute('target', '_blank');
     website.setAttribute('rel', 'noopener');
