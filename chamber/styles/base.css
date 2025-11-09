@@ -198,9 +198,10 @@ section {
     margin-bottom: .75rem;
 }
 
-.card img {
-    max-width: 150px;
-    max-height: 150px;
+#cards section img {
+    max-width: 400px;
+    max-height: 200px;
+    background-color: #efefef;
 }   
 
 .home-grid {
