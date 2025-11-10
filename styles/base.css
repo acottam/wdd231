@@ -315,6 +315,12 @@ figcaption span {
     text-decoration: none
 }
 
+.btn.filter,
+.btn.filter *,
+.btn.filter::before,
+.btn.filter::after {
+    color: var(--ink-000) !important;
+}
 .btn.filter.is-active {
     color: var(--ink-000) !important;
     background: var(--pnw-green) !important;
