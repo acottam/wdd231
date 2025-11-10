@@ -147,7 +147,7 @@ header {
     text-decoration: none
 }
 .nav a.is-active {
-    background: rgba(255, 255, 255, .25)
+    background: rgba(255, 255, 255, .35)
 }
 
 /* ---------- Main ---------- */
@@ -302,11 +302,12 @@ main {
 /* ---------- Footer ---------- */
 footer {
     text-align: center;
-    color: #fff;
-    font-size: .8rem
+    color: var(--ink-000);
+    font-size: .8rem;
+    background: var(--pnw-blue);
 }
 footer .footer-bar {
-    background: linear-gradient(0deg, rgba(27, 73, 101, 1) 0%, rgba(27, 73, 101, .92) 100%);
+    background: var(--pnw-blue);
     box-shadow: var(--shadow-1);
     padding: .8rem
 }
