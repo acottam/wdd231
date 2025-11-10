@@ -35,8 +35,7 @@ const displayMembers = (members) => {
     let card = document.createElement('section');
     let fullName = document.createElement('h2');
     let logo = document.createElement('img');
-    let address1 = document.createElement('p');
-    let address2 = document.createElement('p');
+    let address = document.createElement('div');
     let phone = document.createElement('p');
     let website = document.createElement('a');
 
@@ -49,11 +48,12 @@ const displayMembers = (members) => {
     logo.setAttribute('loading', 'lazy');
     logo.setAttribute('height', '100');
 
-    // Build the address, phone, and website content
-    address1.textContent = `${member.address1}`;
-    address2.textContent = `${member.address2}`;
+    // Build the address content (combined for list view)
+    address.className = 'address';
+    address.innerHTML = `${member.address1}<br>${member.address2}`;
+    
+    // Build phone and website content
     phone.textContent = `${member.phone}`;
-    //website.textContent = member.website;
     website.textContent = 'Visit Website';
     website.setAttribute('href', member.website);
     website.setAttribute('target', '_blank');
@@ -62,8 +62,7 @@ const displayMembers = (members) => {
     // Append the elements to the card section
     card.appendChild(fullName); 
     card.appendChild(logo);
-    card.appendChild(address1);
-    card.appendChild(address2);
+    card.appendChild(address);
     card.appendChild(phone);
     card.appendChild(website);
 
@@ -71,6 +70,39 @@ const displayMembers = (members) => {
     cards.appendChild(card);
   }); 
 } 
+
+/* ========== View Toggle ========== */
+const gridBtn = document.querySelector('#grid');
+const listBtn = document.querySelector('#list');
+
+function createTableHeader() {
+  const header = document.createElement('div');
+  header.className = 'table-header';
+  header.innerHTML = '<div>Name</div><div>Address</div><div>Phone</div><div>Website</div>';
+  return header;
+}
+
+if (gridBtn && listBtn && cards) {
+  gridBtn.addEventListener('click', () => {
+    cards.classList.remove('list');
+    const header = cards.querySelector('.table-header');
+    if (header) header.remove();
+    gridBtn.classList.add('active');
+    listBtn.classList.remove('active');
+  });
+
+  listBtn.addEventListener('click', () => {
+    cards.classList.add('list');
+    if (!cards.querySelector('.table-header')) {
+      cards.insertBefore(createTableHeader(), cards.firstChild);
+    }
+    listBtn.classList.add('active');
+    gridBtn.classList.remove('active');
+  });
+
+  // Set grid as default active
+  gridBtn.classList.add('active');
+}
 
 /* ========== Footer ========== */
 // use the date object
