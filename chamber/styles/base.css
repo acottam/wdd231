@@ -279,6 +279,7 @@ main {
 	margin: 1rem auto;
 	padding: 0.5rem;
 	background-color: var(--pnw-blue);
+	color: var(--ink-000);
 	text-align: center;
     border-radius: var(--radius);
 }
