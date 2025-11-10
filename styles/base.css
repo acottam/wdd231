@@ -317,6 +317,7 @@ figcaption span {
 
 .btn.filter.is-active {
     color: var(--ink-000) !important;
+    background: var(--pnw-green) !important;
 }
 
 input::placeholder,
