@@ -315,13 +315,13 @@ figcaption span {
     text-decoration: none
 }
 
-.btn.filter,
-.btn.filter *,
-.btn.filter::before,
-.btn.filter::after {
+button.btn.filter,
+button.btn.filter *,
+button.btn.filter::before,
+button.btn.filter::after {
     color: var(--ink-000) !important;
 }
-.btn.filter.is-active {
+button.btn.filter.is-active {
     color: var(--ink-000) !important;
     background: var(--pnw-green) !important;
 }
