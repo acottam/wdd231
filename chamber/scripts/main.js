@@ -75,32 +75,55 @@ const displayMembers = (members) => {
 const gridBtn = document.querySelector('#grid');
 const listBtn = document.querySelector('#list');
 
+// Function to create table header for list view
 function createTableHeader() {
-  const header = document.createElement('div');
-  header.className = 'table-header';
-  header.innerHTML = '<div>Name</div><div>Address</div><div>Phone</div><div>Website</div>';
+  // Create header div
+  const header = document.createElement("div");
+
+  // Add class for table header styling
+  header.className = "table-header";
+  
+  // Set inner HTML for header columns
+  header.innerHTML = "<div>Name</div><div>Address</div><div>Phone</div><div>Website</div>";
+  
+  // Return header
   return header;
 }
 
+// Grid/List view toggle
 if (gridBtn && listBtn && cards) {
   gridBtn.addEventListener('click', () => {
+    // Remove list class
     cards.classList.remove('list');
+    
+    // Table header
     const header = cards.querySelector('.table-header');
+    
+    // Remove table header if exists 
     if (header) header.remove();
+    
+    // Set to active
     gridBtn.classList.add('active');
     listBtn.classList.remove('active');
   });
 
+  // List view button
   listBtn.addEventListener('click', () => {
+    
+    // Add list class
     cards.classList.add('list');
+    
+    // Add table header if not already present
     if (!cards.querySelector('.table-header')) {
       cards.insertBefore(createTableHeader(), cards.firstChild);
     }
+
+    // Set to active
     listBtn.classList.add('active');
     gridBtn.classList.remove('active');
   });
 
-  // Set grid as default active
+  // Set grid to be default view
   gridBtn.classList.add('active');
 }
 
