@@ -164,6 +164,12 @@ main {
 	align-items: start;
 }
 
+@media (max-width: 699px) {
+	#cards {
+		grid-template-columns: 1fr;
+	}
+}
+
 /* List View */
 #cards.list {
 	grid-template-columns: 1fr;
