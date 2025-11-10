@@ -1,12 +1,19 @@
 /* ---------- Theme ---------- */
 :root {
     --pnw-blue: #1B4965;
+    --pnw-blue-alpha: rgba(27, 73, 101, .98);
     --pnw-green: #2E7D32;
     --pnw-sky: #CAE9FF;
     --pnw-sand: #F2E8CF;
     --ink-900: #111827;
     --ink-700: #374151;
+    --ink-500: #6B7280;
     --ink-000: #fff;
+    --ink-000-alpha-08: rgba(255, 255, 255, .08);
+    --ink-000-alpha-15: rgba(255, 255, 255, .15);
+    --ink-000-alpha-18: rgba(255, 255, 255, .18);
+    --ink-000-alpha-35: rgba(255, 255, 255, .35);
+    --ink-000-alpha-10: rgba(255, 255, 255, .1);
     --placeholder: #697279;
     --radius: 6px;
     --gap: 1rem;
@@ -92,8 +99,8 @@ header {
 
 .logo {
     max-width: 100px;
-    background: rgba(255, 255, 255, .08);
-    border: 1px solid rgba(255, 255, 255, .15);
+    background: var(--ink-000-alpha-08);
+    border: 1px solid var(--ink-000-alpha-15);
     border-radius: 50%;
     padding: .2px;
 }
@@ -123,7 +130,7 @@ header {
     line-height: 1;
     width: 44px;
     height: 44px;
-    border: 2px solid rgba(255, 255, 255, .35);
+    border: 2px solid var(--ink-000-alpha-35);
     border-radius: 8px
 }
 
@@ -133,7 +140,7 @@ header {
 }
 
 .menu-toggle:focus-visible {
-    outline: 3px solid #fff;
+    outline: 3px solid var(--ink-000);
     outline-offset: 2px
 }
 
@@ -155,19 +162,19 @@ header {
     margin: 0;
     padding: 0;
     list-style: none;
-    background: rgba(27, 73, 101, .98)
+    background: var(--pnw-blue-alpha)
 }
 
 .nav a {
     display: block;
-    color: #fff;
+    color: var(--ink-000);
     font-weight: 600;
     padding: .8rem 10px;
-    border-bottom: 1px solid #fff
+    border-bottom: 1px solid var(--ink-000)
 }
 
 .nav a:hover {
-    background: rgba(255, 255, 255, .18);
+    background: var(--ink-000-alpha-18);
     text-decoration: none
 }
 
@@ -183,7 +190,7 @@ main {
 
 /* ---------- Cards / Grids ---------- */
 section {
-    background: #fff;
+    background: var(--ink-000);
     border-radius: var(--radius);
     padding: 1rem;
     margin: 0 0 1rem;
@@ -192,7 +199,7 @@ section {
 
 .card h2 {
     background: var(--pnw-blue);
-    color: #fff;
+    color: var(--ink-000);
     padding: .6rem .75rem;
     border-radius: var(--radius);
     margin-bottom: .75rem;
@@ -204,7 +211,7 @@ section {
 }
 
 article {
-    background: #fff;
+    background: var(--ink-000);
     border-radius: var(--radius);
     box-shadow: var(--shadow-1);
     padding: 0;
@@ -227,7 +234,7 @@ figcaption span {
     display: block;
     font-size: .8rem;
     font-weight: 400;
-    color: var(--ink-500);
+    color: var(--placeholder);
 }   
 .portrait {
     width: 100%;
@@ -246,7 +253,7 @@ figcaption span {
 }
 
 .card {
-    background: #fff;
+    background: var(--ink-000);
     border-radius: var(--radius);
     box-shadow: var(--shadow-1);
     display: flex;
@@ -296,7 +303,7 @@ figcaption span {
 .btn {
     display: inline-block;
     background: var(--pnw-green);
-    color: #fff !important;
+    color: var(--ink-000) !important;
     padding: .55rem 1rem;
     border-radius: .6rem;
     font-weight: 700;
@@ -333,7 +340,7 @@ footer .social {
 }
 
 footer .social a {
-    color: #fff;
+    color: var(--ink-000);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -346,7 +353,7 @@ footer .social a {
 
 footer .social a:hover {
     color: var(--pnw-sky);
-    background: rgba(255, 255, 255, .1);
+    background: var(--ink-000-alpha-10);
 }
 
 footer .social .icon {
