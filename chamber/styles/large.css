@@ -17,8 +17,12 @@
         border: 0;
         padding: 0.8rem 0.75rem
     }
-    .nav a:hover, .nav a.is-active {
+    .nav a:hover {
         background: rgba(255, 255, 255, .35);
+        border-radius: 6px
+    }
+    .nav a.is-active {
+        background: var(--pnw-green);
         border-radius: 6px
     }
 }
