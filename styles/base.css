@@ -172,7 +172,7 @@ header {
 }
 
 .nav a.is-active {
-    background: rgba(255, 255, 255, .25)
+    background: var(--pnw-green)
 }
 
 /* ---------- Main ---------- */
@@ -308,6 +308,10 @@ figcaption span {
     text-decoration: none
 }
 
+.btn.filter.is-active {
+    color: var(--ink-000) !important;
+}
+
 input::placeholder,
 textarea::placeholder {
     color: var(--placeholder);
@@ -317,8 +321,9 @@ textarea::placeholder {
 /* ---------- Footer ---------- */
 footer {
     text-align: center;
-    color: #fff;
-    font-size: .8rem
+    color: var(--ink-000);
+    font-size: .8rem;
+    background: var(--pnw-blue);
 }
 
 footer .social {
@@ -351,7 +356,7 @@ footer .social .icon {
 }
 
 footer .footer-bar {
-    background: linear-gradient(0deg, rgba(27, 73, 101, 1) 0%, rgba(27, 73, 101, .92) 100%);
+    background: var(--pnw-blue);
     box-shadow: var(--shadow-1);
     padding: .8rem
 }
