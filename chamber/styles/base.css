@@ -170,10 +170,23 @@ main {
 	}
 }
 
+#cards section {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin: 0 0 1rem;
+    box-shadow: var(--shadow-1);
+    min-height: 350px;
+}
+
 /* List View */
 #cards.list {
 	grid-template-columns: 1fr;
 	gap: 0;
+	background: #fff;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-1);
+	padding: 0;
 }
 #cards.list .table-header {
 	display: grid;
@@ -222,20 +235,6 @@ main {
 	margin: 0;
 	font-size: 0.9rem;
 }
-#cards section {
-    background: #fff;
-    border-radius: var(--radius);
-    padding: 1rem;
-    margin: 0 0 1rem;
-    box-shadow: var(--shadow-1);
-    min-height: 350px;
-}
-#cards.list {
-	background: #fff;
-	border-radius: var(--radius);
-	box-shadow: var(--shadow-1);
-	padding: 0;
-}
 #cards h2 {
     background: var(--pnw-blue);
     color: #fff;
@@ -279,26 +278,25 @@ main {
 .menu {
 	margin: 1rem auto;
 	padding: 0.5rem;
-	background-color: #333;
+	background-color: var(--ink-700);
 	text-align: center;
-    border-radius: 8px;
-
-	button {
-		padding: 0.5rem 1rem;
-		font-weight: 700;
-        color: #fff;
-        background-color: var(--pnw-green);
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        margin: 0 0.5rem; 
-	}
-    button:hover {
-        background-color: #27632a;
-    }
-    button.active {
-        background-color: var(--pnw-blue);
-    }  
+    border-radius: var(--radius);
+}
+.menu button {
+	padding: 0.5rem 1rem;
+	font-weight: 700;
+    color: #fff;
+    background-color: var(--pnw-green);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin: 0 0.5rem; 
+}
+.menu button:hover {
+    background-color: #27632a;
+}
+.menu button.active {
+    background-color: var(--pnw-blue);
 }
 
 /* ---------- Footer ---------- */
