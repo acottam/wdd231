@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - Wilsonville Chamber of Commerce</title>
+    <meta name="description" content="Welcome to Wilsonville Chamber of Commerce - Supporting local businesses and community growth in Wilsonville, Oregon, USA">
+    <meta name="author" content="Adam Cottam">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Wilsonville Chamber of Commerce">
+    <meta property="og:description" content="Supporting local businesses and community growth in Wilsonville, Oregon. Join our thriving business community today.">
+    <meta property="og:url" content="https://acottam.github.io/wdd231/chamber/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://acottam.github.io/wdd231/chamber/images/wilsonville-coc-logo-v2.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wilsonville, Oregon's Chamber of Commerce">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets & Scripts -->
+    <link rel="stylesheet" href="styles/normalize.min.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/main.js" defer></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+
+            <a href="index.html" class="brand" aria-label="Home">
+                <img src="images/wilsonville-coc-logo-v2.png" alt="Wilsonville Chamber of Commerce" width="200" class="logo">
+                <span class="tagline">Wilsonville Chamber of Commerce</span>
+            </a>
+
+            <!-- Hamburger -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"></button>
+
+        </div>
+
+        <!-- Primary Nav -->
+        <nav id="primary-nav" class="nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html" data-nav="home" class="is-active">Home</a></li>
+                <li><a href="discover.html" data-nav="discover">Discover</a></li>
+                <li><a href="directory.html" data-nav="directory">Directory</a></li>
+                <li><a href="join.html" data-nav="join">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Wilsonville</h1>
+                <p>Join our thriving business community and grow your success in the heart of Oregon.</p>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <div class="home-grid">
+            
+            <!-- Current Weather -->
+            <section class="weather-card">
+                <h2>Current Weather</h2>
+                <div class="weather-info">
+                    <div class="weather-temp">
+                        <span id="temperature">--</span>°F
+                    </div>
+                    <div class="weather-details">
+                        <p id="weather-desc">Loading...</p>
+                        <p>High: <span id="high-temp">--</span>°F</p>
+                        <p>Low: <span id="low-temp">--</span>°F</p>
+                        <p>Humidity: <span id="humidity">--</span>%</p>
+                        <p>Sunrise: <span id="sunrise">--</span></p>
+                        <p>Sunset: <span id="sunset">--</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Company Spotlights -->
+            <section class="spotlights">
+                <h2>Member Spotlights</h2>
+                <div class="spotlight-grid" id="spotlights">
+                    <!-- Spotlights will be populated by JavaScript -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bar">
+            <p><span id="currentyear"></span> <span>🌲🌲🌲</span> Wilsonville Chamber of Commerce <span>🌲🌲🌲</span> Wilsonville, Oregon USA</p>
+            <p id="lastmodified"></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

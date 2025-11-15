@@ -7,3 +7,11 @@ ul li {
 ol + li {
   color: blue;
 }
+/* The comment below is used to
+   disable specific styling */
+/*
+span {
+  color: blue;
+  font-size: 1.5em;
+}
+*/
