@@ -27,12 +27,11 @@
         grid-template-columns: 1fr 2fr;
         gap: 2rem;
     }
-    
     .weather-info {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
     .spotlight-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+}

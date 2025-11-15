@@ -138,101 +138,129 @@ document.getElementById("currentyear").innerHTML = `&copy;${today.getFullYear()}
 document.querySelector('#lastmodified').textContent = `Last Modification: ${document.lastModified}`;
 
 /* ========== Home Page Weather ========== */
-const weatherApiKey = ''; // OpenWeatherMap API key
-const lat = 45.2978; // Wilsonville, OR latitude
-const lon = -122.7731; // Wilsonville, OR longitude
+const weatherApiKey = '551d6638de426ca40500ea7a8cb010a4'; // OpenWeatherMap API key
+const lat = 45.2978; // Latitude: Wilsonville, Oregon
+const lon = -122.7731; // Longitude: Wilsonville, Oregon
 
 // Function to get Weather Data
 async function getWeatherData() {
-    if (!weatherApiKey) {
-        // Display placeholder data if no API key
-        document.getElementById('temperature').textContent = '72';
-        document.getElementById('weather-desc').textContent = 'Partly Cloudy';
-        document.getElementById('high-temp').textContent = '78';
-        document.getElementById('low-temp').textContent = '65';
-        document.getElementById('humidity').textContent = '45';
-        document.getElementById('sunrise').textContent = '6:30 AM';
-        document.getElementById('sunset').textContent = '7:45 PM';
-        return;
-    }
 
-    // 
-    try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=imperial`);
-        const data = await response.json();
-        
-        document.getElementById('temperature').textContent = Math.round(data.main.temp);
-        document.getElementById('weather-desc').textContent = data.weather[0].description;
-        document.getElementById('high-temp').textContent = Math.round(data.main.temp_max);
-        document.getElementById('low-temp').textContent = Math.round(data.main.temp_min);
-        document.getElementById('humidity').textContent = data.main.humidity;
-        
-        const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
-        const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
-        
-        document.getElementById('sunrise').textContent = sunrise;
-        document.getElementById('sunset').textContent = sunset;
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-        document.getElementById('weather-desc').textContent = 'Weather data unavailable';
-    }
+  // Fetch Data
+  try {
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=imperial`);
+    
+    // Response
+    const data = await response.json();
+    
+    // Set Variables
+    document.getElementById('temperature').textContent = Math.round(data.main.temp);
+    document.getElementById('weather-desc').textContent = data.weather[0].description;
+    document.getElementById('high-temp').textContent = Math.round(data.main.temp_max);
+    document.getElementById('low-temp').textContent = Math.round(data.main.temp_min);
+    document.getElementById('humidity').textContent = data.main.humidity;
+    
+    // Sunrise
+    const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
+    
+    // Sunset 
+    const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    
+    // Set Sunrise
+    document.getElementById('sunrise').textContent = sunrise;
+    
+    // Set Sunset
+    document.getElementById('sunset').textContent = sunset;
+    
+  // Errors Handling
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    document.getElementById('weather-desc').textContent = 'Weather data unavailable';
+
+    // Display placeholder datail
+    /*
+    document.getElementById('temperature').textContent = '72';
+    document.getElementById('weather-desc').textContent = 'Partly Cloudy';
+    document.getElementById('high-temp').textContent = '78';
+    document.getElementById('low-temp').textContent = '65';
+    document.getElementById('humidity').textContent = '45';
+    document.getElementById('sunrise').textContent = '6:30 AM';
+    document.getElementById('sunset').textContent = '7:45 PM';
+    */  
+  }
 }
 
 /* ========== Home Page Member Spotlights ========== */
 async function getSpotlights() {
-    const spotlightsContainer = document.getElementById('spotlights');
+
+  // Spotlight Element
+  const spotlightsContainer = document.getElementById('spotlights');
+  
+  // Only available on Home Page
+  if (!spotlightsContainer) return;
+  
+  try {
+      
+    // Members JSON
+    const response = await fetch('data/members.json');
+    const data = await response.json();
     
-    if (!spotlightsContainer) return;
+    // Filter members with Gold (3) or Silver (2) membership
+    const qualifiedMembers = data.members.filter(member => 
+      member.membershipLevel === 2 || member.membershipLevel === 3
+    );
     
-    try {
-        const response = await fetch('data/members.json');
-        const data = await response.json();
-        
-        // Filter members with Gold (3) or Silver (2) membership
-        const qualifiedMembers = data.members.filter(member => 
-            member.membershipLevel === 2 || member.membershipLevel === 3
-        );
-        
-        // Randomly select 2-3 members
-        const selectedMembers = [];
-        const numSpotlights = Math.min(3, qualifiedMembers.length);
-        
-        while (selectedMembers.length < numSpotlights) {
-            const randomIndex = Math.floor(Math.random() * qualifiedMembers.length);
-            const member = qualifiedMembers[randomIndex];
-            
-            if (!selectedMembers.includes(member)) {
-                selectedMembers.push(member);
-            }
-        }
-        
-        // Display the selected members
-        selectedMembers.forEach(member => {
-            const spotlightCard = document.createElement('div');
-            spotlightCard.className = 'spotlight-card';
-            
-            const membershipText = member.membershipLevel === 3 ? 'Gold' : 'Silver';
-            
-            spotlightCard.innerHTML = `
-                <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
-                <h3>${member.name}</h3>
-                <p>${member.address1}</p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
-                <div class="membership-level">${membershipText} Member</div>
-            `;
-            
-            spotlightsContainer.appendChild(spotlightCard);
-        });
-        
-    } catch (error) {
-        console.error('Error fetching member data for spotlights:', error);
+    // Randomly select 3 members
+    const selectedMembers = [];
+    const numSpotlights = Math.min(3, qualifiedMembers.length);
+    
+    // Iterate through filtered members
+    while (selectedMembers.length < numSpotlights) {
+      // Get Random Index
+      const randomIndex = Math.floor(Math.random() * qualifiedMembers.length);
+      
+      // Get Member at radom Index
+      const member = qualifiedMembers[randomIndex];
+      
+      // Unique Members - Add to selected member if not already selected
+      if (!selectedMembers.includes(member)) {
+        selectedMembers.push(member);
+      }
     }
+    
+    // Display the selected members
+    selectedMembers.forEach(member => {
+      // spotlight Card Element
+      const spotlightCard = document.createElement('div');
+      
+      // Class Name
+      spotlightCard.className = 'spotlight-card';
+      
+      // Membership Level (Gold or Silver)
+      const membershipText = member.membershipLevel === 3 ? 'Gold' : 'Silver';
+      
+      // Set Spotlight Card
+      spotlightCard.innerHTML = `
+        <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
+        <h3>${member.name}</h3>
+        <p>${member.address1}</p>
+        <p>${member.phone}</p>
+        <a href="${member.website}" target="_blank" rel="noopener">Visit Website</a>
+        <div class="membership-level">${membershipText} Member</div>
+      `;
+      
+      // Append Spotlight Card to Containe
+      spotlightsContainer.appendChild(spotlightCard);
+    });
+      
+  } catch (error) {
+    // Console Error
+    console.error('Error fetching member data for spotlights:', error);
+  }
 }
 
 /* ========== Initialize Home Page ========== */
 if (document.querySelector('.hero')) {
-    // Only run on home page
+    // Home Page (only)
     getWeatherData();
     getSpotlights();
 }
