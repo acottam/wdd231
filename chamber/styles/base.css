@@ -356,8 +356,7 @@ footer p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(46, 125, 50, 0.3) 0%, rgba(46, 125, 50, 0.2) 100%);
-    mix-blend-mode: multiply;
+    background: rgba(0, 0, 0, 0.6);
 }
 .hero-content {
     position: relative;
