@@ -6,6 +6,7 @@
     --pnw-green-dark: #27632a;
     --pnw-sky: #CAE9FF;
     --pnw-sand: #F2E8CF;
+    --bg-slate: #F1F5F9;
     --ink-900: #111827;
     --ink-700: #374151;
     --ink-000: #fff;
@@ -32,7 +33,7 @@ body {
     margin: 0;
     font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--ink-900);
-    background: var(--pnw-sky);
+    background: var(--bg-slate);
     line-height: 1.6;
 }
 img {
