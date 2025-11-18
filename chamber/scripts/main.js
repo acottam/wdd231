@@ -22,8 +22,10 @@ async function getMemberData() {
     displayMembers(data.members);
 }
 
-// Call the function to get member data
-getMemberData();
+// Call the function to get member data only if cards element exists
+if (cards) {
+    getMemberData();
+}
 
 // Function to display members
 const displayMembers = (members) => {
@@ -44,7 +46,7 @@ const displayMembers = (members) => {
     
     // Build the logo image content 
     logo.setAttribute('src', `images/${member.image}`);
-    logo.setAttribute('alt', `Logo of ${member.name}`); 
+    logo.setAttribute('alt', `${member.name} company logo`); 
     logo.setAttribute('loading', 'lazy');
     logo.setAttribute('height', '100');
 
@@ -261,7 +263,7 @@ async function getSpotlights() {
       
       // Set Spotlight Card
       spotlightCard.innerHTML = `
-        <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
+        <img src="images/${member.image}" alt="${member.name} company logo" loading="lazy">
         <h3>${member.name}</h3>
         <p>${member.address1}</p>
         <p>${member.phone}</p>
