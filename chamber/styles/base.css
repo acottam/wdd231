@@ -6,7 +6,6 @@
     --pnw-green-dark: #27632a;
     --pnw-sky: #CAE9FF;
     --pnw-sand: #F2E8CF;
-    --bg-slate: #F1F5F9;
     --ink-900: #111827;
     --ink-700: #374151;
     --ink-000: #fff;
@@ -33,7 +32,7 @@ body {
     margin: 0;
     font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--ink-900);
-    background: var(--bg-slate);
+    background: var(--pnw-sky);
     line-height: 1.6;
 }
 img {
@@ -355,7 +354,7 @@ footer p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
 }
 .hero-content {
     position: relative;
@@ -366,13 +365,13 @@ footer p {
 .hero h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0 0 16px rgba(0, 0, 0, 0.7);
     font-weight: 800;
 }
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.6);
 }
 .cta-button {
     display: inline-block;
