@@ -427,6 +427,41 @@ footer p {
     margin: 0.25rem 0;
     font-size: 0.9rem;
 }
+.forecast {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+}
+.forecast h3 {
+    margin: 0 0 1rem;
+    color: var(--pnw-blue);
+    font-size: 1.1rem;
+}
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+.forecast-item {
+    text-align: center;
+    padding: 0.5rem;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+}
+.forecast-item .day {
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+.forecast-item .temp {
+    font-size: 0.9rem;
+    color: var(--pnw-blue);
+}
+.forecast-item .desc {
+    font-size: 0.7rem;
+    color: var(--ink-700);
+    margin-top: 0.25rem;
+}
 .spotlights {
     background: var(--ink-000);
     border-radius: var(--radius);

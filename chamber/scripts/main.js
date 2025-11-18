@@ -127,6 +127,79 @@ if (gridBtn && listBtn && cards) {
   gridBtn.classList.add('active');
 }
 
+/* ========== Weather API ========== */
+const apiKey = '551d6638de426ca40500ea7a8cb010a4'; // OpenWeatherMap API key
+const lat = 45.2978; // Latitude: Wilsonville, Oregon
+const lon = -122.7731; // Longitude: Wilsonville, Oregon
+
+async function getWeatherData() {
+    try {
+        // Current weather
+        const currentResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`);
+        const currentData = await currentResponse.json();
+        
+        // 5-day forecast
+        const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`);
+        const forecastData = await forecastResponse.json();
+        
+        // Days to Forcast - 3 for assignment
+        const days_to_forcast = 3;
+        
+        // Display Current Weather
+        displayCurrentWeather(currentData);
+        
+        // Display Forcast
+        displayForecast(forecastData, days_to_forcast);
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+        document.getElementById('weather-desc').textContent = 'Weather data unavailable';
+    }
+}
+
+// Function to display Current Weather
+function displayCurrentWeather(data) {
+    document.getElementById('temperature').textContent = Math.round(data.main.temp);
+    document.getElementById('weather-desc').textContent = data.weather[0].description;
+    document.getElementById('high-temp').textContent = Math.round(data.main.temp_max);
+    document.getElementById('low-temp').textContent = Math.round(data.main.temp_min);
+    document.getElementById('humidity').textContent = data.main.humidity;
+    
+    const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
+    const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
+    document.getElementById('sunrise').textContent = sunrise;
+    document.getElementById('sunset').textContent = sunset;
+}
+
+// Function to display forcast
+function displayForecast(data, forcast_days) {
+    const forecastGrid = document.getElementById('forecast-grid');
+    const dailyForecasts = {};
+    
+    // Group forecasts by day and get one per day
+    data.list.forEach(item => {
+        const date = new Date(item.dt * 1000);
+        const dateKey = date.toDateString();
+        if (!dailyForecasts[dateKey] && Object.keys(dailyForecasts).length < forcast_days) {
+            dailyForecasts[dateKey] = item;
+        }
+    });
+    
+    // Daily forcasts
+    Object.values(dailyForecasts).forEach(forecast => {
+        const date = new Date(forecast.dt * 1000);
+        const dayName = date.toLocaleDateString('en-US', {weekday: 'short'});
+        
+        const forecastItem = document.createElement('div');
+        forecastItem.className = 'forecast-item';
+        forecastItem.innerHTML = `
+            <div class="day">${dayName}</div>
+            <div class="temp">${Math.round(forecast.main.temp_max)}°/${Math.round(forecast.main.temp_min)}°</div>
+            <div class="desc">${forecast.weather[0].description}</div>
+        `;
+        forecastGrid.appendChild(forecastItem);
+    });
+}
+
 /* ========== Footer ========== */
 // use the date object
 let today = new Date();
@@ -136,58 +209,6 @@ document.getElementById("currentyear").innerHTML = `&copy;${today.getFullYear()}
 
 // set the text content of the span element with the last modified date
 document.querySelector('#lastmodified').textContent = `Last Modification: ${document.lastModified}`;
-
-/* ========== Home Page Weather ========== */
-const weatherApiKey = '551d6638de426ca40500ea7a8cb010a4'; // OpenWeatherMap API key
-const lat = 45.2978; // Latitude: Wilsonville, Oregon
-const lon = -122.7731; // Longitude: Wilsonville, Oregon
-
-// Function to get Weather Data
-async function getWeatherData() {
-
-  // Fetch Data
-  try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=imperial`);
-    
-    // Response
-    const data = await response.json();
-    
-    // Set Variables
-    document.getElementById('temperature').textContent = Math.round(data.main.temp);
-    document.getElementById('weather-desc').textContent = data.weather[0].description;
-    document.getElementById('high-temp').textContent = Math.round(data.main.temp_max);
-    document.getElementById('low-temp').textContent = Math.round(data.main.temp_min);
-    document.getElementById('humidity').textContent = data.main.humidity;
-    
-    // Sunrise
-    const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-US', {hour: 'numeric', minute: '2-digit'});
-    
-    // Sunset 
-    const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
-    
-    // Set Sunrise
-    document.getElementById('sunrise').textContent = sunrise;
-    
-    // Set Sunset
-    document.getElementById('sunset').textContent = sunset;
-    
-  // Errors Handling
-  } catch (error) {
-    console.error('Error fetching weather data:', error);
-    document.getElementById('weather-desc').textContent = 'Weather data unavailable';
-
-    // Display placeholder datail
-    /*
-    document.getElementById('temperature').textContent = '72';
-    document.getElementById('weather-desc').textContent = 'Partly Cloudy';
-    document.getElementById('high-temp').textContent = '78';
-    document.getElementById('low-temp').textContent = '65';
-    document.getElementById('humidity').textContent = '45';
-    document.getElementById('sunrise').textContent = '6:30 AM';
-    document.getElementById('sunset').textContent = '7:45 PM';
-    */  
-  }
-}
 
 /* ========== Home Page Member Spotlights ========== */
 async function getSpotlights() {
