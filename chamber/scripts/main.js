@@ -130,10 +130,16 @@ if (gridBtn && listBtn && cards) {
 }
 
 /* ========== Weather API ========== */
-const apiKey = '551d6638de426ca40500ea7a8cb010a4'; // OpenWeatherMap API key
-const lat = 45.2978; // Latitude: Wilsonville, Oregon
-const lon = -122.7731; // Longitude: Wilsonville, Oregon
+// OpenWeatherMap API key
+const apiKey = '551d6638de426ca40500ea7a8cb010a4'; 
 
+// Latitude: Wilsonville, Oregon
+const lat = 45.2978;
+
+// Longitude: Wilsonville, Oregon
+const lon = -122.7731; 
+
+// Function to get weather data
 async function getWeatherData() {
     try {
         // Current weather
@@ -152,6 +158,8 @@ async function getWeatherData() {
         
         // Display Forcast
         displayForecast(forecastData, days_to_forcast);
+    
+    // Error Handling
     } catch (error) {
         console.error('Error fetching weather data:', error);
         document.getElementById('weather-desc').textContent = 'Weather data unavailable';
@@ -160,21 +168,32 @@ async function getWeatherData() {
 
 // Function to display Current Weather
 function displayCurrentWeather(data) {
+    
+    // Set Element Values
     document.getElementById('temperature').textContent = Math.round(data.main.temp);
     document.getElementById('weather-desc').textContent = data.weather[0].description;
     document.getElementById('high-temp').textContent = Math.round(data.main.temp_max);
     document.getElementById('low-temp').textContent = Math.round(data.main.temp_min);
     document.getElementById('humidity').textContent = data.main.humidity;
     
+    // Sunrise
     const sunrise = new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
+    
+    // Sunset
     const sunset = new Date(data.sys.sunset * 1000).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
+    
+    // Update text
     document.getElementById('sunrise').textContent = sunrise;
     document.getElementById('sunset').textContent = sunset;
 }
 
 // Function to display forcast
 function displayForecast(data, forcast_days) {
+    
+    // Forcast Grid
     const forecastGrid = document.getElementById('forecast-grid');
+    
+    // Daily Forcasts
     const dailyForecasts = {};
     
     // Group forecasts by day and get one per day
@@ -275,7 +294,9 @@ async function getSpotlights() {
       spotlightsContainer.appendChild(spotlightCard);
     });
       
+  // Error Handling
   } catch (error) {
+    
     // Console Error
     console.error('Error fetching member data for spotlights:', error);
   }
