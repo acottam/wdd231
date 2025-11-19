@@ -34,4 +34,17 @@
     .spotlight-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    /* Join Page Desktop Layout */
+    .join-content {
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
+    .radio-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .submit-btn {
+        width: auto;
+        padding: 1rem 3rem;
+    }
 }

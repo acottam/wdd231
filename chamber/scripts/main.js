@@ -287,3 +287,9 @@ if (document.querySelector('.hero')) {
     getWeatherData();
     getSpotlights();
 }
+
+/* ========== Join Form Timestamp ========== */
+const timestampField = document.getElementById('timestamp');
+if (timestampField) {
+    timestampField.value = new Date().toISOString();
+}

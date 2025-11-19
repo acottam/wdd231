@@ -516,3 +516,196 @@ footer p {
     display: inline-block;
     margin-top: 0.5rem;
 }
+
+/* ---------- Join Page ---------- */
+.join-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.join-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.membership-form {
+    background: var(--ink-000);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-1);
+}
+.membership-form h2 {
+    background: var(--pnw-blue);
+    color: var(--ink-000);
+    padding: 0.8rem;
+    border-radius: var(--radius);
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    text-align: center;
+}
+fieldset {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+legend {
+    font-weight: 700;
+    color: var(--pnw-blue);
+    padding: 0 0.5rem;
+}
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    color: var(--ink-700);
+}
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--pnw-blue);
+    box-shadow: 0 0 0 2px rgba(27, 73, 101, 0.2);
+}
+.radio-group {
+    display: grid;
+    gap: 0.5rem;
+}
+.radio-label {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.radio-label:hover {
+    background-color: var(--bg-light);
+}
+.radio-label input[type="radio"] {
+    margin-right: 0.75rem;
+    margin-bottom: 0;
+}
+.submit-btn {
+    background: var(--pnw-green);
+    color: var(--ink-000);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+.submit-btn:hover {
+    background: var(--pnw-green-dark);
+}
+.membership-benefits {
+    background: var(--ink-000);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-1);
+}
+.membership-benefits h2 {
+    background: var(--pnw-green);
+    color: var(--ink-000);
+    padding: 0.8rem;
+    border-radius: var(--radius);
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    text-align: center;
+}
+.benefit-card {
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-light);
+    position: relative;
+}
+.benefit-card h3 {
+    color: var(--pnw-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+.benefit-card .price {
+    background: var(--pnw-green);
+    color: var(--ink-000);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+.benefit-card.nonprofit .price {
+    background: var(--pnw-blue);
+}
+.benefit-card.gold {
+    border: 2px solid var(--pnw-green);
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+.benefit-card.gold::before {
+    content: "Most Popular";
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: var(--pnw-green);
+    color: var(--ink-000);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.benefit-card ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+}
+.benefit-card li {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+.radio-label input[type="radio"]:checked + span {
+    font-weight: 700;
+    color: var(--pnw-blue);
+}
+.radio-label:has(input[type="radio"]:checked) {
+    background-color: rgba(27, 73, 101, 0.1);
+    border-color: var(--pnw-blue);
+}
+input:invalid {
+    border-color: #dc3545;
+}
+input:valid {
+    border-color: var(--pnw-green);
+}
+
+/* ---------- Thank You Page ---------- */
+.thank-you {
+    background: var(--ink-000);
+    border-radius: var(--radius);
+    padding: 3rem 1.5rem;
+    box-shadow: var(--shadow-1);
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+.thank-you h1 {
+    color: var(--pnw-blue);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.thank-you p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--ink-700);
+}
+.thank-you .cta-button {
+    margin-top: 1rem;
+}

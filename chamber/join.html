@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Join - Wilsonville Chamber of Commerce</title>
+    <meta name="description" content="Join the Wilsonville Chamber of Commerce - Become a member and grow your business in Wilsonville, Oregon, USA">
+    <meta name="author" content="Adam Cottam">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Join Wilsonville Chamber of Commerce">
+    <meta property="og:description" content="Become a member of Wilsonville Chamber of Commerce and connect with local businesses in Oregon.">
+    <meta property="og:url" content="https://acottam.github.io/wdd231/chamber/join.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://acottam.github.io/wdd231/chamber/images/wilsonville-coc-logo-v2.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wilsonville, Oregon's Chamber of Commerce">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets & Scripts -->
+    <link rel="stylesheet" href="styles/normalize.min.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/main.js" defer></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+
+            <a href="index.html" class="brand" aria-label="Home">
+                <img src="images/wilsonville-coc-logo-v2.png" alt="Chamber logo" width="200" class="logo">
+                <span class="tagline">Wilsonville Chamber of Commerce</span>
+            </a>
+
+            <!-- Hamburger -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"></button>
+
+        </div>
+
+        <!-- Primary Nav -->
+        <nav id="primary-nav" class="nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html" data-nav="home">Home</a></li>
+                <li><a href="discover.html" data-nav="discover">Discover</a></li>
+                <li><a href="directory.html" data-nav="directory">Directory</a></li>
+                <li><a href="join.html" data-nav="join" class="is-active">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <div class="join-container">
+            <h1>Join the Chamber</h1>
+            
+            <div class="join-content">
+                <!-- Membership Form -->
+                <section class="membership-form">
+                    <h2>Membership Application</h2>
+                    
+                    <!-- Membership Application -->
+                    <form action="thankyou.html" method="get">
+                        
+                        <!-- Application Information -->
+                        <fieldset>
+                            <legend>Applicant Information</legend>
+                            
+                            <label for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                            
+                            <label for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                            
+                            <label for="title">Title/Position</label>
+                            <input type="text" id="title" name="title" pattern="[A-Za-z\s\-]{7,}">
+                            
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            
+                            <label for="phone">Mobile Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </fieldset>
+
+                        <!-- Business Information -->
+                        <fieldset>
+                            <legend>Business Information</legend>
+                            
+                            <label for="business-name">Business/Organization Name *</label>
+                            <input type="text" id="business-name" name="business-name" required>
+                            
+                            <label for="business-description">Business Description</label>
+                            <textarea id="business-description" name="business-description" rows="4"></textarea>
+                        </fieldset>
+
+                        <!-- Membership Level -->
+                        <fieldset>
+                            <legend>Membership Level</legend>
+                            
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="membership" value="nonprofit" required>
+                                    <span>Non-profit Membership (No Fee)</span>
+                                </label>
+                                
+                                <label class="radio-label">
+                                    <input type="radio" name="membership" value="bronze" required>
+                                    <span>Bronze Membership</span>
+                                </label>
+                                
+                                <label class="radio-label">
+                                    <input type="radio" name="membership" value="silver" required>
+                                    <span>Silver Membership</span>
+                                </label>
+                                
+                                <label class="radio-label">
+                                    <input type="radio" name="membership" value="gold" required>
+                                    <span>Gold Membership</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <input type="hidden" id="timestamp" name="timestamp">
+                        
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </form>
+                </section>
+
+                <!-- Membership Benefits -->
+                <section class="membership-benefits">
+                    <h2>Membership Benefits</h2>
+                    
+                    <!-- Non-profit Membership -->
+                    <div class="benefit-card nonprofit">
+                        <h3>Non-profit Membership</h3>
+                        <div class="price">Free</div>
+                        <p>Special membership for qualifying non-profit organizations</p>
+                        <ul>
+                            <li>Business directory listing</li>
+                            <li>Event notifications and invitations</li>
+                            <li>Access to member resources</li>
+                            <li>Networking opportunities</li>
+                        </ul>
+                    </div>
+
+                    <!-- Bronze Membership -->
+                    <div class="benefit-card bronze">
+                        <h3>Bronze Membership</h3>
+                        <div class="price">$50/month</div>
+                        <p>Perfect for small businesses and startups</p>
+                        <ul>
+                            <li>Business directory listing with contact info</li>
+                            <li>10% discount on chamber events</li>
+                            <li>Monthly networking breakfast</li>
+                            <li>Business referral opportunities</li>
+                            <li>Chamber newsletter inclusion</li>
+                        </ul>
+                    </div>
+
+                    <!-- Silver Membership -->
+                    <div class="benefit-card silver">
+                        <h3>Silver Membership</h3>
+                        <div class="price">$100/month</div>
+                        <p>Enhanced benefits for growing businesses</p>
+                        <ul>
+                            <li>All Bronze membership benefits</li>
+                            <li>Business spotlight in newsletter (quarterly)</li>
+                            <li>Free training workshop attendance</li>
+                            <li>Priority event registration</li>
+                            <li>Social media business promotion</li>
+                            <li>Ribbon cutting ceremony</li>
+                        </ul>
+                    </div>
+
+                    <!-- Gold Membership -->
+                    <div class="benefit-card gold">
+                        <h3>Gold Membership</h3>
+                        <div class="price">$200/month</div>
+                        <p>Premium membership with maximum exposure and benefits</p>
+                        <ul>
+                            <li>All Silver membership benefits</li>
+                            <li>Home page business spotlight rotation</li>
+                            <li>Premium directory placement</li>
+                            <li>Free event booth space</li>
+                            <li>Business consultation services</li>
+                            <li>Logo on chamber website and materials</li>
+                            <li>Speaking opportunities at events</li>
+                            <li>Direct referral program participation</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bar">
+            <p><span id="currentyear"></span> <span>🌲🌲🌲</span> Wilsonville Chamber of Commerce <span>🌲🌲🌲</span> Wilsonville, Oregon USA</p>
+            <p id="lastmodified"></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
