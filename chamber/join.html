@@ -78,19 +78,19 @@
                             <legend>Applicant Information</legend>
                             
                             <label for="first-name">First Name *</label>
-                            <input type="text" id="first-name" name="first-name" required>
+                            <input type="text" id="first-name" name="first-name" autocomplete="given-name" title="Enter your first name" required>
                             
                             <label for="last-name">Last Name *</label>
-                            <input type="text" id="last-name" name="last-name" required>
+                            <input type="text" id="last-name" name="last-name" autocomplete="family-name" title="Enter your last name" required>
                             
                             <label for="title">Title/Position</label>
-                            <input type="text" id="title" name="title" pattern="[A-Za-z\s\-]{7,}">
+                            <input type="text" id="title" name="title" autocomplete="organization-title" title="Enter your job title or position" pattern="[A-Za-z\s\-]{7,}">
                             
                             <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" autocomplete="email" title="Enter your email address" placeholder="name@example.com" required>
                             
-                            <label for="phone">Mobile Phone</label>
-                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">Mobile Phone *</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel" title="Enter your mobile phone number" required>
                         </fieldset>
 
                         <!-- Business Information -->
@@ -98,10 +98,10 @@
                             <legend>Business Information</legend>
                             
                             <label for="business-name">Business/Organization Name *</label>
-                            <input type="text" id="business-name" name="business-name" required>
+                            <input type="text" id="business-name" name="business-name" autocomplete="organization" title="Enter your business or organization name" required>
                             
                             <label for="business-description">Business Description</label>
-                            <textarea id="business-description" name="business-description" rows="4"></textarea>
+                            <textarea id="business-description" name="business-description" title="Describe your business or organization" rows="4"></textarea>
                         </fieldset>
 
                         <!-- Membership Level -->
