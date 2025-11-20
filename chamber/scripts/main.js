@@ -312,5 +312,6 @@ if (document.querySelector('.hero')) {
 /* ========== Join Form Timestamp ========== */
 const timestampField = document.getElementById('timestamp');
 if (timestampField) {
+    // Set Timestamp
     timestampField.value = new Date().toISOString();
 }

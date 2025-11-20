@@ -77,29 +77,37 @@
                         <fieldset>
                             <legend>Applicant Information</legend>
                             
+                            <!-- First Name -->
                             <label for="first-name">First Name *</label>
                             <input type="text" id="first-name" name="first-name" autocomplete="given-name" title="Enter your first name" required>
                             
+                            <!-- Last Name -->
                             <label for="last-name">Last Name *</label>
                             <input type="text" id="last-name" name="last-name" autocomplete="family-name" title="Enter your last name" required>
                             
+                            <!-- Title -->
                             <label for="title">Title/Position</label>
                             <input type="text" id="title" name="title" autocomplete="organization-title" title="Enter your job title or position" pattern="[A-Za-z\s\-]{7,}">
                             
+                            <!-- Email -->
                             <label for="email">Email *</label>
                             <input type="email" id="email" name="email" autocomplete="email" title="Enter your email address" placeholder="name@example.com" required>
                             
+                            <!-- Phone -->
                             <label for="phone">Mobile Phone *</label>
                             <input type="tel" id="phone" name="phone" autocomplete="tel" title="Enter your mobile phone number" required>
+
                         </fieldset>
 
                         <!-- Business Information -->
                         <fieldset>
                             <legend>Business Information</legend>
                             
+                            <!-- Business Name -->
                             <label for="business-name">Business/Organization Name *</label>
                             <input type="text" id="business-name" name="business-name" autocomplete="organization" title="Enter your business or organization name" required>
                             
+                            <!-- Busines Description -->
                             <label for="business-description">Business Description</label>
                             <textarea id="business-description" name="business-description" title="Describe your business or organization" rows="4"></textarea>
                         </fieldset>
@@ -108,22 +116,28 @@
                         <fieldset>
                             <legend>Membership Level</legend>
                             
+                            <!-- Radio -->
                             <div class="radio-group">
+
+                                <!-- Non-profit -->
                                 <label class="radio-label">
                                     <input type="radio" name="membership" value="nonprofit" required>
                                     <span>Non-profit Membership (No Fee)</span>
                                 </label>
                                 
+                                <!-- Bronze -->
                                 <label class="radio-label">
                                     <input type="radio" name="membership" value="bronze" required>
                                     <span>Bronze Membership</span>
                                 </label>
                                 
+                                <!-- Silver -->
                                 <label class="radio-label">
                                     <input type="radio" name="membership" value="silver" required>
                                     <span>Silver Membership</span>
                                 </label>
                                 
+                                <!-- Gold -->
                                 <label class="radio-label">
                                     <input type="radio" name="membership" value="gold" required>
                                     <span>Gold Membership</span>
@@ -131,9 +145,10 @@
                             </div>
                         </fieldset>
 
+                        <!-- Timestamp -->
                         <input type="hidden" id="timestamp" name="timestamp">
                         
-                        <button type="submit" class="submit-btn">Submit Application</button>
+                        <button type="submit" class="submit-btn">Join Today!</button>
                     </form>
                 </section>
 
