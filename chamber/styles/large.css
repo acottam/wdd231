@@ -51,6 +51,11 @@
     /* Discovery Page Desktop Layout */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
     }
     
     /* Image hover effects for desktop only */
@@ -67,5 +72,9 @@
 @media (min-width: 1024px) {
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "card1 card2 card3"
+            "card4 card5 card6"
+            "card7 card8 .";
     }
 }

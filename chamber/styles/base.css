@@ -759,6 +759,15 @@ input:valid {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 1fr;
+    grid-template-areas: 
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+        "card5"
+        "card6"
+        "card7"
+        "card8";
 }
 .gallery-card {
     background: var(--ink-000);
