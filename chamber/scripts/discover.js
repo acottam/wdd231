@@ -24,40 +24,34 @@ function trackVisitor() {
 
 // Create gallery cards
 async function createGalleryCards() {
-    try {
-        const response = await fetch('data/discover.json');
-        const discoverData = await response.json();
-        const galleryGrid = document.getElementById('gallery-grid');
+    const response = await fetch('./data/discover.json');
+    const discoverData = await response.json();
+    const galleryGrid = document.getElementById('gallery-grid');
+    
+    discoverData.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'gallery-card';
         
-        discoverData.forEach((item, index) => {
-            const card = document.createElement('div');
-            card.className = 'gallery-card';
-            
-            card.innerHTML = `
-                <figure>
-                    <img src="images/discover-${index + 1}.webp" 
-                         alt="${item.name}" 
-                         loading="lazy"
-                         width="300" 
-                         height="200">
-                </figure>
-                <div class="card-content">
-                    <h3>${item.name}</h3>
-                    <address>${item.address}</address>
-                    <p>${item.description}</p>
-                    <button class="learn-more-btn">Learn More</button>
-                </div>
-            `;
-            
-            galleryGrid.appendChild(card);
-        });
-    } catch (error) {
-        console.error('Error loading discover data:', error);
-    }
+        card.innerHTML = `
+            <figure>
+                <img src="images/discover-${index + 1}.webp" 
+                     alt="${item.name}" 
+                     loading="lazy"
+                     width="300" 
+                     height="200">
+            </figure>
+            <div class="card-content">
+                <h3>${item.name}</h3>
+                <address>${item.address}</address>
+                <p>${item.description}</p>
+                <button class="learn-more-btn">Learn More</button>
+            </div>
+        `;
+        
+        galleryGrid.appendChild(card);
+    });
 }
 
 // Initialize page
-document.addEventListener('DOMContentLoaded', () => {
-    trackVisitor();
-    createGalleryCards();
-});
+trackVisitor();
+createGalleryCards();
