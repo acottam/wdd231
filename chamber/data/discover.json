@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Wilsonville Memorial Park",
+    "address": "8100 SW Wilsonville Rd, Wilsonville, OR 97070",
+    "description": "A beautiful 126-acre park featuring sports fields, playgrounds, walking trails, and the Wilsonville Family Fun Center with swimming pools and recreation facilities."
+  },
+  {
+    "name": "Town Center Park",
+    "address": "29600 SW Park Pl, Wilsonville, OR 97070",
+    "description": "The heart of Wilsonville featuring a large pond, amphitheater, farmers market pavilion, and hosts many community events throughout the year."
+  },
+  {
+    "name": "Charbonneau Golf Club",
+    "address": "32020 SW Charbonneau Dr, Wilsonville, OR 97070",
+    "description": "An 18-hole championship golf course designed by Robert Muir Graves, offering challenging play with beautiful views of the Willamette River valley."
+  },
+  {
+    "name": "Wilsonville Library",
+    "address": "8200 SW Wilsonville Rd, Wilsonville, OR 97070",
+    "description": "A modern community library offering books, digital resources, meeting spaces, and regular programming for all ages including story times and tech classes."
+  },
+  {
+    "name": "Argyle Winery",
+    "address": "691 OR-99W, Dundee, OR 97115",
+    "description": "Located just outside Wilsonville, this renowned winery specializes in Pinot Noir and Chardonnay, offering tastings and tours in the beautiful Dundee Hills."
+  },
+  {
+    "name": "Wilsonville Farmers Market",
+    "address": "29600 SW Park Pl, Wilsonville, OR 97070",
+    "description": "Weekly farmers market held at Town Center Park featuring local produce, artisan goods, food vendors, and live music during the growing season."
+  },
+  {
+    "name": "Boones Ferry Park",
+    "address": "7200 SW Boones Ferry Rd, Wilsonville, OR 97070",
+    "description": "A scenic park along the Willamette River featuring boat launches, fishing areas, picnic facilities, and beautiful river views with walking trails."
+  },
+  {
+    "name": "Wilsonville Community Center",
+    "address": "7965 SW Wilsonville Rd, Wilsonville, OR 97070",
+    "description": "A hub for community activities offering fitness facilities, meeting rooms, classes, and programs for residents of all ages including seniors and youth."
+  }
+]

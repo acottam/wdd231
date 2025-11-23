@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Discover - Wilsonville Chamber of Commerce</title>
+    <meta name="description" content="Discover Wilsonville, Oregon - Explore local attractions, businesses, and community highlights in our vibrant city">
+    <meta name="author" content="Adam Cottam">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Discover Wilsonville - Chamber of Commerce">
+    <meta property="og:description" content="Explore Wilsonville's attractions, parks, businesses and community highlights. Discover what makes our city special.">
+    <meta property="og:url" content="https://acottam.github.io/wdd231/chamber/discover.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://acottam.github.io/wdd231/chamber/images/wilsonville-coc-logo-v2.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wilsonville, Oregon's Chamber of Commerce">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets & Scripts -->
+    <link rel="stylesheet" href="styles/normalize.min.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+
+            <a href="index.html" class="brand" aria-label="Home">
+                <img src="images/wilsonville-coc-logo-v2.png" alt="Chamber logo" width="200" class="logo">
+                <span class="tagline">Wilsonville Chamber of Commerce</span>
+            </a>
+
+            <!-- Hamburger -->
+            <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"></button>
+
+        </div>
+
+        <!-- Primary Nav -->
+        <nav id="primary-nav" class="nav" aria-label="Primary">
+            <ul>
+                <li><a href="index.html" data-nav="home">Home</a></li>
+                <li><a href="discover.html" data-nav="discover" class="is-active">Discover</a></li>
+                <li><a href="directory.html" data-nav="directory">Directory</a></li>
+                <li><a href="join.html" data-nav="join">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover Wilsonville</h1>
+                <p>Explore the attractions, parks, and community highlights that make Wilsonville special.</p>
+            </div>
+        </section>
+
+        <!-- Visitor Message -->
+        <section class="visitor-message">
+            <p id="visitor-info"></p>
+        </section>
+
+        <!-- Discovery Gallery -->
+        <section class="discovery-gallery">
+            <h2>Local Attractions & Highlights</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Cards will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bar">
+            <p><span id="currentyear"></span> <span>🌲🌲🌲</span> Wilsonville Chamber of Commerce <span>🌲🌲🌲</span> Wilsonville, Oregon USA</p>
+            <p id="lastmodified"></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -734,3 +734,81 @@ input:valid {
 .thank-you .cta-button {
     margin-top: 1rem;
 }
+
+/* ---------- Discovery Page ---------- */
+.visitor-message {
+    background: var(--pnw-blue);
+    color: var(--ink-000);
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.visitor-message p {
+    margin: 0;
+    font-weight: 600;
+}
+.discovery-gallery {
+    padding: 2rem 1rem;
+}
+.discovery-gallery h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--pnw-blue);
+}
+.gallery-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+.gallery-card {
+    background: var(--ink-000);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2);
+}
+.gallery-card figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+.gallery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 1.5rem;
+}
+.card-content h3 {
+    margin: 0 0 0.5rem;
+    color: var(--pnw-blue);
+    font-size: 1.25rem;
+}
+.card-content address {
+    font-style: normal;
+    color: var(--ink-600);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+.card-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.learn-more-btn {
+    background: var(--pnw-green);
+    color: var(--ink-000);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.learn-more-btn:hover {
+    background: var(--pnw-blue);
+}

@@ -47,4 +47,25 @@
         width: auto;
         padding: 1rem 3rem;
     }
+
+    /* Discovery Page Desktop Layout */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Image hover effects for desktop only */
+    .gallery-card img {
+        filter: grayscale(0%);
+        transition: filter 0.3s ease, transform 0.3s ease;
+    }
+    .gallery-card:hover img {
+        filter: grayscale(100%);
+        transform: scale(1.05);
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
