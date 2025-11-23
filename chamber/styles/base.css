@@ -628,7 +628,32 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, te
     margin-bottom: 1rem;
     border: 1px solid var(--border-light);
     position: relative;
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
 }
+
+/* ---------- Animation ---------- */
+.benefit-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.benefit-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.benefit-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.benefit-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Benefit Card Details ---------- */
 .benefit-card h3 {
     color: var(--pnw-blue);
     margin-bottom: 0.5rem;
