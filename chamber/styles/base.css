@@ -898,6 +898,9 @@ input:valid {
     overflow: hidden;
     z-index: 1001;
 }
+.modal-content * {
+    background-color: inherit;
+}
 .modal-header {
     padding: 1rem 2rem;
     text-align: center;
