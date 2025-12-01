@@ -115,11 +115,11 @@ header h1, p.h1{
 }
 .nav a {
     color: var(--ink-000);
-    background: rgba(255, 255, 255, .08);
+    background: rgba(255, 255, 255, .20);
     padding: .35rem 2rem;
     border-radius: var(--radius);
     letter-spacing: .01em;
-    border: 1px solid rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .30);
 }
 .nav a:hover {
     background: var(--canyon-sunrise);
@@ -200,7 +200,7 @@ figure img {
 figcaption {
     padding: .75rem 1rem;
     background: var(--alpine-sky);
-    color: var(--ink-900);
+    color: var(--evergreen-ridge);
 }
 figcaption h3 {
     margin: 0 0 .25rem 0;
@@ -235,7 +235,7 @@ section ul li {
 }
 .wf figcaption {
     margin: 0 0 .5rem 0;
-    color: var(--ink-700);
+    color: var(--evergreen-ridge);
 }
 .wf svg {
     width: 100%;
