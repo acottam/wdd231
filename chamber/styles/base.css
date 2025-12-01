@@ -936,11 +936,11 @@ input:valid {
 }
 #silver-modal .modal-header {
     background: #C0C0C0;
-    color: var(--ink-900);
+    color: var(--ink-700);
 }
 #gold-modal .modal-header {
     background: #FFD700;
-    color: var(--ink-900);
+    color: var(--ink-700);
 }
 .modal-body ul {
     margin: 0;
