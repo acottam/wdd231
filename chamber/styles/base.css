@@ -906,7 +906,7 @@ input:valid {
     position: relative;
 }
 .close {
-    color: inherit;
+    color: var(--ink-000);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -928,14 +928,14 @@ input:valid {
     background: var(--ink-000);
     color: var(--ink-700);
 }
-.modal * {
-    color: inherit !important;
-}
 #nonprofit-modal .modal-header {
     background: #6B46C1;
 }
 #bronze-modal .modal-header {
     background: #8B4513;
+}
+#bronze-modal .close {
+    color: var(--ink-000);
 }
 #silver-modal .modal-header {
     background: #C0C0C0;
