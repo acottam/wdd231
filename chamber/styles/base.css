@@ -925,6 +925,8 @@ input:valid {
 }
 .modal-body {
     padding: 2rem;
+    background: var(--ink-000);
+    color: var(--ink-700);
 }
 #nonprofit-modal .modal-header {
     background: #6B46C1;
