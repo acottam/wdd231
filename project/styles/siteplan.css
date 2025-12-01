@@ -2,6 +2,7 @@
 :root {
     --evergreen-ridge: #0B3D2E;    /* header/nav/footer background */
     --canyon-sunrise: #C47E36;     /* buttons/links/accents */
+    --canyon-dark: #8B5A28;        /* accessible dark orange for headings */
     --alpine-sky: #BBD7EA;         /* highlight panels/cards */
     --warm-sandstone: #F5F2E8;     /* base page background */
     --ink-900: #111827;            /* body text */
@@ -153,14 +154,14 @@ section > h3, p.h3 {
     margin-top: 0;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--canyon-sunrise);
+    color: var(--canyon-dark);
     margin-bottom: .5rem;
 }
 section > h4, p.h4 {
     margin-top: 0;
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--canyon-sunrise);
+    color: var(--canyon-dark);
     margin-bottom: .5rem;
 }
 section > h5, p.h5 {
