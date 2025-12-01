@@ -935,11 +935,8 @@ input:valid {
     background: #6B46C1;
 }
 #nonprofit-modal .modal-body {
-    color: var(--ink-000);
-    background: var(--ink-900);
-}
-#nonprofit-modal * {
-    color: var(--ink-000) !important;
+    color: var(--ink-700);
+    background: var(--ink-000);
 }
 #bronze-modal .modal-header {
     background: #8B4513;
