@@ -154,14 +154,14 @@ section > h3, p.h3 {
     margin-top: 0;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--canyon-dark);
+    color: var(--evergreen-ridge);
     margin-bottom: .5rem;
 }
 section > h4, p.h4 {
     margin-top: 0;
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--canyon-dark);
+    color: var(--evergreen-ridge);
     margin-bottom: .5rem;
 }
 section > h5, p.h5 {
