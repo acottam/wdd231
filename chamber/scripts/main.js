@@ -315,3 +315,37 @@ if (timestampField) {
     // Set Timestamp
     timestampField.value = new Date().toISOString();
 }
+
+/* ========== Modal Functionality ========== */
+// Get all learn more links
+const learnMoreLinks = document.querySelectorAll('.learn-more');
+const modals = document.querySelectorAll('.modal');
+const closeButtons = document.querySelectorAll('.close');
+
+// Open modal when learn more link is clicked
+learnMoreLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modalId = link.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'block';
+        }
+    });
+});
+
+// Close modal when X is clicked
+closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        button.closest('.modal').style.display = 'none';
+    });
+});
+
+// Close modal when clicking outside of it
+window.addEventListener('click', (e) => {
+    modals.forEach(modal => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});

@@ -654,23 +654,36 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, te
 }
 
 /* ---------- Benefit Card Details ---------- */
+.benefit-card .card-header {
+    margin: -1rem -1rem 0.75rem -1rem;
+    padding: 1rem;
+    text-align: center;
+    color: var(--ink-000);
+    border-radius: var(--radius) var(--radius) 0 0;
+}
 .benefit-card h3 {
-    color: var(--pnw-blue);
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem 0;
     font-size: 1.2rem;
+    font-weight: 700;
 }
 .benefit-card .price {
-    background: var(--pnw-green);
-    color: var(--ink-000);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-    font-weight: 700;
+    margin: 0;
     font-size: 1.1rem;
-    display: inline-block;
-    margin-bottom: 0.75rem;
+    font-weight: 700;
 }
-.benefit-card.nonprofit .price {
-    background: var(--pnw-blue);
+.benefit-card.nonprofit .card-header {
+    background: #6B46C1;
+}
+.benefit-card.bronze .card-header {
+    background: #CD7F32;
+}
+.benefit-card.silver .card-header {
+    background: #C0C0C0;
+    color: var(--ink-900);
+}
+.benefit-card.gold .card-header {
+    background: #FFD700;
+    color: var(--ink-900);
 }
 .benefit-card.gold {
     border: 2px solid var(--pnw-green);
@@ -688,13 +701,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, te
     font-size: 0.8rem;
     font-weight: 700;
 }
-.benefit-card ul {
-    margin: 0.5rem 0 0;
-    padding-left: 1.25rem;
-}
-.benefit-card li {
-    margin-bottom: 0.25rem;
-    font-size: 0.9rem;
+.benefit-card p {
+    margin-bottom: 1rem;
+    color: var(--ink-700);
+    line-height: 1.5;
 }
 .radio-label input[type="radio"]:checked + span {
     font-weight: 700;
@@ -813,9 +823,10 @@ input:valid {
     margin-bottom: 1.5rem;
     line-height: 1.6;
     flex-grow: 1;
+    text-align: center;
 }
 .learn-more-btn {
-    display: inline-block;
+    display: block;
     background: var(--pnw-green);
     color: var(--ink-000);
     border: none;
@@ -825,8 +836,99 @@ input:valid {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: auto;
+    margin: 0 auto;
 }
 .learn-more-btn:hover {
     background: var(--pnw-blue);
+}
+
+/* ---------- Modals ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    background-color: var(--ink-000);
+    margin: 10% auto;
+    padding: 0;
+    border-radius: var(--radius);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: var(--shadow-1);
+    overflow: hidden;
+}
+.modal-header {
+    padding: 1rem 2rem;
+    text-align: center;
+    color: var(--ink-000);
+    border-radius: var(--radius) var(--radius) 0 0;
+    position: relative;
+}
+.close {
+    color: inherit;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+}
+.close:hover {
+    opacity: 0.8;
+}
+.modal-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.modal-body {
+    padding: 2rem;
+}
+#nonprofit-modal .modal-header {
+    background: #6B46C1;
+}
+#bronze-modal .modal-header {
+    background: #CD7F32;
+}
+#silver-modal .modal-header {
+    background: #C0C0C0;
+    color: var(--ink-900);
+}
+#gold-modal .modal-header {
+    background: #FFD700;
+    color: var(--ink-900);
+}
+.modal-body ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+.modal-body li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Learn More Button */
+.learn-more {
+    display: block;
+    background: var(--pnw-green);
+    color: var(--ink-000);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    margin: 1rem auto 0;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+.learn-more:hover {
+    background: var(--pnw-green-dark);
+    text-decoration: none;
 }

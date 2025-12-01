@@ -67,6 +67,13 @@
         filter: grayscale(100%);
         transform: scale(1.05);
     }
+
+    /* Modal Desktop Styles */
+    .modal-content {
+        margin: 5% auto;
+        width: 80%;
+        max-width: 600px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -76,5 +83,10 @@
             "card1 card2 card3"
             "card4 card5 card6"
             "card7 card8 .";
+    }
+
+    /* Larger Modal for bigger screens */
+    .modal-content {
+        max-width: 700px;
     }
 }
