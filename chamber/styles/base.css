@@ -744,6 +744,39 @@ input:valid {
 .thank-you .cta-button {
     margin-top: 1rem;
 }
+.application-summary {
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border: 1px solid var(--border-light);
+}
+.application-summary h2 {
+    color: var(--pnw-blue);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.summary-grid {
+    display: grid;
+    gap: 1rem;
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--ink-000);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+}
+.summary-item strong {
+    color: var(--pnw-blue);
+    font-weight: 600;
+}
+.summary-item span {
+    color: var(--ink-700);
+    text-align: right;
+}
 
 /* ---------- Discovery Page ---------- */
 .visitor-message {

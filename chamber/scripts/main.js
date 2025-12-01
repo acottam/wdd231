@@ -324,28 +324,38 @@ const closeButtons = document.querySelectorAll('.close');
 
 // Open modal when learn more link is clicked
 learnMoreLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const modalId = link.getAttribute('data-modal');
-        const modal = document.getElementById(modalId);
-        if (modal) {
-            modal.style.display = 'block';
-        }
-    });
+  link.addEventListener('click', (e) => {
+    
+    // Prevent default link behavior
+    e.preventDefault();
+    
+    // Get the modal ID from data attribute
+    const modalId = link.getAttribute('data-modal');
+    const modal = document.getElementById(modalId);
+        
+    // Display the modal
+    if (modal) {
+      modal.style.display = 'block';
+    }
+
+  });
 });
 
 // Close modal when X is clicked
 closeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        button.closest('.modal').style.display = 'none';
-    });
+  // Close the modal
+  button.addEventListener('click', () => {
+    button.closest('.modal').style.display = 'none';
+  });
 });
 
 // Close modal when clicking outside of it
 window.addEventListener('click', (e) => {
-    modals.forEach(modal => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
+  // Check each modal
+  modals.forEach(modal => {
+    if (e.target === modal) {
+      // Hide the modal
+      modal.style.display = 'none';
+    }
+  });
 });

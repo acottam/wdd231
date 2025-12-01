@@ -6,8 +6,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Thank You - Wilsonville Chamber of Commerce</title>
-    <meta name="description" content="Thank you for joining the Wilsonville Chamber of Commerce">
+    <meta name="description" content="Thank you for joining the Wilsonville Chamber of Commerce - Your membership application has been received.">
     <meta name="author" content="Adam Cottam">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Thank You - Wilsonville Chamber of Commerce">
+    <meta property="og:description" content="Thank you for joining the Wilsonville Chamber of Commerce - Your membership application has been received.">
+    <meta property="og:url" content="https://acottam.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://acottam.github.io/wdd231/chamber/images/wilsonville-coc-logo-v2.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wilsonville, Oregon's Chamber of Commerce">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +28,7 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
     <script src="scripts/main.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
     
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
@@ -53,13 +63,45 @@
 
     <!-- Main -->
     <main>
-        <div class="join-container">
-            <section class="thank-you">
-                <h1>Thank You!</h1>
-                <p>Your membership application has been received. We appreciate your interest in joining the Wilsonville Chamber of Commerce.</p>
-                <p>A member of our team will review your application and contact you within 2-3 business days.</p>
-                <a href="index.html" class="cta-button">Return Home</a>
-            </section>
+        <div class="thank-you">
+            <h1>Thank You!</h1>
+            <p>Your membership application has been successfully submitted. We appreciate your interest in joining the Wilsonville Chamber of Commerce.</p>
+            
+            <!-- Application Summary -->
+            <div class="application-summary">
+                <h2>Application Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <strong>Name:</strong>
+                        <span id="display-name"></span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Email:</strong>
+                        <span id="display-email"></span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Phone:</strong>
+                        <span id="display-phone"></span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Business:</strong>
+                        <span id="display-business"></span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Membership:</strong>
+                        <span id="display-membership"></span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Application Date:</strong>
+                        <span id="display-timestamp"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <p>A member of our team will contact you within 2-3 business days to complete your membership setup.</p>
+            
+            <!-- Return to Home Page -->
+            <a href="index.html" class="cta-button">Return to Home</a>
         </div>
     </main>
 
