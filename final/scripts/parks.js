@@ -5,6 +5,13 @@ async function loadParks() {
   try {
     const response = await fetch('data/parks-list.json');
     parks = await response.json();
+    
+    // Set random hero background
+    const randomPark = parks[Math.floor(Math.random() * parks.length)];
+    const hero = document.querySelector('.parks-page-hero');
+    hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
+    document.getElementById('hero-caption').textContent = randomPark.name;
+    
     displayParks(parks);
   } catch (error) {
     console.error('Error loading parks:', error);
