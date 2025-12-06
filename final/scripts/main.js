@@ -122,9 +122,14 @@ function populateParkDropdown(parks) {
 
 // Generate itineraries (itineraries page)
 function generateItinerariesPage(parks) {
+
+  // Filter parks with itineraries
   const parksWithItineraries = parks.filter(p => p.itinerary);
+  
+  // Get container for itineraries
   const container = document.getElementById('itineraries-container');
   
+  // Build itinerary sections
   container.innerHTML = parksWithItineraries.map(park => {
     const daysHTML = park.itinerary.days.map((day, index) => `
       <div class="day day${index + 1}">
@@ -135,6 +140,7 @@ function generateItinerariesPage(parks) {
       </div>
     `).join('');
     
+    // Upsell for 2-day itineraries (if three days not present)
     const upsellHTML = park.itinerary.days.length === 2 ? `
       <div class="day day-upsell">
         <h5>Why Not Stay Another Day?</h5>
@@ -142,6 +148,7 @@ function generateItinerariesPage(parks) {
       </div>
     ` : '';
     
+    // Return itinerary section
     return `
       <section class="itinerary ${park.region}">
         <div class="itinerary-hero">
@@ -162,16 +169,22 @@ function generateItinerariesPage(parks) {
   }).join('');
 }
 
-// Generate itinerary previews
+// function: Generate itinerary previews - home page
 function generateItineraryPreviews(allParks) {
+  
+  // Filter parks with showcase and itinerary
   const showcaseParks = allParks.filter(p => p.showcase && p.itinerary).slice(0, 3);
+  
+  // Get container for previews
   const container = document.getElementById('itinerary-preview-grid');
   
+  // Build previews
   container.innerHTML = showcaseParks.map(park => {
     const highlights = park.itinerary.days.slice(0, 3).map(day => 
       day.activities[0] || day.day
     );
     
+    // Return preview article
     return `
       <article class="itinerary-preview">
         <h3>${park.itinerary.title}</h3>
@@ -184,9 +197,13 @@ function generateItineraryPreviews(allParks) {
   }).join('');
 }
 
-// Generate modals dynamically
+// Function: Generate modals dynamically - home page
 function generateModals(parksToShow) {
+  
+  // Get modal container
   const container = document.getElementById('modal-container');
+  
+  // Build modals
   container.innerHTML = parksToShow.map(park => {
     if (!park.itinerary) return '';
     
@@ -198,6 +215,7 @@ function generateModals(parksToShow) {
       </ul>
     `).join('');
     
+    // Return modal HTML
     return `
       <div id="${modalId}" class="modal">
         <div class="modal-content">
@@ -225,15 +243,19 @@ function generateModals(parksToShow) {
 
 // Attach modal event listeners
 function attachModalListeners() {
+  
+  // Get all close buttons and modals
   const closeButtons = document.querySelectorAll('.close');
   const modals = document.querySelectorAll('.modal');
 
+  // Close button functionality
   closeButtons.forEach(button => {
     button.addEventListener('click', () => {
       button.closest('.modal').style.display = 'none';
     });
   });
 
+  // Click outside to close
   window.addEventListener('click', (e) => {
     modals.forEach(modal => {
       if (e.target === modal) {
@@ -245,7 +267,11 @@ function attachModalListeners() {
 
 // Display parks (home page)
 function displayParks(parksToShow) {
+  
+  // Get grid container
   const grid = document.getElementById('featured-grid');
+  
+  // Build grid
   grid.innerHTML = parksToShow.map(park => `
     <article class="park-card">
       <img src="${park.image}" alt="${park.name}" loading="lazy">
@@ -264,9 +290,15 @@ function displayParks(parksToShow) {
   // Add modal event listeners
   document.querySelectorAll('.view-itinerary').forEach(link => {
     link.addEventListener('click', (e) => {
+      
+      // Prevent default link behavior
       e.preventDefault();
+      
+      // Get modal ID and show modal
       const modalId = link.getAttribute('data-modal');
       const modal = document.getElementById(modalId);
+      
+      // Show modal if found
       if (modal) {
         modal.style.display = 'block';
       }
@@ -276,7 +308,11 @@ function displayParks(parksToShow) {
 
 // Display parks (parks page)
 function displayParksPage(parksToShow) {
+  
+  // Get grid container
   const grid = document.getElementById('park-grid');
+  
+  // Build grid
   grid.innerHTML = parksToShow.map(park => `
     <article class="park-card">
       <img src="${park.image}" alt="${park.name}" loading="lazy">
@@ -294,10 +330,18 @@ function displayParksPage(parksToShow) {
   
   // Add modal event listeners
   document.querySelectorAll('.view-park-details').forEach(link => {
+    
+    // Click event to open park details modal
     link.addEventListener('click', (e) => {
+
+      // Prevent default link behavior
       e.preventDefault();
+      
+      // Get park name and find park data
       const parkName = link.getAttribute('data-park');
       const park = parks.find(p => p.name === parkName);
+      
+      // Open park modal if found
       if (park) {
         openParkModal(park);
       }
@@ -307,16 +351,26 @@ function displayParksPage(parksToShow) {
 
 // Open park details modal (parks page)
 function openParkModal(park) {
+  
+  // Create park details modal
   const modalId = 'park-details-modal';
   let modal = document.getElementById(modalId);
   
+  // Create modal if it doesn't exist
   if (!modal) {
+    
+    // Create modal element
     modal = document.createElement('div');
+    
+    // Set attributes
     modal.id = modalId;
     modal.className = 'modal';
+
+    // Append to body
     document.body.appendChild(modal);
   }
   
+  // Build modal content
   const itineraryHTML = park.itinerary ? `
     <h4>Sample Itinerary: ${park.itinerary.title}</h4>
     ${park.itinerary.days.map(day => `
@@ -327,6 +381,8 @@ function openParkModal(park) {
     `).join('')}
   ` : '<p>No itinerary available for this park.</p>';
   
+  
+  // Set modal inner HTML
   modal.innerHTML = `
     <div class="modal-content">
       <div class="modal-header modal-header-image">
@@ -350,6 +406,7 @@ function openParkModal(park) {
     </div>
   `;
   
+  // Show modal
   modal.style.display = 'block';
   
   // Close button
@@ -359,6 +416,8 @@ function openParkModal(park) {
   
   // Click outside to close
   window.addEventListener('click', (e) => {
+    
+    // Close modal if clicked outside of content
     if (e.target === modal) {
       modal.style.display = 'none';
     }
@@ -367,19 +426,32 @@ function openParkModal(park) {
 
 // Filter and sort (parks page)
 function filterAndSort() {
+  
+  // Get filter values
+  const parks = window.parks;
+
+  // Get selected region
   const region = document.getElementById('region-filter').value;
+  
+  // Get selected sort option
   const sort = document.getElementById('sort-filter').value;
   
+  // Filter parks by region
   let filtered = region === 'all' ? [...parks] : parks.filter(p => p.region === region);
   
-  if (sort === 'name') {
+  // Sort parks
+  if (sort === 'name') {  
+    // Sort by name
     filtered.sort((a, b) => a.name.localeCompare(b.name));
   } else if (sort === 'region') {
+    // Sort by region
     filtered.sort((a, b) => a.region.localeCompare(b.region));
   } else if (sort === 'season') {
+    // Sort by season
     filtered.sort((a, b) => a.season.localeCompare(b.season));
   }
   
+  // Display filtered and sorted parks
   displayParksPage(filtered);
 }
 
