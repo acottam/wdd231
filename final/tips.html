@@ -6,6 +6,15 @@
   <title>Planning Tips - Family Adventures</title>
   <meta name="description" content="Essential tips for planning your family national park adventure.">
   <meta name="author" content="Adam Cottam">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Family Adventures in America's National Parks">
+  <meta property="og:description" content="Simple trip planning for families who love the outdoors. Explore kid-friendly hikes, activities, and itineraries for U.S. National Parks.">
+  <meta property="og:url" content="https://acottam.github.io/wdd231/final/index.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://acottam.github.io/wdd231/final/images/np-logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Family Adventures in America's National Parks">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,32 +31,47 @@
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico">
 </head>
+
 <body>
+  
+  <!-- Header -->
   <header>
     <div class="header-wrapper">
-    <img src="images/np-logo.png" alt="America's National Parks Logo" class="logo">
-    <div class="header-content">
-      <p class="site-name">
+      
+      <!-- Logo -->
+      <img src="images/np-logo.png" alt="America's National Parks Logo" class="logo">
+      
+      <!-- Site Name -->
+      <div class="header-content">
+        <p class="site-name">
           <span class="line-1">Family Adventures</span>
           <span class="line-2">in</span>
           <span class="line-3">America's National Parks</span>
         </p>
-    </div>
-    <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
-      <span class="bar" aria-hidden="true"></span>
-      <span class="bar" aria-hidden="true"></span>
-      <span class="bar" aria-hidden="true"></span>
-    </button>
-      <div class="header-spacer"></div>
-    <nav id="primary-nav" class="nav closed" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="parks.html">Parks</a>
-      <a href="itineraries.html">Itineraries</a>
-      <a href="tips.html">Planning Tips</a>
-    </nav>
       </div>
+      
+      <!-- Menu Button -->
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav"
+        aria-expanded="false">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+      
+      <!-- Header Spacer -->
+      <div class="header-spacer"></div>
+      
+      <!-- Primary Nav -->
+      <nav id="primary-nav" class="nav closed" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="parks.html">Parks</a>
+        <a href="itineraries.html">Itineraries</a>
+        <a href="tips.html">Planning Tips</a>
+      </nav>
+    </div>
   </header>
 
+  <!-- Main -->
   <main>
     <h1 class="page-title">Essential Planning Tips</h1>
     
@@ -139,9 +163,11 @@
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p><span id="currentyear"></span> <span>🏕️🏔️🌲</span> Adam Cottam <span>🌲🏔️🏕️</span> Portland, Oregon USA</p>
     <p id="lastmodified"></p>
   </footer>
 </body>
+
 </html>
