@@ -88,6 +88,13 @@ function generateItinerariesPage(parks) {
       </div>
     `).join('');
     
+    const upsellHTML = park.itinerary.days.length === 2 ? `
+      <div class="day day-upsell">
+        <h5>Why Not Stay Another Day?</h5>
+        <p>Extend your adventure! The area surrounding ${park.name} offers incredible family-friendly activities, local attractions, and hidden gems waiting to be discovered. Make it a 3-day getaway and create even more unforgettable memories!</p>
+      </div>
+    ` : '';
+    
     return `
       <section class="itinerary ${park.region}">
         <div class="itinerary-hero">
@@ -98,6 +105,7 @@ function generateItinerariesPage(parks) {
         <h4>${park.itinerary.title}</h4>
         <div class="days-container">
           ${daysHTML}
+          ${upsellHTML}
         </div>
         <div class="itinerary-cta">
           <a href="tips.html?park=${encodeURIComponent(park.name)}" class="cta-btn">Get Planning Tips for ${park.name}</a>

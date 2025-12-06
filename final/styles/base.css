@@ -652,6 +652,22 @@ footer p {
 .day3 {
     background: var(--alpine-sky);
 }
+.day-upsell {
+    background: var(--canyon-sunrise);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.day-upsell h5 {
+    color: white;
+    margin-bottom: 1rem;
+}
+.day-upsell p {
+    line-height: 1.6;
+}
 
 /* ---- Tips Page ---- */
 .tips-grid {
