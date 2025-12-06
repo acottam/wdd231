@@ -1,3 +1,17 @@
+// Load random hero background
+async function loadHeroBackground() {
+  try {
+    const response = await fetch('data/parks-list.json');
+    const parks = await response.json();
+    const randomPark = parks[Math.floor(Math.random() * parks.length)];
+    const hero = document.querySelector('.itinerary-page-hero');
+    hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
+    document.getElementById('hero-caption').textContent = randomPark.name;
+  } catch (error) {
+    console.error('Error loading hero background:', error);
+  }
+}
+
 // Menu toggle
 document.getElementById('menu-toggle').addEventListener('click', () => {
   const nav = document.getElementById('primary-nav');
@@ -18,3 +32,6 @@ document.querySelectorAll('.nav a').forEach(link => {
     link.classList.add('active');
   }
 });
+
+// Load hero background
+loadHeroBackground();
