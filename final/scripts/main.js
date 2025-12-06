@@ -1,7 +1,7 @@
 // Load parks from JSON
 let parks = [];
 
-// Load parks and initialize page - data/parks-list.json
+// Function: Load parks and initialize page - data/parks-list.json
 async function loadParks() {
   
   // Fetch parks data
@@ -241,7 +241,7 @@ function generateModals(parksToShow) {
   attachModalListeners();
 }
 
-// Attach modal event listeners
+// Function: Attach modal event listeners - home page
 function attachModalListeners() {
   
   // Get all close buttons and modals
@@ -265,7 +265,7 @@ function attachModalListeners() {
   });
 }
 
-// Display parks (home page)
+// Function: Display parks - home page
 function displayParks(parksToShow) {
   
   // Get grid container
@@ -349,7 +349,7 @@ function displayParksPage(parksToShow) {
   });
 }
 
-// Open park details modal (parks page)
+// Function: Open park details modal (parks page)
 function openParkModal(park) {
   
   // Create park details modal
@@ -424,7 +424,7 @@ function openParkModal(park) {
   });
 }
 
-// Filter and sort (parks page)
+// Function: Filter and sort - parks page
 function filterAndSort() {
   
   // Get filter values
@@ -455,9 +455,13 @@ function filterAndSort() {
   displayParksPage(filtered);
 }
 
-// Display parks
+// Function: Display parks (home page)
 function displayParks(parksToShow) {
+
+  // Get grid container
   const grid = document.getElementById('featured-grid');
+  
+  // Build grid
   grid.innerHTML = parksToShow.map(park => `
     <article class="park-card">
       <img src="${park.image}" alt="${park.name}" loading="lazy">
@@ -475,10 +479,19 @@ function displayParks(parksToShow) {
   
   // Add modal event listeners
   document.querySelectorAll('.view-itinerary').forEach(link => {
+    
+    // Click event to open modal
     link.addEventListener('click', (e) => {
+      // Prevent default link behavior
       e.preventDefault();
+
+      // Get modal ID
       const modalId = link.getAttribute('data-modal');
+      
+      // Get modal element
       const modal = document.getElementById(modalId);
+      
+      // Show modal if found
       if (modal) {
         modal.style.display = 'block';
       }
@@ -488,17 +501,23 @@ function displayParks(parksToShow) {
 
 // Menu toggle
 document.getElementById('menu-toggle').addEventListener('click', () => {
+  
+  // Toggle nav visibility
   const nav = document.getElementById('primary-nav');
   const btn = document.getElementById('menu-toggle');
   nav.classList.toggle('open');
   nav.classList.toggle('closed');
   btn.classList.toggle('open');
+
+  // Update ARIA attribute
   btn.setAttribute('aria-expanded', nav.classList.contains('open'));
 });
 
 // Filter listeners (parks page only)
 const regionFilter = document.getElementById('region-filter');
 const sortFilter = document.getElementById('sort-filter');
+
+// Attach event listeners if filters exist
 if (regionFilter && sortFilter) {
   regionFilter.addEventListener('change', filterAndSort);
   sortFilter.addEventListener('change', filterAndSort);
@@ -506,26 +525,43 @@ if (regionFilter && sortFilter) {
 
 // Form submission handler (tips page)
 const planningForm = document.getElementById('planning-form');
+
+// Attach submit event listener
 if (planningForm) {
+  
+  // Add submit event listener
   planningForm.addEventListener('submit', (e) => {
+    
+    // Prevent default form submission
     let submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+    
+    // Push new submission
     submissions.push({
       timestamp: new Date().toISOString(),
       count: submissions.length + 1
     });
+
+    // Save back to localStorage
     localStorage.setItem('formSubmissions', JSON.stringify(submissions));
   });
 }
 
 // Thank you page logic
 const currentPageCheck = window.location.pathname.split('/').pop() || 'index.html';
+
+// Page: thankyou.html
 if (currentPageCheck === 'thankyou.html') {
+  
+  // Get URL parameters
   const params = new URLSearchParams(window.location.search);
   const detailsDiv = document.getElementById('submission-details');
   
+  // Display submission details
   if (detailsDiv) {
+    // Build details HTML
     const details = [];
     
+    // Add each detail if present
     if (params.get('name')) details.push(`<p><strong>Name:</strong> ${params.get('name')}</p>`);
     if (params.get('email')) details.push(`<p><strong>Email:</strong> ${params.get('email')}</p>`);
     if (params.get('park')) details.push(`<p><strong>Park of Interest:</strong> ${params.get('park')}</p>`);
@@ -533,16 +569,24 @@ if (currentPageCheck === 'thankyou.html') {
     if (params.get('party-size')) details.push(`<p><strong>Party Size:</strong> ${params.get('party-size')} people</p>`);
     if (params.get('interests')) details.push(`<p><strong>Special Interests:</strong> ${params.get('interests')}</p>`);
     
+    // Set inner HTML
     detailsDiv.innerHTML = details.join('');
   }
   
+  // Display submission stats
   const submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
   const statsDiv = document.getElementById('submission-stats');
   
+  // Build stats HTML
   if (statsDiv && submissions.length > 0) {
+    
+    // Get latest submission
     const latest = submissions[submissions.length - 1];
+    
+    // Format timestamp
     const timestamp = new Date(latest.timestamp).toLocaleString();
     
+    // Set stats HTML
     statsDiv.innerHTML = `
       <div class="stats-box">
         <h3>Your Submission Stats</h3>
@@ -559,7 +603,11 @@ document.getElementById('lastmodified').textContent = `Last Modified: ${document
 
 // Set active navigation
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+// Highlight active nav link
 document.querySelectorAll('.nav a').forEach(link => {
+  
+  // Check if link matches current page
   if (link.getAttribute('href') === currentPage) {
     link.classList.add('active');
   }
