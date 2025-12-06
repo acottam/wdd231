@@ -18,6 +18,22 @@ async function loadParks() {
       
       parks.sort((a, b) => a.name.localeCompare(b.name));
       displayParksPage(parks);
+    } else if (currentPage === 'itineraries.html') {
+      // Itineraries page logic
+      const randomPark = parks[Math.floor(Math.random() * parks.length)];
+      const hero = document.querySelector('.itinerary-page-hero');
+      hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
+      document.getElementById('hero-caption').textContent = randomPark.name;
+      
+      generateItinerariesPage(parks);
+    } else if (currentPage === 'tips.html') {
+      // Tips page logic
+      const randomPark = parks[Math.floor(Math.random() * parks.length)];
+      const hero = document.querySelector('.tips-page-hero');
+      hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
+      document.getElementById('hero-caption').textContent = randomPark.name;
+      
+      populateParkDropdown(parks);
     } else {
       // Home page logic
       const randomPark = parks[Math.floor(Math.random() * parks.length)];
@@ -36,6 +52,59 @@ async function loadParks() {
   } catch (error) {
     console.error('Error loading parks:', error);
   }
+}
+
+// Populate park dropdown (tips page)
+function populateParkDropdown(parks) {
+  const parkSelect = document.getElementById('park');
+  parks.sort((a, b) => a.name.localeCompare(b.name));
+  parks.forEach(park => {
+    const option = document.createElement('option');
+    option.value = park.name;
+    option.textContent = park.name;
+    parkSelect.appendChild(option);
+  });
+  
+  // Pre-select park from URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedPark = urlParams.get('park');
+  if (selectedPark) {
+    parkSelect.value = selectedPark;
+  }
+}
+
+// Generate itineraries (itineraries page)
+function generateItinerariesPage(parks) {
+  const parksWithItineraries = parks.filter(p => p.itinerary);
+  const container = document.getElementById('itineraries-container');
+  
+  container.innerHTML = parksWithItineraries.map(park => {
+    const daysHTML = park.itinerary.days.map((day, index) => `
+      <div class="day day${index + 1}">
+        <h5>${day.day}</h5>
+        <ul>
+          ${day.activities.map(activity => `<li>${activity}</li>`).join('')}
+        </ul>
+      </div>
+    `).join('');
+    
+    return `
+      <section class="itinerary ${park.region}">
+        <div class="itinerary-hero">
+          <img src="${park.image}" alt="${park.name}">
+          <h3 class="hero-title">${park.name}</h3>
+        </div>
+        <h3>${park.name}</h3>
+        <h4>${park.itinerary.title}</h4>
+        <div class="days-container">
+          ${daysHTML}
+        </div>
+        <div class="itinerary-cta">
+          <a href="tips.html?park=${encodeURIComponent(park.name)}" class="cta-btn">Get Planning Tips for ${park.name}</a>
+        </div>
+      </section>
+    `;
+  }).join('');
 }
 
 // Generate itinerary previews
@@ -305,6 +374,55 @@ const sortFilter = document.getElementById('sort-filter');
 if (regionFilter && sortFilter) {
   regionFilter.addEventListener('change', filterAndSort);
   sortFilter.addEventListener('change', filterAndSort);
+}
+
+// Form submission handler (tips page)
+const planningForm = document.getElementById('planning-form');
+if (planningForm) {
+  planningForm.addEventListener('submit', (e) => {
+    let submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+    submissions.push({
+      timestamp: new Date().toISOString(),
+      count: submissions.length + 1
+    });
+    localStorage.setItem('formSubmissions', JSON.stringify(submissions));
+  });
+}
+
+// Thank you page logic
+const currentPageCheck = window.location.pathname.split('/').pop() || 'index.html';
+if (currentPageCheck === 'thankyou.html') {
+  const params = new URLSearchParams(window.location.search);
+  const detailsDiv = document.getElementById('submission-details');
+  
+  if (detailsDiv) {
+    const details = [];
+    
+    if (params.get('name')) details.push(`<p><strong>Name:</strong> ${params.get('name')}</p>`);
+    if (params.get('email')) details.push(`<p><strong>Email:</strong> ${params.get('email')}</p>`);
+    if (params.get('park')) details.push(`<p><strong>Park of Interest:</strong> ${params.get('park')}</p>`);
+    if (params.get('travel-date')) details.push(`<p><strong>Travel Date:</strong> ${params.get('travel-date')}</p>`);
+    if (params.get('party-size')) details.push(`<p><strong>Party Size:</strong> ${params.get('party-size')} people</p>`);
+    if (params.get('interests')) details.push(`<p><strong>Special Interests:</strong> ${params.get('interests')}</p>`);
+    
+    detailsDiv.innerHTML = details.join('');
+  }
+  
+  const submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+  const statsDiv = document.getElementById('submission-stats');
+  
+  if (statsDiv && submissions.length > 0) {
+    const latest = submissions[submissions.length - 1];
+    const timestamp = new Date(latest.timestamp).toLocaleString();
+    
+    statsDiv.innerHTML = `
+      <div class="stats-box">
+        <h3>Your Submission Stats</h3>
+        <p><strong>Total Submissions:</strong> ${submissions.length}</p>
+        <p><strong>Latest Submission:</strong> ${timestamp}</p>
+      </div>
+    `;
+  }
 }
 
 // Footer dates
