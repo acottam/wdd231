@@ -1,0 +1,433 @@
+// Load parks from JSON
+let parks = [];
+
+async function loadParks() {
+  try {
+    const response = await fetch('data/parks-list.json');
+    parks = await response.json();
+    
+    // Get featured parks and randomize
+    const featured = parks.filter(p => p.featured);
+    const shuffled = featured.sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 4);
+    
+    displayParks(selected);
+  } catch (error) {
+    console.error('Error loading parks:', error);
+  }
+}
+
+// Display parks
+  {
+    name: "Yellowstone",
+    region: "west",
+    state: "WY, MT, ID",
+    description: "World's first national park with geysers, hot springs, and abundant wildlife.",
+    image: "images/yellowstone-01.webp",
+    season: "Summer",
+    activity: "Wildlife viewing"
+  },
+  {
+    name: "Grand Canyon",
+    region: "southwest",
+    state: "Arizona",
+    description: "Massive canyon carved by the Colorado River with breathtaking views.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Grand+Canyon",
+    season: "Spring/Fall",
+    activity: "Scenic overlooks"
+  },
+  {
+    name: "Yosemite",
+    region: "west",
+    state: "California",
+    description: "Iconic granite cliffs, waterfalls, and giant sequoia groves.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Yosemite",
+    season: "Spring/Summer",
+    activity: "Hiking"
+  },
+  {
+    name: "Zion",
+    region: "southwest",
+    state: "Utah",
+    description: "Red rock canyons and dramatic desert landscapes.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Zion",
+    season: "Spring/Fall",
+    activity: "Canyon hiking"
+  },
+  {
+    name: "Acadia",
+    region: "east",
+    state: "Maine",
+    description: "Rocky coastline, mountains, and forests on Maine's coast.",
+    image: "https://placehold.co/600x400/BBD7EA/0B3D2E?text=Acadia",
+    season: "Summer/Fall",
+    activity: "Coastal trails"
+  },
+  {
+    name: "Rocky Mountain",
+    region: "west",
+    state: "Colorado",
+    description: "Alpine lakes, mountain peaks, and diverse wildlife.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Rocky+Mountain",
+    season: "Summer",
+    activity: "Mountain hiking"
+  },
+  {
+    name: "Glacier",
+    region: "west",
+    state: "Montana",
+    description: "Pristine forests, alpine meadows, and rugged mountains.",
+    image: "https://placehold.co/600x400/BBD7EA/0B3D2E?text=Glacier",
+    season: "Summer",
+    activity: "Scenic drives"
+  },
+  {
+    name: "Olympic",
+    region: "west",
+    state: "Washington",
+    description: "Diverse ecosystems from rainforest to alpine peaks.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Olympic",
+    season: "Summer/Fall",
+    activity: "Rainforest trails"
+  },
+  {
+    name: "Sequoia",
+    region: "west",
+    state: "California",
+    description: "Giant sequoia trees and mountain wilderness.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Sequoia",
+    season: "Spring/Summer",
+    activity: "Giant tree viewing"
+  },
+  {
+    name: "Joshua Tree",
+    region: "southwest",
+    state: "California",
+    description: "Unique desert landscape with iconic Joshua trees.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Joshua+Tree",
+    season: "Fall/Winter",
+    activity: "Rock climbing"
+  },
+  {
+    name: "Bryce Canyon",
+    region: "southwest",
+    state: "Utah",
+    description: "Distinctive red rock hoodoos and natural amphitheaters.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Bryce+Canyon",
+    season: "Spring/Fall",
+    activity: "Rim walks"
+  },
+  {
+    name: "Arches",
+    region: "southwest",
+    state: "Utah",
+    description: "Over 2,000 natural stone arches in red rock desert.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Arches",
+    season: "Spring/Fall",
+    activity: "Arch viewing"
+  },
+  {
+    name: "Great Smoky Mountains",
+    region: "east",
+    state: "TN, NC",
+    description: "Ancient mountains with diverse plant and animal life.",
+    image: "https://placehold.co/600x400/BBD7EA/0B3D2E?text=Great+Smoky+Mountains",
+    season: "Spring/Fall",
+    activity: "Waterfall hikes"
+  },
+  {
+    name: "Shenandoah",
+    region: "east",
+    state: "Virginia",
+    description: "Blue Ridge Mountains with Skyline Drive scenic route.",
+    image: "https://placehold.co/600x400/BBD7EA/0B3D2E?text=Shenandoah",
+    season: "Fall",
+    activity: "Scenic drives"
+  },
+  {
+    name: "Everglades",
+    region: "east",
+    state: "Florida",
+    description: "Unique wetland ecosystem with alligators and birds.",
+    image: "https://placehold.co/600x400/BBD7EA/0B3D2E?text=Everglades",
+    season: "Winter",
+    activity: "Wildlife viewing"
+  },
+  {
+    name: "Denali",
+    region: "west",
+    state: "Alaska",
+    description: "North America's highest peak and vast wilderness.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Denali",
+    season: "Summer",
+    activity: "Bus tours"
+  },
+  {
+    name: "Mount Rainier",
+    region: "west",
+    state: "Washington",
+    description: "Iconic volcanic peak with wildflower meadows.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Mount+Rainier",
+    season: "Summer",
+    activity: "Wildflower viewing"
+  },
+  {
+    name: "Crater Lake",
+    region: "west",
+    state: "Oregon",
+    description: "Deepest lake in the U.S. in a volcanic caldera.",
+    image: "https://placehold.co/600x400/BBD7EA/0B3D2E?text=Crater+Lake",
+    season: "Summer",
+    activity: "Lake viewing"
+  },
+  {
+    name: "Grand Teton",
+    region: "west",
+    state: "Wyoming",
+    description: "Dramatic mountain peaks rising above Jackson Hole.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Grand+Teton",
+    season: "Summer",
+    activity: "Mountain viewing"
+  },
+  {
+    name: "Badlands",
+    region: "midwest",
+    state: "South Dakota",
+    description: "Striking eroded buttes and pinnacles.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Badlands",
+    season: "Spring/Fall",
+    activity: "Scenic drives"
+  },
+  {
+    name: "Canyonlands",
+    region: "southwest",
+    state: "Utah",
+    description: "Colorful canyons carved by the Colorado River.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Canyonlands",
+    season: "Spring/Fall",
+    activity: "Overlook viewing"
+  },
+  {
+    name: "Capitol Reef",
+    region: "southwest",
+    state: "Utah",
+    description: "Hidden waterfalls and colorful rock formations.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Capitol+Reef",
+    season: "Spring/Fall",
+    activity: "Scenic drives"
+  },
+  {
+    name: "Big Bend",
+    region: "southwest",
+    state: "Texas",
+    description: "Remote desert and river landscapes along the Rio Grande.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Big+Bend",
+    season: "Winter/Spring",
+    activity: "Desert hiking"
+  },
+  {
+    name: "Mammoth Cave",
+    region: "midwest",
+    state: "Kentucky",
+    description: "World's longest known cave system.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Mammoth+Cave",
+    season: "Year-round",
+    activity: "Cave tours"
+  },
+  {
+    name: "Hot Springs",
+    region: "midwest",
+    state: "Arkansas",
+    description: "Historic bathhouses and thermal springs.",
+    image: "https://placehold.co/600x400/BBD7EA/0B3D2E?text=Hot+Springs",
+    season: "Year-round",
+    activity: "Bathhouse tours"
+  },
+  {
+    name: "Congaree",
+    region: "east",
+    state: "South Carolina",
+    description: "Old-growth bottomland hardwood forest.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Congaree",
+    season: "Spring/Fall",
+    activity: "Boardwalk trails"
+  },
+  {
+    name: "Biscayne",
+    region: "east",
+    state: "Florida",
+    description: "Underwater coral reefs and coastal mangroves.",
+    image: "https://placehold.co/600x400/BBD7EA/0B3D2E?text=Biscayne",
+    season: "Winter",
+    activity: "Snorkeling"
+  },
+  {
+    name: "Voyageurs",
+    region: "midwest",
+    state: "Minnesota",
+    description: "Water-based park with lakes and islands.",
+    image: "https://placehold.co/600x400/BBD7EA/0B3D2E?text=Voyageurs",
+    season: "Summer",
+    activity: "Boating"
+  },
+  {
+    name: "Isle Royale",
+    region: "midwest",
+    state: "Michigan",
+    description: "Remote island wilderness in Lake Superior.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Isle+Royale",
+    season: "Summer",
+    activity: "Backpacking"
+  },
+  {
+    name: "Petrified Forest",
+    region: "southwest",
+    state: "Arizona",
+    description: "Ancient petrified wood and painted desert.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Petrified+Forest",
+    season: "Spring/Fall",
+    activity: "Fossil viewing"
+  },
+  {
+    name: "Death Valley",
+    region: "west",
+    state: "CA, NV",
+    description: "Hottest, driest, and lowest national park.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Death+Valley",
+    season: "Winter",
+    activity: "Desert exploration"
+  },
+  {
+    name: "Redwood",
+    region: "west",
+    state: "California",
+    description: "Tallest trees on Earth in coastal forests.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Redwood",
+    season: "Summer/Fall",
+    activity: "Giant tree viewing"
+  },
+  {
+    name: "Haleakalā",
+    region: "west",
+    state: "Hawaii",
+    description: "Volcanic crater with sunrise viewing and unique landscapes.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Haleakala",
+    season: "Year-round",
+    activity: "Sunrise viewing"
+  },
+  {
+    name: "Cuyahoga Valley",
+    region: "midwest",
+    state: "Ohio",
+    description: "Waterfalls, forests, and historic canal along the Cuyahoga River.",
+    image: "https://placehold.co/600x400/0B3D2E/F5F2E8?text=Cuyahoga+Valley",
+    season: "Spring/Fall",
+    activity: "Waterfall viewing"
+  },
+  {
+    name: "Guadalupe Mountains",
+    region: "southwest",
+    state: "Texas",
+    description: "Highest peaks in Texas with desert and forest ecosystems.",
+    image: "https://placehold.co/600x400/C47E36/F5F2E8?text=Guadalupe+Mountains",
+    season: "Fall",
+    activity: "Peak hiking"
+  }
+];
+
+// Display parks
+function displayParks(parksToShow) {
+  const grid = document.getElementById('featured-grid');
+  grid.innerHTML = parksToShow.map(park => `
+    <article class="park-card">
+      <img src="${park.image}" alt="${park.name}" loading="lazy">
+      <div class="park-card-content">
+        <span class="region">${park.region.toUpperCase()}</span>
+        <h3>${park.name}</h3>
+        <p class="state">${park.state}</p>
+        <p>${park.description}</p>
+        <p><strong>Best Season:</strong> ${park.season}</p>
+        <p><strong>Top Activity:</strong> ${park.activity}</p>
+        <a href="#" class="btn view-itinerary" data-modal="${park.name.toLowerCase().replace(/\s+/g, '-')}-modal">View Sample Itinerary</a>
+      </div>
+    </article>
+  `).join('');
+  
+  // Add modal event listeners
+  document.querySelectorAll('.view-itinerary').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const modalId = link.getAttribute('data-modal');
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.style.display = 'block';
+      }
+    });
+  });
+}
+
+// Filter parks (not used on home page, but kept for parks.html)
+function filterAndSort() {
+  const region = document.getElementById('region-filter')?.value || 'all';
+  const sort = document.getElementById('sort-filter')?.value || 'name';
+  
+  let filtered = region === 'all' ? [...parks] : parks.filter(p => p.region === region);
+  
+  if (sort === 'name') {
+    filtered.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (sort === 'region') {
+    filtered.sort((a, b) => a.region.localeCompare(b.region));
+  } else if (sort === 'season') {
+    filtered.sort((a, b) => a.season.localeCompare(b.season));
+  }
+  
+  displayParks(filtered);
+}
+
+// Only add event listeners if elements exist
+if (document.getElementById('region-filter')) {
+  document.getElementById('region-filter').addEventListener('change', filterAndSort);
+  document.getElementById('sort-filter').addEventListener('change', filterAndSort);
+}
+
+// Menu toggle
+document.getElementById('menu-toggle').addEventListener('click', () => {
+  const nav = document.getElementById('primary-nav');
+  const btn = document.getElementById('menu-toggle');
+  nav.classList.toggle('open');
+  nav.classList.toggle('closed');
+  btn.setAttribute('aria-expanded', nav.classList.contains('open'));
+});
+
+// Footer dates
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+document.getElementById('lastmodified').textContent = `Last Modified: ${document.lastModified}`;
+
+// Set active navigation
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
+  }
+});
+
+// Display featured parks (first 4)
+displayParks(parks.slice(0, 4));
+
+// Modal functionality
+const closeButtons = document.querySelectorAll('.close');
+const modals = document.querySelectorAll('.modal');
+
+closeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    button.closest('.modal').style.display = 'none';
+  });
+});
+
+window.addEventListener('click', (e) => {
+  modals.forEach(modal => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});

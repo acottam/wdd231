@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning Tips - Family Adventures</title>
+  <meta name="description" content="Essential tips for planning your family national park adventure.">
+  <meta name="author" content="Adam Cottam">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/large.css">
+  <script src="scripts/tips.js" defer></script>
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <header>
+    <div class="header-wrapper">
+    <img src="images/americas-national-parks-logo.png" alt="America's National Parks Logo" class="logo">
+    <div class="header-content">
+      <p class="site-name">
+          <span class="line-1">Family Adventures</span>
+          <span class="line-2">in</span>
+          <span class="line-3">America's National Parks</span>
+        </p>
+    </div>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
+      <div class="header-spacer"></div>
+    <nav id="primary-nav" class="nav closed" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="parks.html">Parks</a>
+      <a href="itineraries.html">Itineraries</a>
+      <a href="tips.html">Planning Tips</a>
+    </nav>
+      </div>
+  </header>
+
+  <main>
+    <h1 class="page-title">Essential Planning Tips</h1>
+    <section>
+      <p>Make your family national park trip smooth and enjoyable with these practical tips.</p>
+    </section>
+
+    <div class="tips-grid">
+      <div class="tips-content">
+        <section class="tip-category">
+          <h3>When to Visit</h3>
+          <ul>
+            <li>Summer (June-August): Peak season, crowded but best weather</li>
+            <li>Spring/Fall: Fewer crowds, mild weather, some facilities may be closed</li>
+            <li>Winter: Least crowded, limited access, special winter activities</li>
+            <li>Book lodging 6-12 months in advance for summer visits</li>
+          </ul>
+        </section>
+
+        <section class="tip-category">
+          <h3>What to Pack</h3>
+          <ul>
+            <li>Layers: Weather changes quickly in mountains</li>
+            <li>Sun protection: Hat, sunscreen, sunglasses</li>
+            <li>Water bottles: Stay hydrated on trails</li>
+            <li>Snacks: Keep kids energized</li>
+            <li>First aid kit: Band-aids, pain reliever, insect repellent</li>
+            <li>Binoculars: Great for wildlife viewing</li>
+          </ul>
+        </section>
+
+        <section class="tip-category">
+          <h3>Safety Reminders</h3>
+          <ul>
+            <li>Stay on marked trails</li>
+            <li>Keep children within arm's reach near cliffs and water</li>
+            <li>Store food properly to avoid wildlife encounters</li>
+            <li>Check weather forecasts daily</li>
+            <li>Know your limits: Choose trails appropriate for your family's fitness level</li>
+            <li>Carry a map and know where you're going</li>
+          </ul>
+        </section>
+
+        <section class="tip-category">
+          <h3>Making It Fun for Kids</h3>
+          <ul>
+            <li>Junior Ranger programs: Free activity books at visitor centers</li>
+            <li>Scavenger hunts: Look for specific plants, animals, or landmarks</li>
+            <li>Take breaks: Don't over-schedule</li>
+            <li>Let kids lead: Give them the map or let them choose the next stop</li>
+            <li>Bring a nature journal for drawing and observations</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="tips-form">
+        <h3>Get Your Free Planning Guide</h3>
+        <p>Receive personalized tips and itinerary recommendations for your family adventure!</p>
+        <form action="thankyou.html" method="GET" id="planning-form">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="park">Interested Park *</label>
+          <select id="park" name="park" required>
+            <option value="">Select a park...</option>
+          </select>
+
+          <label for="travel-date">Planned Travel Date</label>
+          <input type="date" id="travel-date" name="travel-date">
+
+          <label for="party-size">Party Size</label>
+          <input type="number" id="party-size" name="party-size" min="1" max="20">
+
+          <label for="interests">Special Interests</label>
+          <textarea id="interests" name="interests" rows="3"></textarea>
+
+          <button type="submit" class="submit-btn">Get My Free Guide</button>
+      <div class="header-spacer"></div>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p><span id="currentyear"></span> <span>🏕️🏔️🌲</span> Adam Cottam <span>🌲🏔️🏕️</span> Portland, Oregon USA</p>
+    <p id="lastmodified"></p>
+  </footer>
+</body>
+</html>

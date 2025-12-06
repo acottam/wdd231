@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Family Adventures</title>
+  <meta name="description" content="Thank you for requesting your free planning guide.">
+  <meta name="author" content="Adam Cottam">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/large.css">
+  <script src="scripts/thankyou.js" defer></script>
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <header>
+    <div class="header-wrapper">
+    <img src="images/americas-national-parks-logo.png" alt="America's National Parks Logo" class="logo">
+    <div class="header-content">
+      <p class="site-name">
+          <span class="line-1">Family Adventures</span>
+          <span class="line-2">in</span>
+          <span class="line-3">America's National Parks</span>
+        </p>
+    </div>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
+      <div class="header-spacer"></div>
+    <nav id="primary-nav" class="nav closed" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="parks.html">Parks</a>
+      <a href="itineraries.html">Itineraries</a>
+      <a href="tips.html">Planning Tips</a>
+    </nav>
+      </div>
+  </header>
+
+  <main>
+    <section class="thankyou">
+      <h2>Thank You for Your Interest!</h2>
+      <p>Your free planning guide will be sent to your email shortly. Here's a summary of your request:</p>
+      
+      <div class="submission-details" id="submission-details"></div>
+      
+      <div class="submission-stats" id="submission-stats"></div>
+      
+      <p><a href="index.html" class="btn">Return to Home</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p><span id="currentyear"></span> <span>🏕️🏔️🌲</span> Adam Cottam <span>🌲🏔️🏕️</span> Portland, Oregon USA</p>
+    <p id="lastmodified"></p>
+  </footer>
+</body>
+</html>
