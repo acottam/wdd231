@@ -44,6 +44,9 @@
         font-size: 1.5rem;
         padding: .7rem 0;
     }
+    .hero-content h2 {
+        font-size: 1.75rem;
+    }
     .park-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -69,6 +72,9 @@
         gap: 0rem;
     }
     header h1 {
+        font-size: 2rem;
+    }
+    .hero-content h2 {
         font-size: 2rem;
     }
     section > h2 {
