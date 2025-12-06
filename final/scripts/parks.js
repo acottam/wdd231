@@ -33,10 +33,82 @@ function displayParks(parksToShow) {
         <p>${park.description}</p>
         <p><strong>Best Season:</strong> ${park.season}</p>
         <p><strong>Top Activity:</strong> ${park.activity}</p>
-        <a href="park.html?id=${park.name.toLowerCase().replace(/\s+/g, '-')}" class="btn">View Details</a>
+        <a href="#" class="btn view-park-details" data-park="${park.name}">View Details</a>
       </div>
     </article>
   `).join('');
+  
+  // Add modal event listeners
+  document.querySelectorAll('.view-park-details').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parkName = link.getAttribute('data-park');
+      const park = parks.find(p => p.name === parkName);
+      if (park) {
+        openParkModal(park);
+      }
+    });
+  });
+}
+
+// Open park details modal
+function openParkModal(park) {
+  const modalId = 'park-details-modal';
+  let modal = document.getElementById(modalId);
+  
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = modalId;
+    modal.className = 'modal';
+    document.body.appendChild(modal);
+  }
+  
+  const itineraryHTML = park.itinerary ? `
+    <h4>Sample Itinerary: ${park.itinerary.title}</h4>
+    ${park.itinerary.days.map(day => `
+      <h5>${day.day}</h5>
+      <ul>
+        ${day.activities.map(activity => `<li>${activity}</li>`).join('')}
+      </ul>
+    `).join('')}
+  ` : '<p>No itinerary available for this park.</p>';
+  
+  modal.innerHTML = `
+    <div class="modal-content">
+      <div class="modal-header modal-header-image">
+        <img src="${park.image}" alt="${park.name}">
+        <div class="modal-header-overlay">
+          <span class="close">&times;</span>
+          <h3>${park.name} National Park</h3>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p><strong>Location:</strong> ${park.state}</p>
+        <p><strong>Region:</strong> ${park.region.toUpperCase()}</p>
+        <p><strong>Best Season:</strong> ${park.season}</p>
+        <p><strong>Top Activity:</strong> ${park.activity}</p>
+        <p>${park.description}</p>
+        ${itineraryHTML}
+        <div class="modal-cta">
+          <a href="tips.html?park=${encodeURIComponent(park.name)}" class="cta-btn">Get Planning Tips for ${park.name}</a>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  modal.style.display = 'block';
+  
+  // Close button
+  modal.querySelector('.close').addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+  
+  // Click outside to close
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 }
 
 // Filter and sort

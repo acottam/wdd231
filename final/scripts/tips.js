@@ -1,36 +1,35 @@
-// Load random hero background
-async function loadHeroBackground() {
+// Load parks and populate dropdown
+async function loadParks() {
   try {
     const response = await fetch('data/parks-list.json');
     const parks = await response.json();
+    
+    // Set random hero background
     const randomPark = parks[Math.floor(Math.random() * parks.length)];
     const hero = document.querySelector('.tips-page-hero');
     hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
     document.getElementById('hero-caption').textContent = randomPark.name;
+    
+    // Populate park dropdown
+    const parkSelect = document.getElementById('park');
+    parks.sort((a, b) => a.name.localeCompare(b.name));
+    parks.forEach(park => {
+      const option = document.createElement('option');
+      option.value = park.name;
+      option.textContent = park.name;
+      parkSelect.appendChild(option);
+    });
+    
+    // Pre-select park from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedPark = urlParams.get('park');
+    if (selectedPark) {
+      parkSelect.value = selectedPark;
+    }
   } catch (error) {
-    console.error('Error loading hero background:', error);
+    console.error('Error loading parks:', error);
   }
 }
-
-// Park data for dropdown
-const parks = [
-  "Yellowstone", "Grand Canyon", "Yosemite", "Zion", "Acadia", "Rocky Mountain",
-  "Glacier", "Olympic", "Sequoia", "Joshua Tree", "Bryce Canyon", "Arches",
-  "Great Smoky Mountains", "Shenandoah", "Everglades", "Denali", "Mount Rainier",
-  "Crater Lake", "Grand Teton", "Badlands", "Canyonlands", "Capitol Reef",
-  "Big Bend", "Mammoth Cave", "Hot Springs", "Congaree", "Biscayne", "Voyageurs",
-  "Isle Royale", "Petrified Forest", "Death Valley", "Redwood", "Haleakalā",
-  "Cuyahoga Valley", "Guadalupe Mountains"
-];
-
-// Populate park dropdown
-const parkSelect = document.getElementById('park');
-parks.forEach(park => {
-  const option = document.createElement('option');
-  option.value = park;
-  option.textContent = park;
-  parkSelect.appendChild(option);
-});
 
 // Form submission handler
 document.getElementById('planning-form').addEventListener('submit', (e) => {
@@ -64,5 +63,5 @@ document.querySelectorAll('.nav a').forEach(link => {
   }
 });
 
-// Load hero background
-loadHeroBackground();
+// Load parks and hero background
+loadParks();

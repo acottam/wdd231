@@ -7,9 +7,46 @@ async function loadHeroBackground() {
     const hero = document.querySelector('.itinerary-page-hero');
     hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
     document.getElementById('hero-caption').textContent = randomPark.name;
+    
+    // Generate itineraries
+    generateItineraries(parks);
   } catch (error) {
     console.error('Error loading hero background:', error);
   }
+}
+
+// Generate itineraries dynamically
+function generateItineraries(parks) {
+  const parksWithItineraries = parks.filter(p => p.itinerary);
+  const container = document.getElementById('itineraries-container');
+  
+  container.innerHTML = parksWithItineraries.map(park => {
+    const daysHTML = park.itinerary.days.map((day, index) => `
+      <div class="day day${index + 1}">
+        <h5>${day.day}</h5>
+        <ul>
+          ${day.activities.map(activity => `<li>${activity}</li>`).join('')}
+        </ul>
+      </div>
+    `).join('');
+    
+    return `
+      <section class="itinerary ${park.region}">
+        <div class="itinerary-hero">
+          <img src="${park.image}" alt="${park.name}">
+          <h3 class="hero-title">${park.name}</h3>
+        </div>
+        <h3>${park.name}</h3>
+        <h4>${park.itinerary.title}</h4>
+        <div class="days-container">
+          ${daysHTML}
+        </div>
+        <div class="itinerary-cta">
+          <a href="tips.html?park=${encodeURIComponent(park.name)}" class="cta-btn">Get Planning Tips for ${park.name}</a>
+        </div>
+      </section>
+    `;
+  }).join('');
 }
 
 // Menu toggle

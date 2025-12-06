@@ -373,7 +373,7 @@ footer p {
 
 /* ---- Filters ---- */
 .filters {
-    background: var(--alpine-sky);
+    background: var(--canyon-dark);
     padding: 1rem;
     margin-bottom: 1.5rem;
     display: flex;
@@ -383,6 +383,7 @@ footer p {
 }
 .filters label {
     font-weight: 600;
+    color: white;
 }
 .filters select {
     padding: .5rem;
@@ -547,6 +548,12 @@ footer p {
 .itinerary {
     margin-bottom: 2rem;
 }
+.itinerary-cta {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #ddd;
+}
 .itinerary-hero {
     margin: -1rem -1rem 1rem -1rem;
     border-radius: var(--radius) var(--radius) 0 0;
@@ -604,20 +611,6 @@ footer p {
     font-weight: 600;
     margin-bottom: .75rem;
 }
-/*
-.itinerary.west h3 {
-    border-bottom-color: var(--evergreen-ridge);
-}
-.itinerary.southwest h3 {
-    border-bottom-color: var(--canyon-sunrise);
-}
-.itinerary.east h3 {
-    border-bottom-color: var(--alpine-sky);
-}
-.itinerary.midwest h3 {
-    border-bottom-color: var(--canyon-dark);
-}
-*/
 .day {
     background: var(--alpine-sky);
     padding: 1rem;
@@ -638,6 +631,7 @@ footer p {
 .tips-grid {
     display: grid;
     gap: 1.5rem;
+    align-items: start;
 }
 .tips-content {
     display: flex;
@@ -660,8 +654,6 @@ footer p {
     border-radius: var(--radius);
     padding: 1.5rem;
     box-shadow: var(--shadow-2);
-    position: sticky;
-    top: 80px;
 }
 .tips-form h3 {
     color: var(--evergreen-ridge);
@@ -717,6 +709,10 @@ footer p {
     color: var(--evergreen-ridge);
     margin-bottom: 1rem;
 }
+.thankyou > p {
+    max-width: 100%;
+    margin: 0 auto 1rem auto;
+}
 .submission-details {
     background: var(--alpine-sky);
     padding: 1.5rem;
@@ -755,6 +751,7 @@ footer p {
 }
 .thankyou .btn:hover {
     background: var(--canyon-dark);
+    text-decoration: none;
 }
 
 /* ---- Modals ---- */
@@ -853,4 +850,10 @@ footer p {
 .modal-body li {
     margin-bottom: 0.5rem;
     line-height: 1.5;
+}
+.modal-cta {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd;
 }

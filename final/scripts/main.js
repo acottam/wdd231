@@ -73,6 +73,9 @@ function generateModals(parksToShow) {
           </div>
           <div class="modal-body">
             ${daysHTML}
+            <div class="modal-cta">
+              <a href="tips.html?park=${encodeURIComponent(park.name)}" class="cta-btn">Get Planning Tips for ${park.name}</a>
+            </div>
           </div>
         </div>
       </div>

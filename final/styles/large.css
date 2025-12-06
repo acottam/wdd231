@@ -44,6 +44,11 @@
     .itinerary-preview-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+    .days-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
 }
 
 /* ---- Wider ---- */
