@@ -427,9 +427,6 @@ function openParkModal(park) {
 // Function: Filter and sort - parks page
 function filterAndSort() {
   
-  // Get filter values
-  const parks = window.parks;
-
   // Get selected region
   const region = document.getElementById('region-filter').value;
   
