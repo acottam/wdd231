@@ -79,7 +79,7 @@ header {
     display: grid;
     grid-template-columns: 130px 1fr 40px;
     grid-template-rows: auto auto;
-    gap: 1rem;
+    gap: 0rem;
 }
 .logo {
     height: 130px;

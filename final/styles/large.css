@@ -8,6 +8,7 @@
     }
     .header-wrapper {
         grid-template-columns: 150px 1fr 150px;
+        gap: 0rem;
     }
     .logo {
         width: 150px;
@@ -63,6 +64,9 @@
 @media (min-width: 70rem) {
     main, .header-wrapper {
         width: min(1100px, 90%);
+    }
+    .header-wrapper {
+        gap: 0rem;
     }
     header h1 {
         font-size: 2rem;
