@@ -1,73 +1,120 @@
 // Load parks from JSON
 let parks = [];
 
+// Load parks and initialize page - data/parks-list.json
 async function loadParks() {
+  
+  // Fetch parks data
   try {
+    
+    // Fetch the parks data
     const response = await fetch('data/parks-list.json');
     parks = await response.json();
     
     // Check which page we're on
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
+    // Page-specific logic
     if (currentPage === 'parks.html') {
-      // Parks page logic
+      
+      // Parks page logic: select random park for hero
       const randomPark = parks[Math.floor(Math.random() * parks.length)];
+      
+      // Set random hero image
       const hero = document.querySelector('.parks-page-hero');
       hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
       document.getElementById('hero-caption').textContent = randomPark.name;
       
+      // Sort parks alphabetically - Default view
       parks.sort((a, b) => a.name.localeCompare(b.name));
+      
+      // Initial display of all parks on parks page
       displayParksPage(parks);
+    
     } else if (currentPage === 'itineraries.html') {
       // Itineraries page logic
       const randomPark = parks[Math.floor(Math.random() * parks.length)];
+      
+      // Set random hero image
       const hero = document.querySelector('.itinerary-page-hero');
       hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
       document.getElementById('hero-caption').textContent = randomPark.name;
       
+      // Generate itineraries cards
       generateItinerariesPage(parks);
+      
     } else if (currentPage === 'tips.html') {
-      // Tips page logic
+      // Tips page logic: select random park for hero
       const randomPark = parks[Math.floor(Math.random() * parks.length)];
+      
+      // Set random hero image
       const hero = document.querySelector('.tips-page-hero');
       hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
       document.getElementById('hero-caption').textContent = randomPark.name;
       
+      // Populate park dropdown
       populateParkDropdown(parks);
+
     } else {
-      // Home page logic
+      // Home page logic: select random park for hero
       const randomPark = parks[Math.floor(Math.random() * parks.length)];
+      
+      // Set random hero image
       const hero = document.querySelector('.hero');
       hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
       document.getElementById('hero-caption').textContent = randomPark.name;
       
+      // Select 4 random featured parks for display
       const featured = parks.filter(p => p.featured);
+      
+      // Shuffle and pick first 4
       const shuffled = featured.sort(() => 0.5 - Math.random());
       const selected = shuffled.slice(0, 4);
       
+      // Display parks: on home page load
       displayParks(selected);
+
+      // Generate modals: on home page load
       generateModals(selected);
+
+      // Generate itinerary previews: on home page load
       generateItineraryPreviews(parks);
     }
+
   } catch (error) {
+
+    // Catch: Handle fetch error - log to console
     console.error('Error loading parks:', error);
   }
 }
 
-// Populate park dropdown (tips page)
+// Function: Populate park dropdown (tips page)
 function populateParkDropdown(parks) {
+
+  // Populate park select dropdown
   const parkSelect = document.getElementById('park');
+  
+  // Sort parks alphabetically
   parks.sort((a, b) => a.name.localeCompare(b.name));
+  
+  // Iterate and add options
   parks.forEach(park => {
+    // Create option element
     const option = document.createElement('option');
+    
+    // Build option
     option.value = park.name;
     option.textContent = park.name;
+    
+    // Append option to select
     parkSelect.appendChild(option);
   });
   
   // Pre-select park from URL parameter
   const urlParams = new URLSearchParams(window.location.search);
   const selectedPark = urlParams.get('park');
+  
+  // Get Park (if selected)
   if (selectedPark) {
     parkSelect.value = selectedPark;
   }
