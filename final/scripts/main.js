@@ -6,6 +6,12 @@ async function loadParks() {
     const response = await fetch('data/parks-list.json');
     parks = await response.json();
     
+    // Set random hero background
+    const randomPark = parks[Math.floor(Math.random() * parks.length)];
+    const hero = document.querySelector('.hero');
+    hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
+    document.getElementById('hero-caption').textContent = randomPark.name;
+    
     // Get featured parks and randomize
     const featured = parks.filter(p => p.featured);
     const shuffled = featured.sort(() => 0.5 - Math.random());
