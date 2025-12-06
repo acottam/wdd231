@@ -365,6 +365,7 @@ document.getElementById('menu-toggle').addEventListener('click', () => {
   const btn = document.getElementById('menu-toggle');
   nav.classList.toggle('open');
   nav.classList.toggle('closed');
+  btn.classList.toggle('open');
   btn.setAttribute('aria-expanded', nav.classList.contains('open'));
 });
 
