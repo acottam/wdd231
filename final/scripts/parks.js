@@ -12,6 +12,8 @@ async function loadParks() {
     hero.style.backgroundImage = `linear-gradient(rgba(11, 61, 46, 0.6), rgba(11, 61, 46, 0.6)), url('${randomPark.image}')`;
     document.getElementById('hero-caption').textContent = randomPark.name;
     
+    // Sort by name initially
+    parks.sort((a, b) => a.name.localeCompare(b.name));
     displayParks(parks);
   } catch (error) {
     console.error('Error loading parks:', error);

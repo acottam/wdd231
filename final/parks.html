@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,32 +23,46 @@
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico">
 </head>
+
 <body>
+  
+  <!-- Header -->
   <header>
     <div class="header-wrapper">
-    <img src="images/np-logo.png" alt="America's National Parks Logo" class="logo">
-    <div class="header-content">
-      <p class="site-name">
+
+      <!-- Logo -->
+      <img src="images/np-logo.png" alt="America's National Parks Logo" class="logo">
+
+      <!-- Site Name -->
+      <div class="header-content">
+        <p class="site-name">
           <span class="line-1">Family Adventures</span>
           <span class="line-2">in</span>
           <span class="line-3">America's National Parks</span>
         </p>
-    </div>
-    <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
-      <span class="bar" aria-hidden="true"></span>
-      <span class="bar" aria-hidden="true"></span>
-      <span class="bar" aria-hidden="true"></span>
-    </button>
-      <div class="header-spacer"></div>
-    <nav id="primary-nav" class="nav closed" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="parks.html">Parks</a>
-      <a href="itineraries.html">Itineraries</a>
-      <a href="tips.html">Planning Tips</a>
-    </nav>
       </div>
+      
+      <!-- Menu Button -->
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+      
+      <!-- Header Spacer -->
+      <div class="header-spacer"></div>
+      
+      <!-- Primary Nav -->
+      <nav id="primary-nav" class="nav closed" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="parks.html">Parks</a>
+        <a href="itineraries.html">Itineraries</a>
+        <a href="tips.html">Planning Tips</a>
+      </nav>
+    </div>
   </header>
 
+  <!-- Main -->
   <main>
     <h1 class="page-title">All National Parks</h1>
     
@@ -62,6 +77,8 @@
 
     <!-- Filters -->
     <section class="filters">
+      
+      <!-- Filter by Region -->
       <label for="region-filter">Filter by Region:</label>
       <select id="region-filter">
         <option value="all">All Regions</option>
@@ -70,6 +87,8 @@
         <option value="midwest">Midwest</option>
         <option value="east">East</option>
       </select>
+      
+      <!-- Sort By -->
       <label for="sort-filter">Sort by:</label>
       <select id="sort-filter">
         <option value="name">Name</option>
@@ -84,6 +103,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p><span id="currentyear"></span> <span>🏕️🏔️🌲</span> Adam Cottam <span>🌲🏔️🏕️</span> Portland, Oregon USA</p>
     <p id="lastmodified"></p>
