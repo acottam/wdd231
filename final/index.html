@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Family Adventures in America's National Parks</title>
-  <meta name="description"
-    content="Simple trip planning for families who love the outdoors. Explore kid-friendly hikes, activities, and itineraries for U.S. National Parks.">
+  <meta name="description" content="Simple trip planning for families who love the outdoors. Explore kid-friendly hikes, activities, and itineraries for U.S. National Parks.">
   <meta name="author" content="Adam Cottam">
 
   <!-- Fonts -->
@@ -26,9 +25,14 @@
 </head>
 
 <body>
+  
+  <!-- Header -->
   <header>
     <div class="header-wrapper">
+      <!-- Logo -->
       <img src="images/np-logo.png" alt="America's National Parks Logo" class="logo">
+      
+      <!-- Site Name -->
       <div class="header-content">
         <p class="site-name">
           <span class="line-1">Family Adventures</span>
@@ -36,13 +40,19 @@
           <span class="line-3">America's National Parks</span>
         </p>
       </div>
+      
+      <!-- Menu Button -->
       <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav"
         aria-expanded="false">
         <span class="bar" aria-hidden="true"></span>
         <span class="bar" aria-hidden="true"></span>
         <span class="bar" aria-hidden="true"></span>
       </button>
+      
+      <!-- Header Spacer -->
       <div class="header-spacer"></div>
+      
+      <!-- Primary Nav -->
       <nav id="primary-nav" class="nav closed" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="parks.html">Parks</a>
@@ -52,6 +62,7 @@
     </div>
   </header>
 
+  <!-- Main -->
   <main>
     <h1 class="page-title">Welcome to America's National Parks</h1>
     
@@ -78,37 +89,7 @@
       <h2>Ready-Made Family Itineraries</h2>
       <p class="intro">Take the stress out of planning with our simple 2-3 day itineraries designed for families.</p>
       
-      <div class="itinerary-preview-grid">
-        <article class="itinerary-preview">
-          <h3>Yellowstone: 3-Day Adventure</h3>
-          <p>Geysers, hot springs, and wildlife viewing perfect for families with young children.</p>
-          <ul>
-            <li>Old Faithful & Grand Prismatic Spring</li>
-            <li>Grand Canyon of Yellowstone</li>
-            <li>Wildlife in Lamar Valley</li>
-          </ul>
-        </article>
-        
-        <article class="itinerary-preview">
-          <h3>Grand Canyon: 2-Day South Rim</h3>
-          <p>Breathtaking views and easy rim walks suitable for all ages.</p>
-          <ul>
-            <li>Mather Point & Visitor Center</li>
-            <li>Rim Trail scenic sections</li>
-            <li>Desert View Watchtower</li>
-          </ul>
-        </article>
-        
-        <article class="itinerary-preview">
-          <h3>Great Smoky Mountains: 3-Day Getaway</h3>
-          <p>Waterfalls, wildlife, and mountain scenery in America's most visited park.</p>
-          <ul>
-            <li>Cades Cove scenic loop</li>
-            <li>Laurel Falls & Grotto Falls</li>
-            <li>Newfound Gap overlook</li>
-          </ul>
-        </article>
-      </div>
+      <div class="itinerary-preview-grid" id="itinerary-preview-grid"></div>
       
       <div class="cta-center">
         <a href="itineraries.html" class="cta-btn">View All Itineraries</a>
@@ -116,108 +97,10 @@
     </section>
   </main>
 
-  <!-- Modals -->
-  <div id="yellowstone-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h3>Yellowstone: 3-Day Family Adventure</h3>
-      </div>
-      <div class="modal-body">
-        <h4>Day 1: Geysers & Hot Springs</h4>
-        <ul>
-          <li>Morning: Old Faithful area (2-3 hours)</li>
-          <li>Lunch: Picnic at park</li>
-          <li>Afternoon: Grand Prismatic Spring overlook</li>
-          <li>Evening: Wildlife viewing in Lamar Valley</li>
-        </ul>
-        <h4>Day 2: Canyon & Waterfalls</h4>
-        <ul>
-          <li>Morning: Grand Canyon of Yellowstone</li>
-          <li>Lunch: Canyon Village</li>
-          <li>Afternoon: Easy hikes to waterfalls</li>
-        </ul>
-        <h4>Day 3: Wildlife & Departure</h4>
-        <ul>
-          <li>Morning: Hayden Valley wildlife viewing</li>
-          <li>Afternoon: Departure</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <!-- Modal Container -->
+  <div id="modal-container"></div>
 
-  <div id="grand-canyon-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h3>Grand Canyon: 2-Day South Rim Trip</h3>
-      </div>
-      <div class="modal-body">
-        <h4>Day 1: Rim Views</h4>
-        <ul>
-          <li>Morning: Visitor Center & Mather Point</li>
-          <li>Lunch: Grand Canyon Village</li>
-          <li>Afternoon: Rim Trail walk (easy sections)</li>
-          <li>Evening: Sunset at Yavapai Point</li>
-        </ul>
-        <h4>Day 2: Desert View Drive</h4>
-        <ul>
-          <li>Morning: Desert View Watchtower</li>
-          <li>Lunch: Picnic at scenic overlook</li>
-          <li>Afternoon: Junior Ranger program</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div id="yosemite-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h3>Yosemite: 2-Day Valley Adventure</h3>
-      </div>
-      <div class="modal-body">
-        <h4>Day 1: Valley Floor</h4>
-        <ul>
-          <li>Morning: Lower Yosemite Fall trail</li>
-          <li>Lunch: Yosemite Village</li>
-          <li>Afternoon: Valley View and El Capitan</li>
-          <li>Evening: Sunset at Tunnel View</li>
-        </ul>
-        <h4>Day 2: Waterfalls & Meadows</h4>
-        <ul>
-          <li>Morning: Mist Trail to Vernal Fall</li>
-          <li>Lunch: Curry Village</li>
-          <li>Afternoon: Mirror Lake loop</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div id="zion-modal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h3>Zion: 2-Day Canyon Experience</h3>
-      </div>
-      <div class="modal-body">
-        <h4>Day 1: Zion Canyon</h4>
-        <ul>
-          <li>Morning: Riverside Walk</li>
-          <li>Lunch: Zion Lodge</li>
-          <li>Afternoon: Emerald Pools trail</li>
-          <li>Evening: Sunset at Canyon Junction</li>
-        </ul>
-        <h4>Day 2: Scenic Drive</h4>
-        <ul>
-          <li>Morning: Weeping Rock trail</li>
-          <li>Lunch: Springdale</li>
-          <li>Afternoon: Pa'rus Trail bike ride</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
+  <!-- Footer -->
   <footer>
     <p><span id="currentyear"></span> <span>🏕️🏔️🌲</span> Adam Cottam <span>🌲🏔️🏕️</span> Portland, Oregon USA</p>
     <p id="lastmodified"></p>

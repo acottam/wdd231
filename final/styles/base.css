@@ -221,7 +221,6 @@ section > h2, p.h2 {
     color: var(--evergreen-ridge);
     padding: .6rem 0;
     border-radius: 999px;
-    display: inline-block;
     margin-bottom: .75rem;
     font-size: 2rem; 
     font-weight: 700;
@@ -588,8 +587,24 @@ footer p {
 }
 .itinerary h3 {
     color: var(--evergreen-ridge);
-    padding-bottom: .5rem;
 }
+.itinerary h4 {
+    color: var(--evergreen-ridge);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    border-left: 4px solid var(--canyon-sunrise);
+    padding-left: .75rem;
+    margin-bottom: .25rem;
+}
+.itinerary h5 {
+    color: var(--evergreen-ridge);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: .75rem;
+}
+/*
 .itinerary.west h3 {
     border-bottom-color: var(--evergreen-ridge);
 }
@@ -602,24 +617,21 @@ footer p {
 .itinerary.midwest h3 {
     border-bottom-color: var(--canyon-dark);
 }
+*/
 .day {
     background: var(--alpine-sky);
     padding: 1rem;
     border-radius: var(--radius);
     margin: 1rem 0;
 }
-.day:first-child(1) {
+.day1 {
+    background: #E8F2F8;
+}
+.day2 {
+    background: #D4E5F1;
+}
+.day3 {
     background: var(--alpine-sky);
-}
-.day:nth-child(2) {
-    background: var(--warm-sandstone);
-}
-.day:nth-child(3) {
-    background: var(--canyon-sunrise);
-}
-.day h4 {
-    color: var(--evergreen-ridge);
-    margin-bottom: .5rem;
 }
 
 /* ---- Tips Page ---- */
@@ -754,7 +766,7 @@ footer p {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(11, 61, 46, 0.75);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 .modal-content {
     background-color: var(--ink-000);
@@ -775,6 +787,29 @@ footer p {
     color: var(--ink-000);
     position: relative;
 }
+.modal-header-image {
+    padding: 0;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+.modal-header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.modal-header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(11, 61, 46, 0.4), rgba(11, 61, 46, 0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 2rem;
+}
 .modal-header h3 {
     margin: 0;
     font-size: 1.3rem;
@@ -790,6 +825,8 @@ footer p {
     top: 1rem;
     right: 1.5rem;
     cursor: pointer;
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .close:hover {
     opacity: 0.8;

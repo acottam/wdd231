@@ -8,7 +8,6 @@
     "season": "Summer",
     "activity": "Wildlife viewing",
     "featured": true,
-    "showcase": true,
     "itinerary": {
       "title": "Yellowstone: 3-Day Family Adventure",
       "days": [
@@ -48,7 +47,6 @@
     "season": "Spring/Fall",
     "activity": "Scenic overlooks",
     "featured": true,
-    "showcase": true,
     "itinerary": {
       "title": "Grand Canyon: 2-Day South Rim Trip",
       "days": [
@@ -208,16 +206,7 @@
     "image": "images/glacier-01.webp",
     "season": "Summer",
     "activity": "Scenic drives",
-    "featured": false,
-    "showcase": true,
-    "itinerary": {
-      "title": "Glacier: 3-Day Mountain Adventure",
-      "days": [
-        {"day": "Day 1: Going-to-the-Sun Road", "activities": ["Morning: Start at West Glacier", "Lunch: Logan Pass", "Afternoon: Hidden Lake Overlook", "Evening: Many Glacier area"]},
-        {"day": "Day 2: Many Glacier Valley", "activities": ["Morning: Swiftcurrent Lake loop", "Lunch: Many Glacier Hotel", "Afternoon: Grinnell Lake trail"]},
-        {"day": "Day 3: Lake McDonald", "activities": ["Morning: Lake McDonald scenic area", "Lunch: Apgar Village", "Afternoon: Trail of the Cedars"]}
-      ]
-    }
+    "featured": false
   },
   {
     "name": "Olympic",

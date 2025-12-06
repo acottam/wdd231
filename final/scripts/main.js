@@ -18,9 +18,89 @@ async function loadParks() {
     const selected = shuffled.slice(0, 4);
     
     displayParks(selected);
+    generateModals(selected);
+    generateItineraryPreviews(parks);
   } catch (error) {
     console.error('Error loading parks:', error);
   }
+}
+
+// Generate itinerary previews
+function generateItineraryPreviews(allParks) {
+  const showcaseParks = allParks.filter(p => p.showcase && p.itinerary).slice(0, 3);
+  const container = document.getElementById('itinerary-preview-grid');
+  
+  container.innerHTML = showcaseParks.map(park => {
+    const highlights = park.itinerary.days.slice(0, 3).map(day => 
+      day.activities[0] || day.day
+    );
+    
+    return `
+      <article class="itinerary-preview">
+        <h3>${park.itinerary.title}</h3>
+        <p>${park.description}</p>
+        <ul>
+          ${highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+        </ul>
+      </article>
+    `;
+  }).join('');
+}
+
+// Generate modals dynamically
+function generateModals(parksToShow) {
+  const container = document.getElementById('modal-container');
+  container.innerHTML = parksToShow.map(park => {
+    if (!park.itinerary) return '';
+    
+    const modalId = park.name.toLowerCase().replace(/\s+/g, '-') + '-modal';
+    const daysHTML = park.itinerary.days.map(day => `
+      <h4>${day.day}</h4>
+      <ul>
+        ${day.activities.map(activity => `<li>${activity}</li>`).join('')}
+      </ul>
+    `).join('');
+    
+    return `
+      <div id="${modalId}" class="modal">
+        <div class="modal-content">
+          <div class="modal-header modal-header-image">
+            <img src="${park.image}" alt="${park.name}">
+            <div class="modal-header-overlay">
+              <span class="close">&times;</span>
+              <h3>${park.itinerary.title}</h3>
+            </div>
+          </div>
+          <div class="modal-body">
+            ${daysHTML}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+  
+  // Re-attach modal event listeners
+  attachModalListeners();
+}
+
+// Attach modal event listeners
+function attachModalListeners() {
+  const closeButtons = document.querySelectorAll('.close');
+  const modals = document.querySelectorAll('.modal');
+
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      button.closest('.modal').style.display = 'none';
+    });
+  });
+
+  window.addEventListener('click', (e) => {
+    modals.forEach(modal => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
 }
 
 // Display parks
@@ -77,21 +157,3 @@ document.querySelectorAll('.nav a').forEach(link => {
 
 // Load and display parks
 loadParks();
-
-// Modal functionality
-const closeButtons = document.querySelectorAll('.close');
-const modals = document.querySelectorAll('.modal');
-
-closeButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    button.closest('.modal').style.display = 'none';
-  });
-});
-
-window.addEventListener('click', (e) => {
-  modals.forEach(modal => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-});
