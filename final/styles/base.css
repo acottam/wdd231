@@ -715,9 +715,7 @@ footer p {
     color: var(--evergreen-ridge);
     margin-bottom: .25rem;
 }
-.tips-form input,
-.tips-form select,
-.tips-form textarea {
+.tips-form input, .tips-form select, .tips-form textarea {
     padding: .75rem;
     border: 1px solid var(--evergreen-ridge);
     border-radius: var(--radius);

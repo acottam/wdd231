@@ -61,8 +61,7 @@
 
 /* ---- Wider ---- */
 @media (min-width: 70rem) {
-    main,
-    .header-wrapper {
+    main, .header-wrapper {
         width: min(1100px, 90%);
     }
     header h1 {
